@@ -11,7 +11,7 @@
 			<h1> Casa Negra </h1>
 		</header>
 
-
+		<h2>Hello</h2>
 <ul>
 		<li><a href="index.php?page=accueil"> Accueil </a></li>
 	</ul>

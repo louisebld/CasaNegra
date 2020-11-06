@@ -17,9 +17,13 @@
 		</ul>
 	</main>
 
+	<?php
 
 
+		include 'pages/accueil.php'
 
+
+	?>
 
 	<footer>
 

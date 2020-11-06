@@ -1,5 +1,6 @@
 
 <section class="prentation">
+<!-- Petite présentation du site -->
 		<h1>Presentation</h1>
 			<p>L'entrprise Casa Negra, architecte d'intérieur est là pour vous, elle vous accompagne à travers vos démarches, pour donner vie à votre projet.</p>
 
@@ -7,6 +8,10 @@
 
 			<p>Vous pouvez retrouver notre showroom, avec plusieurs projets déjà réalisé</p>
 </section>
+
+<!-- 
+A modifier plus tard
+Affiche un commentaire random, la note moyenne, et et le nb de projets réalisés
 
 <section class="stats">
 	<div class="box_accueil">
@@ -23,7 +28,7 @@
 					<?php //recuperer la moeynne des étoiles de notre base de donnée?>
 		</div>
 	</div>
-</section>
+</section> -->
 
 
 <?php

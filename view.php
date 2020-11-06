@@ -8,38 +8,24 @@
 <body>
 	<main>
 		<header>
-
-			<?php
-			include 'entete.php';
-			?>
-
-
+			<h1> Casa Negra </h1>
 		</header>
 
+			
 		<ul>
 			<li><a href="index.php?page=accueil"> Accueil </a></li>
 		</ul>
-
-
-		<?php
-
-
-
-		if (!isset($_GET['page'])) {
-			header("location:index.php?page=accueil");
-
-		}
-
-
-		?>
+	</main>
 
 
 
-		<footer>
 
-			&copy; CasaNegra 2020
 
-		</footer>
+	<footer>
 
-	</body>
-	</html>
+		&copy; CasaNegra 2020
+
+	</footer>
+
+</body>
+</html>

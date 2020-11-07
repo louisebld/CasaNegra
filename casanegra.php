@@ -18,26 +18,30 @@ function charge_equipe($c){
 }
 
 
-function print_formulaire() {
+function print_formulaire_ajout() {
 	//Affiche le formulaire pour ajouter un nouveau membre
 
 	?>
 
-	<form method="post" action="index.php?page=connexion">
+	<form method="post" action="index.php?page=inscription">
 
 		<p><label for="ajout"> Nom </label>
-			<input type = "text" name ="nom" id="ajout"></p>
+			<input type = "text" name ="nom" id="ajout" value="<?php if (isset($_SESSION['donnee']['nom'])) 
+																echo $_SESSION['donnee']['nom']; ?>"></p>
+
 			
 
 		<p><label for="ajout"> Prénom </label>
-			<input type = "text" name ="prénom" id="ajout"></p>
+			<input type = "text" name ="prénom" id="ajout" value="<?php if (isset($_SESSION['donnee']['prénom'])) 
+																echo $_SESSION['donnee']['prénom']; ?>"></p>
 
 
 		<p><label for="ajout"> Adresse Mail </label>
-			<input type = "text" name ="mail" id="ajout"></p>
+			<input type = "text" name ="mail" id="ajout" value="<?php if (isset($_SESSION['donnee']['mail'])) 
+																echo $_SESSION['donnee']['mail']; ?>"></p>
 
 
-		<p><input type="submit" name="action" id="action" value="Envoyer"/></p>
+		<p><input type="submit" name="action" id="action" value="S'inscrire"/></p>
 				</form>
 
 				<?php	 
@@ -47,8 +51,8 @@ function print_formulaire() {
 
 function insert_compte($nom, $prénom, $mail) {
 	//Insère un nouveau compte dans la bdd
-					global $bdd;
-					mysqli_query($bdd, "INSERT INTO compte (nom, prénom, adressemail) values ('$nom', '$prénom', $mail)");
+					global $c;
+					mysqli_query($c, "INSERT INTO compte(nom, prénom, mail) values ('$nom', '$prénom', '$mail')");
 
 				}
 

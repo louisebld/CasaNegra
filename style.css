@@ -1,5 +1,13 @@
+@font-face{
+	font-family: Abel;
+	src: url("Abel-Regular.ttf");
+}
+
+
+
+
 body {
-  font-family : cursive;
+  font-family : Abel,cursive;
 }
 
 /*POUR LE MENU*/

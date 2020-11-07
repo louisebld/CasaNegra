@@ -13,7 +13,7 @@ function charge_equipe($c){
 	while ($row=mysqli_fetch_assoc($result)) {
 		$tableau[] = $row;
 	}
-	var_dump($tableau);
+	//var_dump($tableau);
 	return $tableau;
 }
 

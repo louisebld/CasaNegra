@@ -11,24 +11,34 @@
 			<h1><?php echo $title ?></h1>
 		</header>
 
-			
-		<ul>
-			<li><a href="index.php?page=accueil"> Accueil </a>
-			</li>
-			<!-- Je ne sais pas pourquoi, il veut pas prendre presentation en lien .. -->
-			<li><a href="index.php?page=presentation"></a>Presentation</li>
-		</ul>
+		<!-- Pour la connexion -->
+
+		<div id="inscription">
+			<a href="index.php?page=inscription"> Inscription </a>
+		</div>
+
+		<!-- Pour l'entête -->
+		<?php
+		include ("pages/entete.php");
+
+		?>
+
 	</main>
 
 	<?php
 		//Inclusion de la page selon la valeur de $page
-		if ($page == "accueil"){
-			include ("pages/accueil.php");
-		}
+	if ($page == "accueil"){
+		include ("pages/accueil.php");
+	}
 
-		elseif ($page == "presentation"){
-			include ("pages/presentation.php");
-		}
+	elseif ($page == "presentation"){
+		include ("pages/presentation.php");
+	}
+
+	elseif ($page == "inscription") {
+		include ("pages/inscription.php");
+
+	}
 
 
 

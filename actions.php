@@ -15,4 +15,55 @@ if (isset($_GET) && isset($_GET["page"])){
 	$title="accueil";
 }
 
+
+// Envoi du formulaire pour créer un membre
+// Vérification
+
+// init tab
+$erreur=[];
+
+if (isset($_POST['action'])) {
+
+
+	if (empty($_POST["nom"])) {
+		$erreur[]="nom";
+	}
+
+
+	if (empty($_POST["prénom"])) {
+		$erreur[]="prénom";
+
+	}
+
+// + le truc pour le mail avec symbole td4 wayntal
+	if (empty($_POST["mail"])) {
+		$erreur[]="mail";
+
+	}
+
+
+	if (count($erreur)>0) {
+
+		$_SESSION["erreur"]= $erreur;
+		$_SESSION["donnee"]= $_POST;
+	}
+	else {
+
+		$nom = $_POST['nom'];
+		$prénom = $_POST['prénom'];
+		$mail = $_POST['mail'];
+
+
+		insert_compte($nom, $prénom, $mail);
+
+		header("Location:index.php?page=accueil");
+		
+		unset($_SESSION['erreur']);
+		unset($_SESSION['donnee']);
+
+	}
+}
+
+
+
 ?>

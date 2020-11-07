@@ -11,3 +11,16 @@ Table equipe:
 	sex: var
 	metier: var
 */
+
+
+
+/*
+Table compte :
+	idcompte : int auto ingrement
+	nom : varchar 100
+	prénom : varchar 100
+	mail : text
+
+d'autres trucs à rajouter par la suite...
+
+*/

@@ -61,7 +61,9 @@ function print_equipe($equipe){
 		echo '<div class="membre">';
 		echo "<h2>" . $value["name"] . "</h2>";
 		echo "<p>" . $value["age"] . ", " . $value["metier"] . "</p>" ;
+		echo "numéro de téléphone: " . $value["tel"];
 		echo "<p>" . $value["description"] . "</p>";
+
 		echo "</div>";
 	}
 }

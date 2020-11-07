@@ -12,7 +12,7 @@
 <li><a href="index.php?page=avis"> Avis </a></li>
 <li><a href="index.php?page"> Rendez-vous </a></li> 
 <!-- Pas encore de pages rendez-vous -->
-<li id="dernier">Contact</li>
+<li id="dernier"><a href="index.php?page"> Contact </a></li>
 </ul>
 </div>
  

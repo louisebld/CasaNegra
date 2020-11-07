@@ -1,15 +1,13 @@
 <?php
 //COnnexion à notre base de donnée
 
-$c = mysqli_connect("localhost", "root", "", "CasaNegra");
-mysqli_set_charset($c, "utf8")
+$c = mysqli_connect("localhost", "root", "", "casanegra");
+mysqli_set_charset($c, "utf8");
 
 /*
-Table Equipe:
+Table equipe:
 	idsalarie: int
 	age: int
 	sex: var
 	metier: var
 */
-
-?>

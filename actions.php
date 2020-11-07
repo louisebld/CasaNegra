@@ -54,6 +54,7 @@ if (isset($_POST['action'])) {
 		$mail = $_POST['mail'];
 
 
+
 		insert_compte($nom, $prénom, $mail);
 
 		header("Location:index.php?page=accueil");

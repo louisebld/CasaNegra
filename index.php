@@ -5,7 +5,7 @@
 session_start();
 
 
-include 'db.php';
+include 'bdd.php';
 include 'casanegra.php';
 include 'actions.php';
 include 'view.php';

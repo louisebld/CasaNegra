@@ -3,8 +3,9 @@
 
 function charge_equipe($c){
 	//Fonction recupere le tableau de la bdd Equipe de salarie + caractéristique
+
 	//requete
-	$sql="SELECT * FROM Equipe";
+	$sql="SELECT * FROM equipe";
 	$result=  mysqli_query($c, $sql);
 
 	//on met dans un tableau
@@ -12,7 +13,7 @@ function charge_equipe($c){
 	while ($row=mysqli_fetch_assoc($result)) {
 		$tableau[] = $row;
 	}
-	//var_dump($tableau);
+	var_dump($tableau);
 	return $tableau;
 }
 
@@ -53,7 +54,7 @@ function insert_compte($nom, $prénom, $mail) {
 
 
 
-function print_equipe(){
+function print_equipe($equipe){
 	//Print toute l'equipe contenue dans la base de donnée
 	echo '<div class="equipe">';
 	foreach ($equipe as $key => $value) {

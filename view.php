@@ -22,6 +22,11 @@
 		include ("pages/entete.php");
 
 		?>
+		
+		<!-- Pour le footer -->
+		<?php
+		include("pages/footer.php);
+		?>
 
 	</main>
 
@@ -44,11 +49,6 @@
 
 	?>
 
-	<footer>
-
-		&copy; CasaNegra 2020
-
-	</footer>
 
 </body>
 </html>

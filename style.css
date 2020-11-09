@@ -6,6 +6,7 @@
 
 body {
   font-family : Abel,cursive;
+  display: table;
 }
 
 /*POUR LE MENU*/
@@ -47,3 +48,14 @@ ul a
 }
 /*FIN MENU*/
 
+/*POUR LE FOOTER*/
+footer{
+  text-align: center;
+  padding: 3px;
+  background-color: black;
+  color: white;
+  position:absolute;
+  display:table-row;
+
+}
+/*FIN FOOTER*/

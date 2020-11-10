@@ -6,6 +6,8 @@
 
 body {
   font-family : Abel,cursive;
+   overflow-x: hidden; 
+
 }
 
 /*POUR LE MENU*/
@@ -60,8 +62,8 @@ footer{
 
 /*POUR LE DIAPO*/
 #diaporama{
-  margin-left: 100px;
-  margin-right:100px ;
+  margin-left: 30%;
+  margin-right:30% ;
   width: 450px;
   max-height: 300px;
 }

@@ -2,7 +2,7 @@
 //Recupertation du tableau de l'equipe
 $equipe = charge_equipe($c);
 $compte = charge_compte_mailmotdepasse($c);
-var_dump($compte);
+
 
 //initialise la page ou la défini en fonction du choix de l'utilisateur
 if (isset($_GET) && isset($_GET["page"])){

@@ -40,6 +40,10 @@ function print_formulaire_ajout() {
 			<input type = "text" name ="mail" id="ajout" value="<?php if (isset($_SESSION['donnee']['mail'])) 
 																echo $_SESSION['donnee']['mail']; ?>"></p>
 
+		<p><label for="ajout"> Mot de passe </label>
+	<input type = "password" name ="motdepasse" id="ajout" value="<?php if (isset($_SESSION['donnee']['motdepasse'])) 
+														echo $_SESSION['donnee']['motdepasse']; ?>"></p>
+
 
 		<p><input type="submit" name="action" id="action" value="S'inscrire"/></p>
 				</form>
@@ -49,10 +53,10 @@ function print_formulaire_ajout() {
 
 
 
-function insert_compte($nom, $prénom, $mail) {
+function insert_compte($nom, $prénom, $mail, $motdepasse) {
 	//Insère un nouveau compte dans la bdd
 					global $c;
-					mysqli_query($c, "INSERT INTO compte(nom, prénom, mail) values ('$nom', '$prénom', '$mail')");
+					mysqli_query($c, "INSERT INTO compte(nom, prénom, mail, motdepasse) values ('$nom', '$prénom', '$mail', '$motdepasse')");
 
 				}
 

@@ -10,9 +10,8 @@
 <li id="premier"><a href="index.php?page=accueil"> Accueil </a></li>
 <li id="deuxieme"><a href="index.php?page=presentation"> Présentation </a></li>
 <li><a href="index.php?page=avis"> Avis </a></li>
-<li><a href="index.php?page"> Rendez-vous </a></li> 
-<!-- Pas encore de pages rendez-vous -->
-<li id="dernier"><a href="index.php?page"> Contact </a></li>
+<li><a href="index.php?page=prendrerdv"> Rendez-vous </a></li> 
+<li id="dernier"><a href="index.php?page=contact"> Contact </a></li>
 </ul>
 </div>
  

@@ -17,8 +17,8 @@ function print_equipe($equipe){
 	foreach ($equipe as $key => $value) {
 		echo '<div class="membre_equipe">';
 		echo "<h2>" . $value["name"];
-		echo $value["fname"] . "</h2>";
-		echo "<p>" . $value["age"] . ", " . $value["metier"] . "</p>" ;
+		echo " " . $value["fname"] . "</h2>";
+		echo "<p>" . $value["age"] . "ans, " . $value["metier"] . "</p>" ;
 		echo "numéro de téléphone: " . $value["tel"];
 		echo "<p>" . $value["descrip"] . "</p>";
 

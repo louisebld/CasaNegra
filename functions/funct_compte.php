@@ -71,7 +71,7 @@ function verificationadressemailmdp($compte, $mail, $motdepasse){
 	for ($i = 0; $i < count($compte); $i++){
 		$personnecourante=$compte[$i];
 
-		if ($mail == $personnecourante['mail'] {
+		if ($mail == $personnecourante['mail']) {
 			$verification[]='Adressemail';
 		}
 

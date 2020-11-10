@@ -41,6 +41,11 @@ if (isset($_POST['action'])) {
 
 	}
 
+	if (empty($_POST["motdepasse"])) {
+		$erreur[]="motdepasse";
+
+	}
+
 
 	if (count($erreur)>0) {
 
@@ -52,10 +57,11 @@ if (isset($_POST['action'])) {
 		$nom = $_POST['nom'];
 		$prénom = $_POST['prénom'];
 		$mail = $_POST['mail'];
+		$motdepasse = $_POST['motdepasse'];
 
 
 
-		insert_compte($nom, $prénom, $mail);
+		insert_compte($nom, $prénom, $mail, $motdepasse);
 
 		header("Location:index.php?page=accueil");
 		

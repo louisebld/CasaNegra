@@ -8,7 +8,7 @@
 <body>
 	<main>
 		<header>
-			<h1><?php echo $title ?></h1>
+			
 		</header>
 
 		<!-- Pour la connexion -->

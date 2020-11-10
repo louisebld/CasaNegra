@@ -39,16 +39,6 @@ function print_formulaire_ajout() {
 
 
 
-
-
-
-
-
-
-
-
-
-
 function print_formulaire_connexion() {
 	//Affiche le formulaire pour ajouter un nouveau membre
 
@@ -70,6 +60,28 @@ function print_formulaire_connexion() {
 
 				<?php	 
 			}
+
+
+
+
+function verificationadressemailmdp($compte, $mail, $motdepasse){
+	// Permet de savoir si un mail et un mot de passe donné corresponde bien à un compte
+	// verification prend les champs corrects
+	$verification=[];
+	for ($i = 0; $i < count($compte); $i++){
+		$personnecourante=$compte[$i];
+
+		if ($mail == $personnecourante['mail'] {
+			$verification[]='Adressemail';
+		}
+
+		if ($motdepasse = $personnecourante['motdepasse']) {
+			$verification[]='Motdepasse'
+		}
+
+
+	}
+}
 
 
 

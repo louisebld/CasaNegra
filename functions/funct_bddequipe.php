@@ -16,7 +16,4 @@ function charge_equipe($c){
 	return $tableau;
 }
 
-
-
-
 ?>

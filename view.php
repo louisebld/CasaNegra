@@ -23,10 +23,6 @@
 
 		?>
 		
-		<!-- Pour le footer -->
-		<?php
-		include("pages/footer.php);
-		?>
 
 	</main>
 
@@ -48,6 +44,12 @@
 
 
 	?>
+
+	<!-- Pour le footer -->
+	<?php
+	include("pages/footer.php");
+	?>
+
 
 
 </body>

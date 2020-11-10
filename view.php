@@ -41,6 +41,21 @@
 
 	}
 
+	elseif ($page == "avis") {
+		include ("pages/avis.php");
+
+	}
+
+	elseif ($page == "prendrerdv") {
+		include ("pages/rdv.php");
+
+	}
+
+	elseif ($page == "contact") {
+		include ("pages/contact.php");
+
+	}
+
 
 
 	?>

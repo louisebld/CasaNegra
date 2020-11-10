@@ -38,8 +38,8 @@ if (isset($_POST['action'])) {
 
 	}
 
-// + le truc pour le mail avec symbole td4 wayntal
-	if (empty($_POST["mail"])) {
+// + le truc pour le mail avec symbole td5 wayntal
+	if (empty($_POST["mail"]) || !preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $_POST["mail"])) {
 		$erreur[]="mail";
 
 	}

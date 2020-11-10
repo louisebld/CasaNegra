@@ -1,22 +1,38 @@
 <?php
 
-function print_equipe($equipe){
-	//Print toute l'equipe contenue dans la base de donnée
-	echo '<div class="equipe">';
-	foreach ($equipe as $key => $value) {
-		echo '<div class="membre_equipe">';
-		echo "<h2>" . $value["name"];
-		echo $value["fname"] . "</h2>";
-		echo "<p>" . $value["age"] . ", " . $value["metier"] . "</p>" ;
-		echo "numéro de téléphone: " . $value["tel"];
-		echo "<p>" . $value["description"] . "</p>";
+/*function charge_equipe($c){
+	//Fonction recupere le tableau de la bdd Equipe de salarie + caractéristique
 
-		echo "</div>";
+	//requete
+	$sql="SELECT * FROM equipe";
+	$result=  mysqli_query($c, $sql);
+
+	//on met dans un tableau
+	$tableau = [];
+	while ($row=mysqli_fetch_assoc($result)) {
+		$tableau[] = $row;
 	}
-	echo "</div>"; 
+	//var_dump($tableau);
+	return $tableau;
 }
+*/
+function charge_equipe($c){
+	//Focntion qui va prendre dex bases de données en arguments, et va rendre le metier de chaque personne, selon l'id des tables
+	
 
+	$sql = "SELECT e.name AS name, m.metier AS metier, e.fname AS fname, e.age AS age, e.description AS descrip, tel
+			FROM equipe AS e
+			INNER JOIN metier AS m
+			ON e.id_metier = m.id";
+	$result=  mysqli_query($c, $sql);
 
+	//on met dans un tableau
+	$tableau = [];
+	while ($row=mysqli_fetch_assoc($result)) {
+		$tableau[] = $row;
+	}
+	//var_dump($tableau);
+	return $tableau;
 
-
+}
 ?>

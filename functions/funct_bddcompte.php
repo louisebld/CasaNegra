@@ -10,11 +10,11 @@ function insert_compte($nom, $prénom, $mail, $motdepasse) {
 
 
 
-function charge_compte($c){
-	//Fonction recupere le tableau de la bdd Equipe de salarie + caractéristique
+function charge_compte_mailmotdepasse($c){
+	//Fonction recupere le tableau des adresses mail
 
 	//requete
-	$sql="SELECT * FROM compte";
+	$sql="SELECT mail, motdepasse FROM compte";
 	$result=  mysqli_query($c, $sql);
 
 	//on met dans un tableau

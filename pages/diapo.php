@@ -9,6 +9,8 @@ function diaporamaSuivant() {
 </script>
 <html>
 <body onload="diaporamaSuivant();">
+<div id="diapo">
 <img src="images/diapo1.jpg" id="diaporama" />
+     </div>
 <body>
 </html>

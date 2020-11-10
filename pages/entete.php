@@ -1,7 +1,3 @@
-<!-- Diaporama -->
-
-<script type="text/javascript" src="pages/diapo.js"></script>
-
 
 <!-- Menu du site -->
 

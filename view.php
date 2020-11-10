@@ -17,6 +17,11 @@
 			<a href="index.php?page=inscription"> Inscription </a>
 		</div>
 
+		<div id="connexion">
+			<a href="index.php?page=connexion"> Connexion </a>
+		</div>
+
+
 		<!-- Pour l'entête -->
 		<?php
 		include ("pages/entete.php");
@@ -40,6 +45,12 @@
 		include ("pages/inscription.php");
 
 	}
+
+	elseif ($page == "connexion") {
+		include ("pages/connexion.php");
+
+	}
+
 
 	elseif ($page == "avis") {
 		include ("pages/avis.php");

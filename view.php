@@ -35,6 +35,8 @@
 		//Inclusion de la page selon la valeur de $page
 	if ($page == "accueil"){
 		include ("pages/accueil.php");
+		include("pages/diapo.php");
+
 	}
 
 	elseif ($page == "presentation"){

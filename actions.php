@@ -1,6 +1,7 @@
 <?php
 //Recupertation du tableau de l'equipe
 $equipe = charge_equipe($c);
+$compte = charge_compte($c);
 
 //initialise la page ou la défini en fonction du choix de l'utilisateur
 if (isset($_GET) && isset($_GET["page"])){
@@ -21,6 +22,8 @@ if (isset($_GET) && isset($_GET["page"])){
 
 // init tab
 $erreur=[];
+
+// POUR L'INSCRIPTION
 
 if (isset($_POST['action'])) {
 
@@ -70,6 +73,12 @@ if (isset($_POST['action'])) {
 
 	}
 }
+
+// Fin INSCRIPTION
+
+// DEBUT CONNEXION
+
+
 
 
 

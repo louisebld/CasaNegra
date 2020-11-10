@@ -13,7 +13,7 @@ function print_equipe($equipe){
 
 		echo "</div>";
 	}
-	echo "</div>";
+	echo "</div>"; 
 }
 
 

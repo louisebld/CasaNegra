@@ -20,7 +20,7 @@ function print_equipe($equipe){
 		echo $value["fname"] . "</h2>";
 		echo "<p>" . $value["age"] . ", " . $value["metier"] . "</p>" ;
 		echo "numéro de téléphone: " . $value["tel"];
-		echo "<p>" . $value["description"] . "</p>";
+		echo "<p>" . $value["descrip"] . "</p>";
 
 		echo "</div>";
 	}

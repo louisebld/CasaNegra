@@ -6,8 +6,7 @@ session_start();
 
 
 include 'bdd.php';
-include 'functions/funct_compte.php';
-include 'functions/funct_equipe.php';
+include 'funct_includes.php';
 include 'actions.php';
 include 'view.php';
 

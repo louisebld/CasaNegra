@@ -6,7 +6,6 @@
 
 body {
   font-family : Abel,cursive;
-  display: table;
 }
 
 /*POUR LE MENU*/
@@ -54,8 +53,8 @@ footer{
   padding: 3px;
   background-color: black;
   color: white;
-  position:absolute;
-  display:table-row;
+  position:relative;
+  width: 100%;
 
 }
 /*FIN FOOTER*/

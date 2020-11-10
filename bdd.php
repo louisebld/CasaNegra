@@ -20,6 +20,7 @@ Table compte :
 	nom : varchar 100
 	prénom : varchar 100
 	mail : text
+	motedepasse : varchar 20 valeur par défaut null ?
 
 d'autres trucs à rajouter par la suite...
 

@@ -1,14 +1,4 @@
 <?php
-/*Fichier fonction table equipe
-table equipe:
-	idsalarie: int
-	name: varchar(20)
-	fname: varchar(20)
-	age: int
-	metier: varchar(50)
-	description: text
-	tel: varchar(10)
-*/
 
 
 function print_equipe($equipe){

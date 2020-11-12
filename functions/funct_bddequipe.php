@@ -13,7 +13,7 @@ table equipe:
 
 /*Fichier fonction table metier associé a equipe en qlq sorte
 table metier:
-	id: intdsdsdssd
+	id: int
 	metier: varchar(50)
 */
 

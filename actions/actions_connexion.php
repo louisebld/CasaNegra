@@ -7,6 +7,7 @@
 
 if (isset($_POST['connexion'])) {
 
+// appel à la fonction pour savoir si le mail et le mdp correspondent
 	$verif = verificationadressemailmdp($compte, $_POST["mail"], $_POST["motdepasse"]);
 	$erreur=[];
 // non vide
@@ -24,7 +25,7 @@ if (isset($_POST['connexion'])) {
 // Si on a des champs vide
 	if (count($erreur)>0) {
 
-// on met les valeurs dans une variable de session
+// on met les valeurs dans une variable de session afin de les laisser dans le formulaire
 		$_SESSION["faute"]= $erreur;
 		$_SESSION["donneeutil"]= $_POST;
 
@@ -41,7 +42,9 @@ if (isset($_POST['connexion'])) {
 	}
 
 // Si les deux valeurs sont correctes =2
+// on se connecte
 	else {
+// on enlève toutes les variables de session d'erreur
 		unset($_SESSION["incorrect"]);
 		unset($_SESSION["faute"]);
 		unset($_SESSION["donneeutil"]);
@@ -49,9 +52,11 @@ if (isset($_POST['connexion'])) {
 	// on garde l'adresse mail pour ensuite faire une recherche dessus pour avoir les infos du compte
 		$_SESSION['monadressemail'] = $_POST["mail"];
 		
-		// redirection vers une page membre ??
-
+		// redirection vers une page membre
+		header('Location: index.php?page=moncompte');	
+			
 	}
+
 
 }
 

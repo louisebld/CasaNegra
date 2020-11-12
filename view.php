@@ -69,6 +69,12 @@
 
 	}
 
+	elseif ($page == "moncompte") {
+		include ("pages/moncompte.php");
+
+	}
+
+
 
 
 	?>

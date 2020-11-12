@@ -26,9 +26,12 @@ function print_formulaire_ajout() {
 																echo $_SESSION['donnee']['mail']; ?>"></p>
 
 		<p><label for="ajout"> Mot de passe </label>
-	<input type = "password" name ="motdepasse" id="ajout" value="<?php if (isset($_SESSION['donnee']['motdepasse'])) 
-														echo $_SESSION['donnee']['motdepasse']; ?>"></p>
+	<input type = "password" name ="motdepasse1" id="ajout" value="<?php if (isset($_SESSION['donnee']['motdepasse1'])) 
+														echo $_SESSION['donnee']['motdepasse1']; ?>"></p>
 
+		<p><label for="ajout"> Mot de passe </label>
+	<input type = "password" name ="motdepasse2" id="ajout" value="<?php if (isset($_SESSION['donnee']['motdepasse2'])) 
+														echo $_SESSION['donnee']['motdepasse2']; ?>"></p>
 
 		<p><input type="submit" name="action" id="action" value="S'inscrire"/></p>
 				</form>
@@ -80,6 +83,37 @@ function verificationadressemailmdp($compte, $mail, $motdepasse){
 	}
 		return $verification;
 }
+
+
+
+
+
+// Vérification des éléments du mot de passe
+
+function mdpbonformat($motdepasse) {
+// le mot de passe doit contenir au moins
+	// une majuscule, une minuscule, un chiffre et un caractère spécial -- mot de passe sécurisé
+	// le mot de passe doit contenir au moins 8 caractères
+
+	$majuscule = preg_match('@[A-Z]@', $motdepasse);
+	$minuscule = preg_match('@[a-z]@', $motdepasse);
+	$chiffre = preg_match('@[0-9]@', $motdepasse);
+	$car = '/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/';
+// mis dans une variable sinon les apostrophes faisent bug
+	$caracterespecial = preg_match($car, $motdepasse) ;
+
+	// si toutes les conditions sont réunies
+
+	if($majuscule and $minuscule and $chiffre and $caracterespecial and strlen($motdepasse) >= 8) {
+		$correct=true;
+	}
+	else {
+		$correct=false;
+	}
+
+	return $correct;
+}
+
 
 
 

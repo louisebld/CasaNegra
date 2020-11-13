@@ -8,8 +8,6 @@
 <body>
 	<main>
 		<header>
-			
-		</header>
 
 		<!-- Pour la connexion -->
 
@@ -28,7 +26,7 @@
 
 		?>
 		
-
+		</header>
 	</main>
 
 	<?php

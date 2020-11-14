@@ -49,9 +49,13 @@ if (isset($_POST['connexion'])) {
 		unset($_SESSION["faute"]);
 		unset($_SESSION["donneeutil"]);
 
-	// on garde l'adresse mail pour ensuite faire une recherche dessus pour avoir les infos du compte
-		$_SESSION['monadressemail'] = $_POST["mail"];
 
+	//	$_SESSION['monadressemail'] = $_POST["mail"];
+
+// On prend l'id du compte
+		$_SESSION['idcompte'] = recupereid($_POST["mail"]);
+// on le passe en connecté
+		$_SESSION['connected']=true;
   		
 		// redirection vers une page membre
 		header('Location: index.php?page=moncompte');	
@@ -60,7 +64,5 @@ if (isset($_POST['connexion'])) {
 
 
 }
-
-
 
 ?>

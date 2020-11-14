@@ -22,13 +22,37 @@ if (isset($_POST['action'])) {
 	}
 
 // + le truc pour le mail avec symbole td5 wayntal
-	if (empty($_POST["mail"]) || !preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $_POST["mail"])) {
-		$erreur[]="Email vide ou Email au mauvais format";
+	if (empty($_POST["mail"])) {
+			$erreur[]="Email vide";
+	}
+	
+
+
+	elseif (!preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $_POST["mail"])) {
+		$erreur[]="Email au mauvais format";
+	}
+
+	elseif (existeemail ($_POST["mail"])){
+
+		$erreur[]="Cette adresse email est déjà prise";
 
 	}
 
-	if (empty($_POST["motdepasse1"]) || empty($_POST["motdepasse2"]) || (strcmp($_POST["motdepasse2"], $_POST["motdepasse1"])!=0) || mdpbonformat($_POST["motdepasse1"])==false ) {
-		$erreur[]="Mot de passe vide ou incorrect : votre mot de passe doit contenir au moins : • Une majuscule • Une minuscule • Un chiffre • Un caractère spécial • 8 caractères";
+	if (empty($_POST["motdepasse1"]) || empty($_POST["motdepasse2"])) {
+		$erreur[]="Mot de passe vide, veuillez remplir les deux champs";
+
+	} 
+
+
+
+	elseif(strcmp($_POST["motdepasse2"], $_POST["motdepasse1"])!=0) {
+
+		$erreur[]="Les mots de passes ne correspondent pas";
+	}
+
+
+	elseif	(mdpbonformat($_POST["motdepasse1"])==false ) {
+		$erreur[]="Votre mot de passe doit contenir au moins : • Une majuscule • Une minuscule • Un chiffre • Un caractère spécial • 8 caractères";
 
 	}
 
@@ -46,11 +70,10 @@ if (isset($_POST['action'])) {
 // on prend le 1 mais les 2 mots de passes sont les mêmes 
 		$motdepasse = $_POST['motdepasse1'];
 
-
-
+// création du compte dans la bdd
 		insert_compte($nom, $prénom, $mail, $motdepasse);
 
-		header("Location:index.php?page=accueil");
+		header("Location:index.php?page=connexion");
 		
 		unset($_SESSION['erreur']);
 		unset($_SESSION['donnee']);

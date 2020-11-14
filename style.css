@@ -71,3 +71,19 @@ div#diapo{
   position: relative;
   background-color: black;
 }
+
+
+/*Pour les div connexion, inscription, déconnexion, moncompte*/
+
+#inscription a
+{
+ text-decoration:none;
+ color:#57606f;
+ float:right;
+}
+
+div#incription {
+  margin:10px;
+  background-color:#dfe4ea;
+  position:a
+}

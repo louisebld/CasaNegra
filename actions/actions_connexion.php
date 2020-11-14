@@ -51,7 +51,8 @@ if (isset($_POST['connexion'])) {
 
 	// on garde l'adresse mail pour ensuite faire une recherche dessus pour avoir les infos du compte
 		$_SESSION['monadressemail'] = $_POST["mail"];
-		
+
+  		
 		// redirection vers une page membre
 		header('Location: index.php?page=moncompte');	
 			

@@ -3,6 +3,7 @@
 //Recuperation du tableau de l'equipe
 $equipe = charge_equipe($c);
 $compte = charge_compte_mailmotdepasse($c);
+$avis = charge_avis($c);
 
 
 //initialise la page ou la défini en fonction du choix de l'utilisateur

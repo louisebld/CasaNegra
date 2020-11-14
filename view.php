@@ -9,23 +9,39 @@
 	<main>
 		<header>
 
-		<!-- Pour la connexion -->
+			<!-- Pour la connexion -->
 
-		<div id="inscription">
-			<a href="index.php?page=inscription"> Inscription </a>
-		</div>
+			<?php
 
-		<div id="connexion">
-			<a href="index.php?page=connexion"> Connexion </a>
-		</div>
+// Vérification si la variable existe et que l'utilisateur est connecté
+			if (isset($_SESSION['connected']) && $_SESSION['connected']) {
+				echo "<div id='moncompte'>";
+				echo "<a href='index.php?page=moncompte'>" . "Mon compte" . "</a>";
+				echo "</div>";
 
+				echo "<div id='deconnexion'>";
+				echo "<a href='index.php?page=deconnexion'>" . "Déconnexion" . "</a>";
+				echo "</div>";
 
-		<!-- Pour l'entête -->
-		<?php
-		include ("pages/entete.php");
+			}
 
-		?>
-		
+			else { ?>
+				<div id="inscription">
+					<a href="index.php?page=inscription"> Inscription </a>
+				</div>
+
+				<div id="connexion">
+					<a href="index.php?page=connexion"> Connexion </a>
+				</div>
+
+			<?php } ?>
+
+			<!-- Pour l'entête -->
+			<?php
+			include ("pages/entete.php");
+
+			?>
+
 		</header>
 	</main>
 
@@ -69,6 +85,13 @@
 
 	elseif ($page == "moncompte") {
 		include ("pages/moncompte.php");
+
+	}
+
+// si déconnexion : redirection vers l'accueil et suppression des variables de session ? suppression ou unset
+	elseif ($page == "deconnexion") {
+		header('location:.');
+		session_destroy();
 
 	}
 

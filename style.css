@@ -6,25 +6,25 @@
 
 body {
   font-family : Abel,cursive;
-   overflow-x: hidden; 
-   background-color: #ced6e0;
+  overflow-x: hidden; 
+  background-color: #ced6e0;
 }
 
 /*POUR LE MENU*/
 #menu ul {margin:0;
-padding:0;
-line-height: 40px;
-text-align:center;}
+  padding:0;
+  line-height: 40px;
+  text-align:center;}
 
-#menu li {list-style:none;
-width: 20%;
-float:left;
-position:relative;
-background-color: #747d8c;}
+  #menu li {list-style:none;
+    width: 20%;
+    float:left;
+    position:relative;
+    background-color: #747d8c;}
 
-#menu li:hover {background-color:#a4b0be}
+    #menu li:hover {background-color:#a4b0be}
 
-/*   Pour faire les arrondis    */
+    /*   Pour faire les arrondis    */
 /*#premier {
 border-top-left-radius:10px;
 border-bottom-left-radius:10px;
@@ -32,24 +32,24 @@ border-bottom-left-radius:10px;
 #dernier {
   border-top-right-radius:10px;
   border-bottom-right-radius:10px;
-}*/
+  }*/
 
-ul a
-{ 
- text-decoration:none;
- color:white;
-} 
+  ul a
+  { 
+   text-decoration:none;
+   color:white;
+ } 
 
-#listemenu li a {
- display: block;
- width: 100%;
- height: 100%;
+ #listemenu li a {
+   display: block;
+   width: 100%;
+   height: 100%;
 
-}
-/*FIN MENU*/
+ }
+ /*FIN MENU*/
 
-/*POUR LE FOOTER*/
-footer{
+ /*POUR LE FOOTER*/
+ footer{
   text-align: center;
   padding: 3px;
   background-color: #747d8c;
@@ -60,18 +60,18 @@ footer{
 }
 
 footer a {
-text-decoration:none;
- color:white;
+  text-decoration:none;
+  color:white;
 }
 
 
 footer #apropos {
-    float:left;
-    width:60%;
+  float:left;
+  width:60%;
 }
 
 footer #contact {
-    margin-left:60%   
+  margin-left:60%   
 }
 
 /*FIN FOOTER*/
@@ -100,7 +100,7 @@ div#diapo{
 }
 
 
- #connexion, #inscription, #moncompte, #deconnexion {
+#connexion, #inscription, #moncompte, #deconnexion {
   background-color: #dfe4ea;
   border-radius:5px;
   border: none;
@@ -120,10 +120,26 @@ div#diapo{
 
 }
 
+
+
+/*Formulaire INSCRIPTION POUR CENTRER*/
+
+div#formulaireinscription, div#formulaireconnexion {
+ margin: 0 auto;
+ padding:20px;
+ width: 500px;
+ height: 150%;
+ background-color: #dfe4ea;
+ border-radius: 30px;
+ text-align:center;
+ margin-top:60px;
+ margin-bottom:20px;
+}
+
 /*Pour les boutons*/
 /*tests*/
 
 input, textarea {
  background-color:#dfe4ea;
  border-radius:5px;
- }
+}

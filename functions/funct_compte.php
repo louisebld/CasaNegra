@@ -7,35 +7,35 @@ function print_formulaire_ajout() {
 	//Affiche le formulaire pour ajouter un nouveau membre
 
 	?>
-
+	<div id="formulaireinscription">
 	<form method="post" action="index.php?page=inscription">
 
-		<p><label for="ajout"> Nom </label>
-			<input type = "text" name ="nom" id="ajout" value="<?php if (isset($_SESSION['donnee']['nom'])) 
+		<p>
+			<input type = "text" placeholder="Nom" name ="nom" id="ajout" value="<?php if (isset($_SESSION['donnee']['nom'])) 
 																echo $_SESSION['donnee']['nom']; ?>"></p>
 
 			
 
-		<p><label for="ajout"> Prénom </label>
-			<input type = "text" name ="prénom" id="ajout" value="<?php if (isset($_SESSION['donnee']['prénom'])) 
+		<p>
+			<input type = "text" placeholder="Prénom" name ="prénom" id="ajout" value="<?php if (isset($_SESSION['donnee']['prénom'])) 
 																echo $_SESSION['donnee']['prénom']; ?>"></p>
 
 
-		<p><label for="ajout"> Adresse Mail </label>
-			<input type = "text" name ="mail" id="ajout" value="<?php if (isset($_SESSION['donnee']['mail'])) 
+		<p>
+			<input type = "text" placeholder="Email" name ="mail" id="ajout" value="<?php if (isset($_SESSION['donnee']['mail'])) 
 																echo $_SESSION['donnee']['mail']; ?>"></p>
 
-		<p><label for="ajout"> Mot de passe </label>
-	<input type = "password" name ="motdepasse1" id="ajout" value="<?php if (isset($_SESSION['donnee']['motdepasse1'])) 
+		<p>
+	<input type = "password" placeholder="Mot de passe" name ="motdepasse1" id="ajout" value="<?php if (isset($_SESSION['donnee']['motdepasse1'])) 
 														echo $_SESSION['donnee']['motdepasse1']; ?>"></p>
 
-		<p><label for="ajout"> Mot de passe </label>
-	<input type = "password" name ="motdepasse2" id="ajout" value="<?php if (isset($_SESSION['donnee']['motdepasse2'])) 
+		<p>
+	<input type = "password" placeholder="Mot de passe" name ="motdepasse2" id="ajout" value="<?php if (isset($_SESSION['donnee']['motdepasse2'])) 
 														echo $_SESSION['donnee']['motdepasse2']; ?>"></p>
 
 		<p><input type="submit" name="action" id="action" value="S'inscrire"/></p>
 				</form>
-
+			</div>
 				<?php	 
 			}
 
@@ -46,20 +46,20 @@ function print_formulaire_connexion() {
 	//Affiche le formulaire pour ajouter un nouveau membre
 
 	?>
-
+	<div id="formulaireconnexion">
 	<form method="post" action="index.php?page=connexion">
 
-		<p><label for="ajout"> Adresse Mail </label>
-			<input type = "text" name ="mail" id="ajout" value="<?php if (isset($_SESSION['donneeutil']['mail'])) 
-																echo $_SESSION['donneeutil']['mail']; ?>"></p>
+		<p>
+			<input type = "text" placeholder="Email" name ="mail" id="ajout" value="<?php if (isset($_SESSION['donneeutil']['mail'])) 
+			echo $_SESSION['donneeutil']['mail']; ?>"></p>
 
-		<p><label for="ajout"> Mot de passe </label>
-	<input type = "password" name ="motdepasse" id="ajout"></p>
+			<p>
+	<input type = "password" placeholder="Mot de passe"  name ="motdepasse" id="ajout"></p>
 
 
 		<p><input type="submit" name="connexion" id="action" value="Se connecter"/></p>
 				</form>
-
+</div>
 				<?php	 
 			}
 

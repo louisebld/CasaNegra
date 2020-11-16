@@ -118,6 +118,10 @@
 
 	}
 
+	elseif ($page == "projet") {
+		include ("pages/projet.php");
+	}
+
 // si déconnexion : redirection vers l'accueil et suppression des variables de session ? suppression ou unset
 	elseif ($page == "deconnexion") {
 		header('location:.');

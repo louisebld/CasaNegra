@@ -113,7 +113,6 @@
 // sinon on redirige
 		else {
 			header('location:index.php');
-
 		}
 
 	}

@@ -20,7 +20,7 @@ function print_form_avis(){
 	//Obligation d'etre connecté, sinon redirection
 	?>
 
-	<form method="post" action="index.php?page=avis">
+	<form method="post" action="actions/actions_avis.php">
 
 		<p><label for="ajout"> Commentaire </label>
 			<input type = "text" name ="com" id="ajout" value="<?php if (isset($_SESSION['com'])) 
@@ -29,7 +29,7 @@ function print_form_avis(){
 
 
 		<p><input type="submit" name="avis" id="avis" value="Enregistrer"/></p>
-				</form>
+	</form>
 
 		<?php	 
 	}

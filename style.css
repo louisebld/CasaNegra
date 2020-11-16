@@ -110,6 +110,21 @@ div#diapo{
   display: inline-block;
 }
 
+/*Pour la div avec le nom prénom de l'utilisateur  */
+
+#monnom {
+
+  background-color: #535c68;
+  border-radius:5px;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+}
+
+
 #connexion a {
  text-decoration:none;
  color:#57606f;
@@ -142,4 +157,13 @@ div#formulaireinscription, div#formulaireconnexion {
 input, textarea {
  background-color:#dfe4ea;
  border-radius:5px;
+}
+
+
+/*Pour le champ mot de passe*/
+
+#champmdp ul {
+list-style: square;
+text-align:center;
+
 }

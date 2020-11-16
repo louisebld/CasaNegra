@@ -12,7 +12,7 @@ table avis:
 function insert_com($com, $idcompte){
 	//fonction qui ajoute un commentaire dans la table commentaire
 	global $c;
-	$sql = "INSERT INTO avis (idautor, commentary) VALUES ($idcompte, '$com')";
+	$sql = "INSERT INTO avis (id, idautor, commentary, answer) VALUES (NULL, $idcompte, $com, NULL)";
 	mysqli_query($c, $sql);
 }
 

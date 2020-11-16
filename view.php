@@ -25,6 +25,7 @@
 				echo "<a href='index.php?page=deconnexion'>" . "Déconnexion" . "</a>";
 				echo "</div>";
 
+
 				echo "<div id='monnom'>";
 				printnom($_SESSION['comptedonnee']);
 				echo "</div>";
@@ -38,9 +39,6 @@
 				}
 
 			}
-
-		
-
 
 			else { ?>
 				<div id="inscription">
@@ -101,18 +99,7 @@
 	}
 
 	elseif ($page == "moncompte") {
-
-		if (isset($_SESSION["connected"])) {
-			include ("pages/moncompte.php");
-
-		}
-		else {
-			header('location:index.php');
-			// window.open(page,"Vous devez être connecté","menubar=no, status=no, scrollbars=yes,  width=500, height=300");
-
-		}
-
-		
+		include ("pages/moncompte.php");
 
 	}
 

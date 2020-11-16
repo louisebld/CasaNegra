@@ -35,18 +35,7 @@ function print_formulaire_ajout() {
 
 		<p><input type="submit" name="action" id="action" value="S'inscrire"/></p>
 				</form>
-
-				<div id="champmdp">
-		<p> Votre mot de passe doit contenir au moins: 
-			<ul> <li> 8 caractères </li>
-				<li> 1 majuscule </li>
-				<li> 1 minuscule </li>
-				<li> 1 chiffre </li>
-				<li> 1 caractère spécial </li>
-			</ul>
-		</p>
 			</div>
-		</div>
 				<?php	 
 			}
 
@@ -124,6 +113,7 @@ function mdpbonformat($motdepasse) {
 }
 
 
+
 function print_donnescompte($donnees){
 
 	//Print les données du compte
@@ -150,7 +140,6 @@ function affichetouscomptes ($donneesdescomptes) {
 		echo "<div id='compteutilisateur'>";
 		$comptecourant = $donneesdescomptes[$i];
 		print_donnescompte($comptecourant);
-
 		echo "</div>";
 	}
 }

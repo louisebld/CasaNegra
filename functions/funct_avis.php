@@ -20,12 +20,13 @@ function print_form_avis(){
 	//Obligation d'etre connecté, sinon redirection
 	?>
 
-	<form method="post" action="index.php?page=avis">
+	<form method="post" action="actions/actions_avis.php">
 
-		<p>
-			<textarea id="com" placeholder="Votre avis.." name="com"
-			rows="10" cols="35"></textarea>
-		</p>
+		<p><label for="ajout"> Commentaire </label>
+			<input type = "text" name ="com" id="ajout" value="<?php if (isset($_SESSION['com'])) 
+																echo $_SESSION['com']; ?>"></p>
+
+
 
 		<p><input type="submit" name="avis" id="avis" value="Enregistrer"/></p>
 	</form>

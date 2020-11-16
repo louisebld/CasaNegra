@@ -5,16 +5,16 @@
 
 
 
-/*function testif_admin($idcompte){
+function testif_admin($idcompte){
 	//Fonction qui recupere un boolean si l'id est contenu dans la table
-	$admin = 'false';
-
 	global $c;
-	$sql = "SELECT idcompte FROM admin WHERE idcompte == '".$idcompte."'";
-	$result=  mysqli_query($c, $sql);
-
-	if (!empty($result)){
-		$result = 'true';
+	$result=  mysqli_query($c, "SELECT idcompte FROM admin WHERE idcompte=$idcompte");
+	$nbcompte=mysqli_num_rows($result);
+// si il y a au moins une ligne qui correspond : true
+	if ($nbcompte>0){
+		return true;
+		}
+	else {
+		return false;
 	}
-
-}*/
+}

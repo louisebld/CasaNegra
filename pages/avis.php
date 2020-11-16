@@ -1,12 +1,9 @@
 <section class="avis">
 	<h2>Ajouter un avis</h2>
 		<?php
-	//		var_dump($_SESSION['monadressemail']);
-			echo "bonjour";
-			var_dump($_SESSION);
-			echo "bonjour";
-			var_dump($_POST);
+
 			print_form_avis();
+			
 			if (isset($_SESSION['faute'])) {
 				echo "<ul>";
 				foreach($_SESSION["faute"] as $faute){

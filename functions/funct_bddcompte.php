@@ -51,4 +51,16 @@ function recupereid($mail) {
 
 }
 
+
+
+// récupérer les données du compte (sauf mdp) à partir de l'id dans la base de données
+
+function recupedonnees ($id) {
+	global $c;
+	$donnees = mysqli_query($c, "SELECT * FROM compte WHERE idcompte = '".$id."'");
+	$resultat=mysqli_fetch_assoc($donnees);
+	return $resultat;
+}
+
+
 ?>

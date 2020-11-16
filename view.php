@@ -84,7 +84,18 @@
 	}
 
 	elseif ($page == "moncompte") {
-		include ("pages/moncompte.php");
+
+		if (isset($_SESSION["connected"])) {
+			include ("pages/moncompte.php");
+
+		}
+		else {
+			header('location:index.php');
+			// window.open(page,"Vous devez être connecté","menubar=no, status=no, scrollbars=yes,  width=500, height=300");
+
+		}
+
+		
 
 	}
 

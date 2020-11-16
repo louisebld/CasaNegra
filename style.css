@@ -92,7 +92,7 @@ div#diapo{
 
 /*Pour les div connexion, inscription, déconnexion, moncompte*/
 
-#inscription a, #moncompte a, #deconnexion a
+#inscription a, #moncompte a, #deconnexion a, #pageadmin a
 {
  text-decoration:none;
  color:#57606f;
@@ -100,7 +100,7 @@ div#diapo{
 }
 
 
-#connexion, #inscription, #moncompte, #deconnexion {
+#connexion, #inscription, #moncompte, #deconnexion, #pageadmin {
   background-color: #dfe4ea;
   border-radius:5px;
   border: none;
@@ -167,3 +167,4 @@ list-style: square;
 text-align:center;
 
 }
+

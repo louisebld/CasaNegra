@@ -24,3 +24,5 @@ function affichage(n) {
 
 }
 affichage(diapositive);
+
+

@@ -35,7 +35,18 @@ function print_formulaire_ajout() {
 
 		<p><input type="submit" name="action" id="action" value="S'inscrire"/></p>
 				</form>
+
+				<div id="champmdp">
+		<p> Votre mot de passe doit contenir au moins: 
+			<ul> <li> 8 caractères </li>
+				<li> 1 majuscule </li>
+				<li> 1 minuscule </li>
+				<li> 1 chiffre </li>
+				<li> 1 caractère spécial </li>
+			</ul>
+		</p>
 			</div>
+		</div>
 				<?php	 
 			}
 
@@ -112,6 +123,24 @@ function mdpbonformat($motdepasse) {
 	}
 
 	return $correct;
+}
+
+
+function print_donnescompte($donnees){
+
+	//Print les données du compte
+	echo '<div id="donnees">';
+	echo "<p>" . $donnees["prénom"] . " ";
+	echo  $donnees["nom"] . "</p>";
+	echo "<p>" . $donnees["mail"] . "</p>";
+	echo "</div>";
+}
+
+// fonction pour récupérer le nom et le prénom pour l'afficher
+function printnom ($donnees) {
+
+	echo "<p>" . $donnees["prénom"] . " " . $donnees["nom"];
+
 }
 
 

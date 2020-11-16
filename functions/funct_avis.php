@@ -22,9 +22,10 @@ function print_form_avis(){
 
 	<form method="post" action="index.php?page=avis">
 
-		<p><label for="com"> Commentaire </label>
-			<input type = "text" name ="com" id="com"></p>
-
+		<p>
+			<textarea id="com" placeholder="Votre avis.." name="com"
+			rows="10" cols="35"></textarea>
+		</p>
 
 		<p><input type="submit" name="avis" id="avis" value="Enregistrer"/></p>
 	</form>

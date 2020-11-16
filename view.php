@@ -15,6 +15,8 @@
 
 // Vérification si la variable existe et que l'utilisateur est connecté
 			if (isset($_SESSION['connected']) && $_SESSION['connected']) {
+
+// si il est connecté on affiche moncompte, déconnexion et son nom
 				echo "<div id='moncompte'>";
 				echo "<a href='index.php?page=moncompte'>" . "Mon compte" . "</a>";
 				echo "</div>";
@@ -26,6 +28,14 @@
 				echo "<div id='monnom'>";
 				printnom($_SESSION['comptedonnee']);
 				echo "</div>";
+
+// en plus de ça, si il est admin on va afficher les membres inscrits sur le site
+				if (testif_admin($_SESSION['idcompte'])) {
+					echo "<div id='pageadmin'>";
+					echo "<a href='index.php?page=pageadmin'>" . "Admin" . "</a>";
+					echo "</div>";
+
+				}
 
 			}
 
@@ -103,6 +113,21 @@
 		}
 
 		
+
+	}
+
+	elseif ($page == "pageadmin") {
+
+// si c'est un admin on include
+		if (testif_admin($_SESSION['idcompte'])) {
+				include ("pages/pageadmin.php");
+
+				}
+// sinon on redirige
+		else {
+			header('location:index.php');
+
+		}
 
 	}
 

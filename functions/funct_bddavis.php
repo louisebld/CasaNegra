@@ -10,6 +10,8 @@ table avis:
 */
 
 function insert_com($com, $idcompte){
+	//fonction qui ajoute un commentaire dans la table commentaire
+	global $c;
 	$sql = "INSERT INTO avis (id, idautor, commentary, answer) VALUES (NULL, $idcompte, $com, NULL)";
 	mysqli_query($c, $sql);
 }
@@ -22,22 +24,6 @@ function charge_avis($c){
 			FROM avis
 			INNER JOIN compte
 			ON avis.idautor = compte.idcompte";
-	$result=  mysqli_query($c, $sql);
-
-	//on met dans un tableau
-	$tableau = [];
-	while ($row=mysqli_fetch_assoc($result)) {
-		$tableau[] = $row;
-	}
-	//var_dump($tableau);
-	return $tableau;
-}
-
-
-function recupere_id_autor($c){
-	//Fonction qui va recuperer l'id de l'auteur du commentaire, via l'adresse mail quand il se sera connecté
-
-	$sql = "SELECT idcompte, FROM compte WHERE mail = :monadressemail";
 	$result=  mysqli_query($c, $sql);
 
 	//on met dans un tableau

@@ -23,7 +23,14 @@
 				echo "<a href='index.php?page=deconnexion'>" . "Déconnexion" . "</a>";
 				echo "</div>";
 
+				echo "<div id='monnom'>";
+				printnom($_SESSION['comptedonnee']);
+				echo "</div>";
+
 			}
+
+		
+
 
 			else { ?>
 				<div id="inscription">

@@ -76,8 +76,6 @@ function print_formulaire_connexion() {
 
 
 
-// ne marche pas pour l'instant 
-
 function verificationadressemailmdp($compte, $mail, $motdepasse){
 	// Permet de savoir si un mail et un mot de passe donné corresponde bien à un compte
 	// verification prend les champs corrects
@@ -143,8 +141,19 @@ function printnom ($donnees) {
 
 }
 
+// affiche tous les comptes sur la page admin 
 
 
+function affichetouscomptes ($donneesdescomptes) {
+
+	for ($i = 0; $i < count($donneesdescomptes); $i++){
+		echo "<div id='compteutilisateur'>";
+		$comptecourant = $donneesdescomptes[$i];
+		print_donnescompte($comptecourant);
+
+		echo "</div>";
+	}
+}
 
 ?>
 

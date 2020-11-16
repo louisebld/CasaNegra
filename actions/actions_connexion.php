@@ -56,6 +56,7 @@ if (isset($_POST['connexion'])) {
 		$_SESSION['idcompte'] = recupereid($_POST["mail"]);
 // on le passe en connecté
 		$_SESSION['connected']=true;
+		$_SESSION['comptedonnee']=recupedonnees ($_SESSION['idcompte']);
   		
 		// redirection vers une page membre
 		header('Location: index.php?page=moncompte');	

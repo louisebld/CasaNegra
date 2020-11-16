@@ -63,4 +63,24 @@ function recupedonnees ($id) {
 }
 
 
+// récupérer tous les membres inscrits sur le site
+
+// on récupère le tableau associatif
+function charge_compte($c){
+	//Fonction recupere le tableau des adresses mail
+
+	//requete
+	$sql="SELECT nom, prénom, mail FROM compte";
+	$result=  mysqli_query($c, $sql);
+
+	//on met dans un tableau
+	$tableau = [];
+	while ($row=mysqli_fetch_assoc($result)) {
+		$tableau[] = $row;
+	}
+	//var_dump($tableau);
+	return $tableau;
+	}
+
+
 ?>

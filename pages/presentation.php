@@ -21,9 +21,7 @@
 		<div class="fournisseurs">
 
 			<h2>Nos distributeurs:</h2>
-				<div class="first_distrib">
-					<a href="https://doca.es/fr/"><img src="images/logo_doca.png" name="logo DOCA"></a>
-				</div>
+				
 
 		</div>
 

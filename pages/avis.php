@@ -15,7 +15,7 @@
 		?>
 	<h2>Vous nous faites confiance, voici les avis des clients:</h2>
 		<?php
-			print_avis($avis)
+			
 		?>
 
 </section>

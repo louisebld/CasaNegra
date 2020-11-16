@@ -18,3 +18,29 @@ function testif_admin($idcompte){
 		return false;
 	}
 }
+
+
+// insertion du nouveau métier dans la base de données
+
+function insert_métier($metier) {
+	global $c;
+	mysqli_query($c, "INSERT INTO metier(metier) values ('$metier')");
+
+}
+
+// Pour vérifier qu'on a pas déjà ce métier dans la base de données
+
+function existemetier ($metier) {
+// retourne si le métier existe déjà true ou false
+	global $c;
+	// Je fais une recherche dans la base à partir du métier
+	$metier = mysqli_query($c, "SELECT * FROM metier WHERE metier = '".$metier."'");
+	$compteur = mysqli_num_rows($metier);
+// si il y a plus de 0 lignes : il y est déjà
+	if ($compteur>0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}

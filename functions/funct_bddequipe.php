@@ -41,11 +41,13 @@ function charge_equipe($c){
 // fonction base de donnée métier pour récupérer les métiers
 
 function recupmetier ($c) {
-
 	$metiers = mysqli_query($c, "SELECT metier FROM metier");
-	$met=mysqli_fetch_assoc($metiers);
-	var_dump($met);
-}
+	$tableau = [];
+	while ($row=mysqli_fetch_assoc($metiers)) {
+		$tableau[] = $row;
+	}
+	return $tableau;
+	}
 
 
 

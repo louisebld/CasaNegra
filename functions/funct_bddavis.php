@@ -9,21 +9,17 @@ table avis:
 	
 */
 
-function insert_com($com, $idcompte){
+function insert_com($com, $name, $idprojet){
 	//fonction qui ajoute un commentaire dans la table commentaire
 	global $c;
-	$sql = "INSERT INTO avis (id, idautor, commentary, answer) VALUES (NULL, $idcompte, $com, NULL)";
+	$sql = "INSERT INTO avis (idprojet, name, commentary) VALUES ($idprojet, $name, $com)";
 	mysqli_query($c, $sql);
 }
 
-function charge_avis($c){
-	//Fonction qui va charger les avis avec les noms associés
-	
-
-	$sql = "SELECT compte.nom AS autor, avis.commentary AS com, avis.answer AS answer
-			FROM avis
-			INNER JOIN compte
-			ON avis.idautor = compte.idcompte";
+function charge_avis($idprojet){
+	//Fonction qui renvoie un tableau de commentaire avec une reponse (si existe) and un auteur sur un projet precis
+	global $c;
+	$sql = "SELECT idprojet, name, commentary FROM avis WHERE idprojet=:idprojet";
 	$result=  mysqli_query($c, $sql);
 
 	//on met dans un tableau
@@ -36,6 +32,15 @@ function charge_avis($c){
 }
 
 
+function return_pseudo($idcompte){
+	//fonction qui renvoie un peusdo, via l'id du membre connecté
+
+	global $c;
+	$sql = "SELECT name FROM compte WHERE idcompte=$idcompte";
+
+
+	$res=mysqli_fetch_assoc($result);
+}
 
 
 ?>

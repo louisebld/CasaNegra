@@ -5,7 +5,7 @@
 
 
 
-function testif_admin($idcompte){
+/*function testif_admin($idcompte){
 	//Fonction qui recupere un boolean si l'id est contenu dans la table
 	$admin = 'false';
 
@@ -16,6 +16,5 @@ function testif_admin($idcompte){
 	if (!empty($result)){
 		$result = 'true';
 	}
-}
 
-}
+}*/

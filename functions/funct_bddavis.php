@@ -15,13 +15,14 @@ function insert_com($com, $name, $idprojet){
 
 	$sql = "INSERT INTO avis (idprojet, name, commentary) VALUES ($idprojet, $name, $com)";
 
-	$sql = "INSERT INTO avis ( idautor, commentary) VALUES ( $idcompte, '$com')";
 
 	mysqli_query($c, $sql);
 }
 
 function charge_avis($idprojet){
 	//Fonction qui renvoie un tableau de commentaire avec une reponse (si existe) and un auteur sur un projet precis
+	//--------------------Il y a un pb dans le where en dessous-----------------
+
 	global $c;
 	$sql = "SELECT idprojet, name, commentary FROM avis WHERE idprojet=:idprojet";
 	$result=  mysqli_query($c, $sql);

@@ -24,7 +24,7 @@ function charge_avis($idprojet){
 	//--------------------Il y a un pb dans le where en dessous-----------------
 
 	global $c;
-	$sql = "SELECT idprojet, name, commentary FROM avis WHERE idprojet=:idprojet";
+	$sql = "SELECT idprojet, name, commentary FROM avis WHERE idprojet = $idprojet";
 	$result=  mysqli_query($c, $sql);
 
 	//on met dans un tableau

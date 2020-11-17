@@ -1,20 +1,47 @@
 <?php
 
-function print_form_add_projet(){
-	//Fonction qui permet d'afficher le formulaire qui ajoute un projet
-	//Obligation d'etre connecté, sinon redirection
+function ajoutprojet(){
+
+}
+
+
+function print_formulairenouveauprojet(){
 	?>
+	<div id="formulaireprojet">
+	<form method="posr" action="index.php?page=pageadmin">
+		<p>
+			<input type="text" placeholder="Nom" name="nom" id="ajout">
+		</p>
+		<p>
+			<input type = "date" placeholder="Date de création" name ="date_creation" id="ajout"></p>
 
-	<form method="post" action="index.php?page=projet">
+		<p>
+			<input type = "text" placeholder="Auteur" name ="autor" id="ajout" ></p>
 
-		<p><label for="name"> Nom du createur </label>
-			<input type = "text" name ="com" id="name"></p>
+		<p>
+			<textarea id="com" placeholder="Description" name="description" rows="10" cols="35"></textarea>
+		</p>
 
-		<p><label for = "file">Fichier:</label>
-			<input type = "file" name="file" id ="file"></p>
 
-		<p><input type="submit" name="projet" id="projet" value="Enregistrer"/></p>
-	</form>
+			<p><input type="submit" name="envoieprojet" id="action" value="Ajouter"/></p>
+		</form>
+	</div>
 
-		<?php	 
-	}
+	<?php
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>

@@ -1,5 +1,18 @@
-
-<h2>hello</h2>
 <?php
 
-	print_form_add_projet();
+
+ print_formulairenouveauprojet();
+ 
+if (isset($_SESSION['faute'])) {
+			echo "<ul>";
+			foreach($_SESSION["faute"] as $faute)
+				echo "<li>$faute</li>";
+			echo "</ul>";
+
+}
+
+
+
+
+
+?>

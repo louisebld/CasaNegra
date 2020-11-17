@@ -14,6 +14,18 @@
 print_formulairenouveauequipe();
 ?>
 
+<?php
+if (isset($_SESSION['fauteequipe'])) {
+			echo "<ul>";
+			foreach($_SESSION["fauteequipe"] as $faute)
+				echo "<li>$faute</li>";
+			echo "</ul>";
+
+}
+?>
+
+
+
 <h2> Ajouter un métier </h2>
 
 <?php

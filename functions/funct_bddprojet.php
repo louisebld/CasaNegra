@@ -1,7 +1,8 @@
 <?php
 	/*table projet
 		id: int AI
-		date_creation: varchar
+		name : -
+		date_creation: date
 		idautor: int
 		idcom: int*/
 
@@ -29,3 +30,47 @@
 		//var_dump($tableau);
 		return $tableau;
 	}
+
+//verifs pour l'insertion
+
+function datepaspassee($date){
+	//init date ajd
+	$dateajd = date('d-m-y');
+
+	if($dateajd>$date){
+		return false;
+	}
+
+	// si la date rentrée est plus recente que ajd
+	else{
+		return true;
+	}
+
+}
+
+function projetexiste($nom){
+	// retourne si le projet existe deja dans la base de donnée oui ou non
+	global $c;
+	// Je fais une recherche dans la base à partir de l'adresse mail
+	$projet = mysqli_query($c, "SELECT * FROM projet WHERE name = '".$nom."'");
+	$compteur = mysqli_num_rows($projet);
+	if ($compteur>0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+
+}
+
+function auteurexistepas($autor){
+	// faire une jointure avec equipe 
+}
+
+
+
+
+
+
+
+

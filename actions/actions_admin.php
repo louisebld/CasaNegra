@@ -8,9 +8,9 @@ $listemetier = recupmetier ($c);
 
 if (isset($_POST['envoiemetier'])) {
 
-$erreurmetier=[];
+	$erreurmetier=[];
 // métier vide
-existemetier($_POST["metier"]);
+	existemetier($_POST["metier"]);
 	if (empty($_POST["metier"]) || !trim($_POST['metier'])) {
 		$erreurmetier[]="Vous n'avez pas rentré de métier";
 	}
@@ -35,6 +35,74 @@ existemetier($_POST["metier"]);
 		$metier = $_POST['metier'];
 		insert_métier($metier);
 		header('location:index.php?page=pageadmin');
+
+	}
+}
+
+
+
+// vérification de l'envoi de l'ajout du membre dans l'équipe
+
+// la vérification si le membre est déjà dans l'équipe se fera sur le nom et le prénom
+
+if (isset($_POST['envoiequipe'])) {
+
+	$erreurajoutmembreequipe=[];
+
+// faire un test ici si le nom prénom existe pas déjà 
+
+	if (empty($_POST["nom"]) || !trim($_POST['nom']) || empty($_POST['prénom']) || !trim($_POST['prénom'])) {
+		$erreurajoutmembreequipe[]="Le nom et/ou le prénom est vide";
+	}
+
+	elseif (verifmembreequipe ($_POST["nom"], $_POST["prénom"])) {
+
+	$erreurajoutmembreequipe[]="Cette personne est déjà présente dans l'équipe";
+}
+
+
+	if (empty($_POST["age"]) || !trim($_POST['age']) || !is_numeric($_POST["age"])) {
+
+		$erreurajoutmembreequipe[]="L'age est vide ou non numérique";
+	}
+
+	if (empty($_POST["description"]) || !trim($_POST['description'])) {
+
+		$erreurajoutmembreequipe[]="La description est vide";
+	}
+
+
+	if (empty($_POST["tel"]) || !trim($_POST['tel']) || !is_numeric($_POST["tel"])) {
+
+		$erreurajoutmembreequipe[]="Le numéro de téléphone est vide ou non valide";
+	}
+
+// si il y a des erreurs
+	if (count($erreurajoutmembreequipe)>0){
+// stockage dans une variable de session
+		$_SESSION["fauteequipe"]= $erreurajoutmembreequipe;
+		$_SESSION["donnee"]= $_POST;
+		// pour garder les données dans le formulaire
+
+	}
+// sinon j'insère dans la bdd
+
+	else {
+		unset($_SESSION["donnee"]);
+		unset($_SESSION["fauteequipe"]);
+		$nom = $_POST['nom'];
+		$prénom = $_POST['prénom'];
+		$age = $_POST['age'];
+		$metier = $_POST['metier'];
+		$idmetier = recuperemetier($metier);
+// à partir d'un métier retrouver son id
+		$description = $_POST["description"];
+		$tel = $_POST["tel"];
+
+
+		// marche ?
+		insert_membre($nom, $prénom, $age, $idmetier, $description, $tel);
+		// header('location:index.php?page=pageadmin');
 
 	}
 }

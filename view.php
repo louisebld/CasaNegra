@@ -35,7 +35,7 @@
 					echo "<div id='pageadmin'>";
 					echo "<a href='index.php?page=pageadmin'>" . "Admin" . "</a>";
 					echo "</div>";
-
+					
 				}
 
 			}
@@ -82,6 +82,10 @@
 
 	}
 
+	elseif ($page == "projets"){
+		include ("pages.catalogue.php");
+	}
+
 
 	elseif ($page == "avis") {
 		include ("pages/avis.php");
@@ -113,12 +117,9 @@
 // sinon on redirige
 		else {
 			header('location:index.php');
+
 		}
 
-	}
-
-	elseif ($page == "projet") {
-		include ("pages/projet.php");
 	}
 
 // si déconnexion : redirection vers l'accueil et suppression des variables de session ? suppression ou unset

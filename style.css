@@ -202,3 +202,21 @@ color: black;
 
 }
 
+
+/*Pour l'affichage des membres de l'équipe et le formulaire*/
+
+#membreequipe {
+  width:100%;
+}
+
+#equipeadmin
+{
+    position:relative;
+    width:60%;
+}
+#formulairequipe
+{
+    position:relative;
+    left:60%
+    width:40%;
+}

@@ -54,6 +54,7 @@ if (isset($_POST['connexion'])) {
 
 // On prend l'id du compte
 		$_SESSION['idcompte'] = recupereid($_POST["mail"]);
+		$_SESSION['comptedonnee']=recupedonnees ($_SESSION['idcompte']);
 // on le passe en connecté
 		$_SESSION['connected']=true;
   		

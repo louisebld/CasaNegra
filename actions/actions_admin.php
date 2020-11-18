@@ -115,9 +115,24 @@ if (isset($_POST['envoiequipe'])) {
 
 if (isset($_POST['envoiesupprmetier'])) {
 
+// A FAIRE : VERIFIER SI LE METIER EST PAS UTILISEE 
+
 	$metier = $_POST['metier'];
+	$idmetier = recuperemetier($metier);
+	//var_dump($idmetier);
+	if (metierutiliser($idmetier)) {
+		//var_dump(metierutiliser($idmetier));
+		$_SESSION['metierutilise']="Ce métier est affecté à un membre, vous ne pouvez pas le supprimer";
+
+	}
+
+	else {
+
 	suppr_métier($metier);
+	unset($_SESSION["metierutilise"]);
 	header('location:index.php?page=pageadmin');
+	}
+
 
 
 }

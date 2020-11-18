@@ -89,4 +89,23 @@ function suppr_métier($metier) {
 
 
 
+function metierutiliser($idmetier){
+	//Fonction qui recupere un boolean si le metier est utilisé
+	global $c;
+	$result=  mysqli_query($c, "SELECT * FROM equipe WHERE id_metier=$idmetier");
+	$nbcompte=mysqli_num_rows($result);
+
+// si il y a au moins une ligne qui correspond : true
+	if ($nbcompte>0){
+		return true;
+	}
+	else {
+		return false;
+	}
+
+	
+	
+}
+
+
 

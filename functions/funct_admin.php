@@ -71,6 +71,26 @@ function printformulairemetier() {
 <?php
 }
 
+function print_formulairesupprmetier() {
+	//Affiche le formulaire pour ajouter un nouveau membre
+
+	?>
+	<div id="formulairesupprmetier">
+		<form method="post" action="index.php?page=pageadmin">
+
+			<?php
+			listederoulmetier ();
+			?>
+
+				<p><input type="submit" name="envoiesupprmetier" id="action" value="Supprimer"/></p>
+			</form>
+		</div>
+		<?php	 
+	}
+
+
+
+
 
 
 ?>

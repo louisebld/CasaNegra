@@ -6,6 +6,20 @@
 	affichetouscomptes($donneescomptes);
 	?>
 </div>
+
+
+<div id="membreequipe">
+
+<h2> Les membres de l'équipe </h2>
+
+<?php
+
+
+print_equipeadmin($equipe);
+
+?>
+
+
 <h2> Ajouter un membre dans l'équipe </h2>
 
 <?php
@@ -24,7 +38,7 @@ if (isset($_SESSION['fauteequipe'])) {
 }
 ?>
 
-
+</div>
 
 <h2> Ajouter un métier </h2>
 
@@ -37,16 +51,21 @@ if (isset($_SESSION['fautemetier'])) {
 	foreach($_SESSION["fautemetier"] as $faute)
 		echo $faute;
 
-
 }
 
 ?>
 
 <h2> Supprimer un métier </h2>
+
 <?php
 print_formulairesupprmetier();
 
 
+if (isset($_SESSION['metierutilise'])) {
+
+	echo $_SESSION['metierutilise'];
+}
 
 ?>
+
 

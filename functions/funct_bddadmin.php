@@ -79,9 +79,14 @@ function verifmembreequipe ($nom, $prénom) {
 	else {
 		return false;
 	}
-
-
-
 }
+
+
+function suppr_métier($metier) {
+	global $c;
+	mysqli_query($c, "DELETE FROM metier WHERE metier = '$metier'");
+}
+
+
 
 

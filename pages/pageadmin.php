@@ -40,6 +40,12 @@ if (isset($_SESSION['fautemetier'])) {
 
 }
 
+?>
+
+<h2> Supprimer un métier </h2>
+<?php
+print_formulairesupprmetier();
+
 
 
 ?>

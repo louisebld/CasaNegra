@@ -102,12 +102,25 @@ if (isset($_POST['envoiequipe'])) {
 
 		// marche ?
 		insert_membre($nom, $prénom, $age, $idmetier, $description, $tel);
-		// header('location:index.php?page=pageadmin');
+		header('location:index.php?page=pageadmin');
 
 	}
 }
 
 
+
+
+
+// pour la suppression du métier
+
+if (isset($_POST['envoiesupprmetier'])) {
+
+	$metier = $_POST['metier'];
+	suppr_métier($metier);
+	header('location:index.php?page=pageadmin');
+
+
+}
 
 
 ?>

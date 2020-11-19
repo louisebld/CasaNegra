@@ -51,6 +51,12 @@ function recupmetier ($c) {
 
 
 
+function suppr_equipe($id) {
+	global $c;
+	mysqli_query($c, "DELETE FROM equipe WHERE id = $id");
+}
+
+
 
 
 

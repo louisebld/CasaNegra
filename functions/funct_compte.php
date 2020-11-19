@@ -140,6 +140,11 @@ function affichetouscomptes ($donneesdescomptes) {
 		echo "<div id='compteutilisateur'>";
 		$comptecourant = $donneesdescomptes[$i];
 		print_donnescompte($comptecourant);
+
+		echo "<form method='post' action='index.php?page=pageadmin'>";
+		echo  "<input id='idasuppr' name='idasupprcompte' type='hidden' value= ". $comptecourant['idcompte'] . ">" ;
+		echo "<input type='submit' name='asupprimercompte' id='action' value='Supprimer'/> </form>" . "</p>";
+
 		echo "</div>";
 	}
 }

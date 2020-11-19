@@ -3,10 +3,10 @@
 
 function insert_compte($nom, $prénom, $mail, $motdepasse) {
 	//Insère un nouveau compte dans la bdd
-					global $c;
-					mysqli_query($c, "INSERT INTO compte(nom, prénom, mail, motdepasse) values ('$nom', '$prénom', '$mail', '$motdepasse')");
+	global $c;
+	mysqli_query($c, "INSERT INTO compte(nom, prénom, mail, motdepasse) values ('$nom', '$prénom', '$mail', '$motdepasse')");
 
-				}
+}
 
 
 
@@ -70,7 +70,9 @@ function charge_compte($c){
 	//Fonction recupere le tableau des adresses mail
 
 	//requete
-	$sql="SELECT nom, prénom, mail FROM compte";
+	$sql="SELECT idcompte, nom, prénom, mail FROM compte WHERE idcompte != {$_SESSION['idcompte']} ";
+
+	// pour ne pas afficher dans la liste notre compte (le compte connecté)
 	$result=  mysqli_query($c, $sql);
 
 	//on met dans un tableau
@@ -80,7 +82,20 @@ function charge_compte($c){
 	}
 	//var_dump($tableau);
 	return $tableau;
-	}
+}
+
+
+// pour supprimer un compte à partir de l'id
+
+function suppr_utilisateur($id) {
+	global $c;
+	mysqli_query($c, "DELETE FROM compte WHERE idcompte = $id");
+// enlever de l'admin
+	mysqli_query($c, "DELETE FROM admin WHERE idcompte = $id");
+
+}
+
+
 
 
 ?>

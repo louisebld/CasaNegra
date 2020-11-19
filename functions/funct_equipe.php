@@ -19,7 +19,8 @@ function print_equipe($equipe){
 
 
 function print_equipeadmin($equipe){
-
+// fonction qui affiche les membres de l'équipe
+// on ajoute un champ vide qui contient l'id pour pouvoir le supprimer
 echo '<div class="equipeadmin">';
 	foreach ($equipe as $key => $value) {
 		echo '<div class="membre_equipeadmin">';

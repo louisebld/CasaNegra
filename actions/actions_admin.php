@@ -137,5 +137,30 @@ if (isset($_POST['envoiesupprmetier'])) {
 
 }
 
+// pour supprimer un membre de l'équipe avec le bouton supprimer
+
+
+
+
+if (isset($_POST['asupprimer'])) {
+
+	$idequipe = $_POST['idasuppr'];
+	suppr_equipe($idequipe);
+	header('location:index.php?page=pageadmin');
+
+}
+
+
+// pour supprimer un utilisateur
+
+if (isset($_POST['asupprimercompte'])) {
+
+	$idutilisateur = $_POST['idasupprcompte'];
+	suppr_utilisateur($idutilisateur);
+	header('location:index.php?page=pageadmin');
+
+}
+
+
 
 ?>

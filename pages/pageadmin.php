@@ -69,3 +69,10 @@ if (isset($_SESSION['metierutilise'])) {
 ?>
 
 
+<h2> Ajouter un membre à l'administration </h2>
+
+<?php
+affichetouscomptesadmin ($donneescomptes);
+
+
+?>

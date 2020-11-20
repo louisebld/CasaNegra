@@ -220,3 +220,15 @@ color: black;
     left:60%
     width:40%;
 }
+
+
+/*Pour mettre le bouton à côté du nom*/
+
+#compteutilisateur #donnees {
+  float:left;
+  width:60%;
+}
+
+#compteutilisateur form {
+  margin-left:60%   
+}

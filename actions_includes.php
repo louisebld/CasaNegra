@@ -7,6 +7,7 @@ include 'actions/actions_page.php';
 include 'actions/actions_inscription.php';
 include 'actions/actions_connexion.php';
 include 'actions/actions_admin.php';
+
 include 'actions/actions_projet.php';
 
 

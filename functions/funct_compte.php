@@ -143,11 +143,31 @@ function affichetouscomptes ($donneesdescomptes) {
 
 		echo "<form method='post' action='index.php?page=pageadmin'>";
 		echo  "<input id='idasuppr' name='idasupprcompte' type='hidden' value= ". $comptecourant['idcompte'] . ">" ;
-		echo "<input type='submit' name='asupprimercompte' id='action' value='Supprimer'/> </form>" . "</p>";
+		echo "<input type='submit' name='asupprimercompte' id='action' value='Supprimer'/>" . "</p>";
 
 		echo "</div>";
 	}
 }
+
+
+
+function affichetouscomptesadmin ($donneesdescomptes) {
+
+	for ($i = 0; $i < count($donneesdescomptes); $i++){
+		echo "<div id='compteutilisateur'>";
+		$comptecourant = $donneesdescomptes[$i];
+
+		if (testif_admin($comptecourant['idcompte'])==False) {
+					print_donnescompte($comptecourant);
+		}
+
+		echo "<form method='post' action='index.php?page=pageadmin'>";
+		echo  "<input id='idasuppr' name='idasupprcompte' type='hidden' value= ". $comptecourant['idcompte'] . ">" ;
+		echo "<input type='submit' name='ajouteradmin' id='action' value='Ajouter à ladministration'/> </form>" . "</p>";
+		echo "</div>";
+	}
+}
+
 
 ?>
 

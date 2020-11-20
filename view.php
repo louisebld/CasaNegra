@@ -82,8 +82,12 @@
 
 	}
 
-	elseif ($page == "projets"){
+/*	elseif ($page == "projets"){
 		include ("pages.catalogue.php");
+	}
+*/
+	elseif ($page == "projets"){
+		include ("projet.php");
 	}
 
 

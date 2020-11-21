@@ -73,6 +73,11 @@ if (isset($_SESSION['metierutilise'])) {
 
 <?php
 affichetouscomptesadmin ($donneescomptes);
+// On affiche à la fois le nom + l'email car deux emails différentes peuvent avoir les mêmes nom et aussi c'est plus simple :)
 
+?>
 
+<h2> Liste des admins </h2>
+<?php
+print_listeadmin($listeadmin);
 ?>

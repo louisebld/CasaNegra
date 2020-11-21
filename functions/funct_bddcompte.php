@@ -70,7 +70,9 @@ function charge_compte($c){
 	//Fonction recupere le tableau des adresses mail
 
 	//requete
-	$sql="SELECT idcompte, nom, prénom, mail FROM compte WHERE idcompte != {$_SESSION['idcompte']} ";
+	$sql="SELECT idcompte, nom, prénom, mail FROM compte";
+// marche pas qd pas co 
+// 	$sql="SELECT idcompte, nom, prénom, mail FROM compte WHERE idcompte != {$_SESSION['idcompte']} ";
 
 	// pour ne pas afficher dans la liste notre compte (le compte connecté)
 	$result=  mysqli_query($c, $sql);
@@ -92,6 +94,14 @@ function suppr_utilisateur($id) {
 	mysqli_query($c, "DELETE FROM compte WHERE idcompte = $id");
 // enlever de l'admin
 	mysqli_query($c, "DELETE FROM admin WHERE idcompte = $id");
+
+}
+
+// pour ajouter une l'id d'un compte à la table admin
+
+function insert_admin($id) {
+	global $c;
+	mysqli_query($c, "INSERT INTO admin(idcompte) values ($id)");
 
 }
 

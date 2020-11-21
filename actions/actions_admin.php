@@ -2,6 +2,7 @@
 
 $donneescomptes = charge_compte($c);
 $listemetier = recupmetier ($c);
+$listeadmin = charge_listeadmin($c);
 
 // vérification de l'envoi du métier
 
@@ -160,6 +161,20 @@ if (isset($_POST['asupprimercompte'])) {
 	header('location:index.php?page=pageadmin');
 
 }
+
+
+// pour ajouter un admin
+
+if (isset($_POST['ajouteradmin'])) {
+
+// on ne verifie pas si admin car si il s'affiche dans la liste ça veut dire qu'il n'est pas admin
+	$idutilisateuradmin = $_POST['idajout'];
+	insert_admin($idutilisateuradmin);
+	header('location:index.php?page=pageadmin');
+
+}
+
+
 
 
 

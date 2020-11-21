@@ -109,7 +109,7 @@ function metierutiliser($idmetier){
 
 function charge_listeadmin($c) {
 
-	$req = "SELECT nom, prénom, mail
+	$req = "SELECT compte.idcompte, nom, prénom, mail
 	FROM compte
 	INNER JOIN admin ON compte.idcompte = admin.idcompte";
 
@@ -123,3 +123,17 @@ function charge_listeadmin($c) {
 	//var_dump($tableau);
 	return $tableau;
 }
+
+
+// pour supprimer une id de la liste admin 
+
+function suppr_admin($id) {
+
+	global $c;
+	mysqli_query($c, "DELETE FROM admin WHERE idcompte = $id");
+
+
+}
+
+
+

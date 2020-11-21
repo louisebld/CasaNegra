@@ -174,6 +174,16 @@ if (isset($_POST['ajouteradmin'])) {
 
 }
 
+// pour supprimer un admin
+
+if (isset($_POST['deladmin'])) {
+
+	$idutilisateur = $_POST['idadminsuppr'];
+	suppr_admin($idutilisateur);
+// on fait des header location pour ne pas qu'il puisse renvoyer le formulaire en faisant F5
+	header('location:index.php?page=pageadmin');
+
+}
 
 
 

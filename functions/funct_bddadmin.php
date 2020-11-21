@@ -102,10 +102,24 @@ function metierutiliser($idmetier){
 	else {
 		return false;
 	}
-
-	
-	
 }
 
 
+// Pour charger/avoir la liste des admins 
 
+function charge_listeadmin($c) {
+
+	$req = "SELECT nom, prénom, mail
+	FROM compte
+	INNER JOIN admin ON compte.idcompte = admin.idcompte";
+
+	$result=  mysqli_query($c, $req);
+
+	//on met dans un tableau
+	$tableau = [];
+	while ($row=mysqli_fetch_assoc($result)) {
+		$tableau[] = $row;
+	}
+	//var_dump($tableau);
+	return $tableau;
+}

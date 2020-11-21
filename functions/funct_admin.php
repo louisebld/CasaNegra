@@ -95,12 +95,24 @@ function print_listeadmin($listeadmin){
 	//Print toute l'avis contenue dans la base de donnée
 	echo '<div class="listeadmin">';
 	foreach ($listeadmin as $key => $value) {
-		
-			echo "<p>" . $value["prénom"] . " ";
-			echo $value["nom"] . " ";
-			echo $value["mail"] . "</p> ";
-			
+// pour ne pas qu'on puisse se supprimer soit même : mettre des conditions
+		if (isset($_SESSION['connected'])) {
+// si ce n'est pas son compte qui est connecté 
+			if ($value['idcompte']!=$_SESSION['idcompte']) {
 
+				echo "<p>" . $value["prénom"] . " ";
+				echo $value["nom"] . " ";
+				echo $value["mail"] . "</p> ";
+				echo "<form method='post' action='index.php?page=pageadmin'>";
+				echo  "<input id='idadminsuppr' name='idadminsuppr' type='hidden' value= ". $value['idcompte'] . ">" ;
+				echo "<input type='submit' name='deladmin' id='action' value='Supprimer'/>" . "</p>";
+
+			}
+
+
+		}
+
+		
 	}
 	echo "</div>"; 
 }

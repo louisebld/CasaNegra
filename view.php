@@ -73,12 +73,29 @@
 	}
 
 	elseif ($page == "inscription") {
-		include ("pages/inscription.php");
+
+		if (isset($_SESSION['connected'])) {
+			header('location:index.php');
+
+		}
+		else {
+			include ("pages/inscription.php");
+		}
+
+		
 
 	}
 
 	elseif ($page == "connexion") {
-		include ("pages/connexion.php");
+		
+
+		if (isset($_SESSION['connected'])) {
+			header('location:index.php');
+
+		}
+		else {
+			include ("pages/connexion.php");
+		}
 
 	}
 

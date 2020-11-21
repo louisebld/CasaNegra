@@ -222,13 +222,13 @@ color: black;
 }
 
 
-/*Pour mettre le bouton à côté du nom*/
+/*Pour mettre le bouton à côté du nom*/ 
 
-#compteutilisateur #donnees {
+/*#compteutilisateur #donnees {
   float:left;
   width:60%;
 }
 
 #compteutilisateur form {
   margin-left:60%   
-}
+}*/

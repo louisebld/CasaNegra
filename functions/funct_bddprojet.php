@@ -104,7 +104,7 @@ function auteurexistepas($autor){
 //Si besoin de faire apparaitre le nombre de projets
 //Ne pas oublier d'incrementer
 		
-/*		function charge_nbphotos($c){
+		function charge_nbphotos($c){
 			//charge le nombre de photos, permet de recuperer ce nombre de de nommer les fichiers obtenues
 	
 			$sql = "SELECT nbphotos FROM photos WHERE 1";
@@ -124,4 +124,4 @@ function auteurexistepas($autor){
 					SET nbphotos = nbphotos + 1 
 					WHERE 1";
 			mysqli_query($c, $sql);
-		}*/
+		}

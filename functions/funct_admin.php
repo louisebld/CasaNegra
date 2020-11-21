@@ -89,6 +89,21 @@ function print_formulairesupprmetier() {
 	}
 
 
+// pour afficher la liste des admins
+
+function print_listeadmin($listeadmin){
+	//Print toute l'avis contenue dans la base de donnée
+	echo '<div class="listeadmin">';
+	foreach ($listeadmin as $key => $value) {
+		
+			echo "<p>" . $value["prénom"] . " ";
+			echo $value["nom"] . " ";
+			echo $value["mail"] . "</p> ";
+			
+
+	}
+	echo "</div>"; 
+}
 
 
 

@@ -70,9 +70,14 @@ function charge_compte($c){
 	//Fonction recupere le tableau des adresses mail
 
 	//requete
-	$sql="SELECT idcompte, nom, prénom, mail FROM compte";
-// marche pas qd pas co 
-// 	$sql="SELECT idcompte, nom, prénom, mail FROM compte WHERE idcompte != {$_SESSION['idcompte']} ";
+	if (isset($_SESSION['idcompte'])) {
+		$sql="SELECT idcompte, nom, prénom, mail FROM compte WHERE idcompte != {$_SESSION['idcompte']} ";
+
+	}
+	else {
+		$sql="SELECT idcompte, nom, prénom, mail FROM compte";
+	}
+	
 
 	// pour ne pas afficher dans la liste notre compte (le compte connecté)
 	$result=  mysqli_query($c, $sql);

@@ -1,7 +1,9 @@
 
+
+<div id="premiererangee">
+<div id="affichemembre">
 <h2> Liste des membres inscrits </h2>
 
-<div id="affichemembre">
 	<?php
 	affichetouscomptes($donneescomptes);
 	?>
@@ -18,7 +20,9 @@
 print_equipeadmin($equipe);
 
 ?>
+</div>
 
+<div id="ajoutmembreequipe">
 
 <h2> Ajouter un membre dans l'équipe </h2>
 
@@ -39,9 +43,12 @@ if (isset($_SESSION['fauteequipe'])) {
 ?>
 
 </div>
+</div>
 
+<div id="metier">
+
+<div id="ajoutermetier">
 <h2> Ajouter un métier </h2>
-
 <?php
 
 printformulairemetier();
@@ -50,10 +57,12 @@ if (isset($_SESSION['fautemetier'])) {
 
 	foreach($_SESSION["fautemetier"] as $faute)
 		echo $faute;
-
 }
 
 ?>
+</div>
+
+<div id="supprimermetier">
 
 <h2> Supprimer un métier </h2>
 
@@ -67,8 +76,20 @@ if (isset($_SESSION['metierutilise'])) {
 }
 
 ?>
+</div>
+</div>
+<div id="admin">
 
 
+<div id="listeadmin">
+<h2> Liste des admins </h2>
+<?php
+print_listeadmin($listeadmin);
+?>
+
+</div>
+
+<div id="ajouteradmin">
 <h2> Ajouter un membre à l'administration </h2>
 
 <?php
@@ -76,8 +97,6 @@ affichetouscomptesadmin ($donneescomptes);
 // On affiche à la fois le nom + l'email car deux emails différentes peuvent avoir les mêmes nom et aussi c'est plus simple :)
 
 ?>
+</div>
 
-<h2> Liste des admins </h2>
-<?php
-print_listeadmin($listeadmin);
-?>
+</div>

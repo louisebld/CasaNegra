@@ -127,7 +127,7 @@ function print_donnescompte($donnees){
 // fonction pour récupérer le nom et le prénom pour l'afficher
 function printnom ($donnees) {
 
-	echo "<p>" . $donnees["prénom"] . " " . $donnees["nom"];
+	echo $donnees["prénom"] . " " . $donnees["nom"];
 
 }
 
@@ -143,7 +143,7 @@ function affichetouscomptes ($donneesdescomptes) {
 
 		echo "<form method='post' action='index.php?page=pageadmin'>";
 		echo  "<input id='idasuppr' name='idasupprcompte' type='hidden' value= ". $comptecourant['idcompte'] . ">" ;
-		echo "<input type='submit' name='asupprimercompte' id='action' value='Supprimer'/>" . "</p>";
+		echo "<input type='submit' name='asupprimercompte' id='action' value='Supprimer'/>";
 
 		echo "</div>";
 	}

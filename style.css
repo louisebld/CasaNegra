@@ -232,3 +232,54 @@ color: black;
 #compteutilisateur form {
   margin-left:60%   
 }*/
+
+
+
+/*POUR LA PARTIE ADMIN*/
+
+#affichemembre, #membreequipe, #ajoutmembreequipe, #ajoutermetier, #supprimermetier, #listeadmin, #ajouteradmin
+{
+  background-color:white;
+  width: 33%;
+  float: left;
+  flex: 1; 
+  padding: 1em;
+  margin:20px;
+  opacity: 0.80;
+  color:black;
+
+}
+
+#affichemembre:hover, #membreequipe:hover, #ajoutmembreequipe:hover, #ajoutermetier:hover, #supprimermetier:hover,
+ #listeadmin:hover, #ajouteradmin:hover {
+
+  opacity:1;
+ }
+
+#premiererangee, #metier, #admin {
+text-align: center;
+    padding: 3px;
+    color: white;
+    position: relative;
+    width: 100%;
+    height:100%;
+    display: flex;
+
+}
+
+
+/*Pour la première case*/
+
+#compteutilisateur {
+  display: flex;
+  background-color: #dfe4ea;
+  color:black;
+  margin:20px;
+}
+#donnees, #compteutilisateur form {
+  flex: 1; 
+  padding: 1em;
+  text-align:center;
+  display: block;
+  margin : auto;
+}

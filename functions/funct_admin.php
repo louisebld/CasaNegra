@@ -63,10 +63,12 @@ for ($i = 0; $i < count($listemetier); $i++){
 function printformulairemetier() {
 
 ?>
+<div id="formulaireajoutmetier">
 	<form method="post" action="index.php?page=pageadmin">
-	<p><input type = "text" placeholder="Métier" name ="metier" id="ajout" ></p>
-	<p><input type="submit" name="envoiemetier" id="metier" value="Ajouter"/></p>
+		<p><input type = "text" placeholder="Métier" name ="metier" id="ajout" ></p>
+		<p><input type="submit" name="envoiemetier" id="action" value="Ajouter"/></p>
 	</form>
+</div>
 
 <?php
 }

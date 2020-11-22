@@ -25,11 +25,11 @@ echo '<div class="equipeadmin">';
 	foreach ($equipe as $key => $value) {
 		echo '<div class="membre_equipeadmin">';
 		echo "<p>" . $value["name"];
-		echo " " . $value["fname"];
+		echo " " . $value["fname"] . "</p>";
 
 		echo "<form method='post' action='index.php?page=pageadmin'>";
 		echo  "<input id='idasuppr' name='idasuppr' type='hidden' value= ". $value['id'] . ">" ;
-		echo "<input type='submit' name='asupprimer' id='action' value='Supprimer'/> </form>" . "</p>";
+		echo "<input type='submit' name='asupprimer' id='action' value='Supprimer'/> </form>";
 
 		echo "</div>";
 	}

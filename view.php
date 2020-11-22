@@ -18,6 +18,7 @@
 
 // si il est connecté on affiche moncompte, déconnexion et son nom
 				echo "<div id='moncompte'>";
+
 				echo "<a href='index.php?page=moncompte'>" . "Mon compte" . "</a>";
 				echo "</div>";
 
@@ -27,6 +28,7 @@
 
 
 				echo "<div id='monnom'>";
+				echo "<img src='./imgsite/user.png' alt='imageutilisateur'/>";
 				printnom($_SESSION['comptedonnee']);
 				echo "</div>";
 

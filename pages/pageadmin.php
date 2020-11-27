@@ -100,3 +100,25 @@ affichetouscomptesadmin ($donneescomptes);
 </div>
 
 </div>
+
+
+
+<div id='contactadmin'> 
+<h2>Vos messages non traités :</h2>
+
+<?php
+
+print_contact_notok($contactatraiter);
+?>
+
+
+
+<h2> Anciens messages (traité) </h2>
+
+<?php
+
+print_contact_ok($contactok);
+?>
+
+
+</div>

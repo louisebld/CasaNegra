@@ -132,6 +132,6 @@ if (isset($_POST['action'])) {
 			insert_projet($autor, $description, $file_name, $date_creation);
 	        echo "Success";
 	        unset($_FILES['image']);
-	        header("Location: index.php?page=projet");
+	        header("Location: index.php?page=projets");
 	    //}
    }

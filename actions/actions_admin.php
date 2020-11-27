@@ -185,6 +185,23 @@ if (isset($_POST['deladmin'])) {
 
 }
 
+// pour traiter un message
+
+if (isset($_POST['atraiter'])) {
+
+	$idcon = $_POST['idcontactsuppr'];
+	changestatusok($idcon);
+	header('location:index.php?page=pageadmin');
+	
+}
+
+if (isset($_POST['asuppr'])) {
+
+	$idcon = $_POST['idcontactsuppr'];
+	supprime_contact($idcon);
+	header('location:index.php?page=pageadmin');
+	
+}
 
 
 

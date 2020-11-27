@@ -38,7 +38,7 @@ if (isset($_SESSION['faute'])) {
 	    <?php
 
 	    ?>
-	    	<p>NBPHOTOS:</p><?php var_dump($nbphotos);
+	    	<?php
 	    	affiche_projet($projets);
       	
       	?> 

@@ -106,7 +106,7 @@
 	}
 */
 	elseif ($page == "projets"){
-		include ("projet.php");
+		include ("pages/projet.php");
 	}
 
 

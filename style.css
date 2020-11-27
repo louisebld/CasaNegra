@@ -422,3 +422,26 @@ text-align: center;
   margin-top:35px;
 
 }
+
+/*POUR LA PARTIE MESSAGES DANS ADMIN*/
+
+#tableaucontact {
+padding: 5px;
+border-collapse:collapse;
+width:100%;
+}
+
+ #tableaucontact td {
+  border:solid thin black;
+  padding:15px;
+  background-color: #c7ecee;
+  opacity: 80%;
+}
+
+#firstrange {
+  background-color: #95afc0;
+}
+
+#contactadmin {
+  margin-bottom: 15px;
+}

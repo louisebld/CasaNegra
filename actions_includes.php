@@ -9,6 +9,7 @@ include 'actions/actions_connexion.php';
 include 'actions/actions_admin.php';
 
 include 'actions/actions_projet.php';
+include 'actions/actions_contact.php';
 
 
 ?>

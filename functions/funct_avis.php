@@ -2,17 +2,19 @@
 
 function print_avis($avis){
 	//Print toute l'avis contenue dans la base de donnée
-	echo '<div class="avis">';
+	echo '<div class="galery_avis">';
 	foreach ($avis as $key => $value) {
 		echo '<div class="box_avis">';
 		
-			echo "<p>" . $value["autor"] . "</p>";
-			echo '<div class="com">' . "<p>" . $value["com"] . "</p>" . "</div>";
-			echo '<div class="answer">' . "<p>" . $value["answer"] . "</p>" . "</div>";
+			echo '<div class="autor"><p>Pseudo: ' . $value["name"] . "</p></div>";
+			echo '<div class="commentary"><p>Commentaire: ' . $value["commentary"] . "</p></div>";
+			if (isset($value["answer"])){
+				echo '<div class="answer"><p>Reponse :' . $value["answer"] . "</p></div>";
+			}
 
 		echo "</div>";
 	}
-	echo "</div>"; 
+	echo '</div>';
 }
 
 function print_form_avis(){

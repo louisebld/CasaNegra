@@ -17,7 +17,7 @@ if (isset($_SESSION['faute'])) {
 ?>
 
 <section>
-		<form action="index.php?page=projet" method="POST" enctype="multipart/form-data"></br>
+		<form action="index.php?page=projets" method="POST" enctype="multipart/form-data"></br>
 
 
 		    <label>Date</label>

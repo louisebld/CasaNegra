@@ -42,25 +42,42 @@ function print_formulairenouveauprojet(){
 	function affiche_image($nomprojet){
 		//Prends en argument un nom d'image, et ressort une balise img avec cette derniere
 
-		return $img = '<img src="./projets/' . $nomprojet . '" alt="projets" width="300"/>';
+		return $img = '<img src="./projets/' . $nomprojet . '" alt="projets" class="img_projet"/>';
 
 	}
 
 	function affiche_projet($projets){
 		//Affiche les differents projets
-		echo '<div class="projets">';
+
 		foreach ($projets as $key => $value) {
-			echo '<div class="box_projet">';
+
+			echo '<figure class="projet">';
+
 			echo affiche_image($value['nomprojet']);
-			echo '<p>Date de création: ' . $value['date_creation'] .'</p>';
+
+			echo '<figcaption class="fig_projet">Date de création' . $value['date_creation'] . "</br>";
+			echo "Realisation: " . $value['autor'] .'</br>';
+			echo $value['description'];
+
+			$avis = charge_avis($value['id']);
+			if (!empty($avis)) {
+					echo "<h2>Commentaire: </h2></br>";	
+			}
+
+			print_avis($avis);
+
+			echo "</figcaption></figure>";
+
+			
+/*			echo '<div class="projet">';
+			echo affiche_image($value['nomprojet']);
+			echo '<div class="desc_projet"><p>Date de création: ' . $value['date_creation'] .'</p>';
 			echo '<p>Realisation: ' . $value['autor'] .'</p>';
-			echo "<p>" . $value['description'] . "</p>";
-			echo "</div>";
+			echo "<p>" . $value['description'] . "</p></div>";
+			echo "</div>";*/
 		}
-		echo "</div>"; 
+		
 	}
-
-
 
 
 

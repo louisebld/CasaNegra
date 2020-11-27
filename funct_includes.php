@@ -16,5 +16,6 @@ include 'functions/funct_bddavis.php';
 include 'functions/funct_bddadmin.php';
 include 'functions/funct_bddprojet.php';
 include 'functions/funct_bddmetier.php';
+include 'functions/funct_bddcontact.php';
 
 

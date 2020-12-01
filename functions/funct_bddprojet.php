@@ -46,10 +46,6 @@ function projetexiste($nom){
 
 
 <?php
-	//Partie refaite:
-		function get_file_extension($file) {
-		    	return substr(strrchr($file,'.'),1);
-		}
 
 
 	  	function insert_projet($autor, $description, $nomprojet, $date_creation){

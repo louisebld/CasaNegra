@@ -3,22 +3,15 @@
 ?>
 
 <section>
-		<form action="index.php?page=projets" method="POST" enctype="multipart/form-data"></br>
+		<?php 
+			if (testif_admin($_SESSION['idcompte'])){
+				?>
+					<h2>Ajouter un projet:</h2>
+				<?php
+				print_formulaire();
+			}
 
-
-		    <label>Date</label>
-		    <input type="date" name="date">
-
-		  	<label>Auteur</label>
-		  	<input type="text" name="autor"></br>
-
-	      	<label>Description</label>
-	      	<textarea name="description"></textarea></br>
-
-	        <input type="file" name="image" accept="image/jpeg"/></br>
-	        <input type="submit"/>
-      	</form>
-	      
+	    ?>  
 	    <h2>Nos creations</h2>
 	      
 	    <?php

@@ -76,7 +76,7 @@ if (isset($_POST['action'])) {
 
 	}
 }
-*/
+
 // Fin la creation du projet
 
 ?>

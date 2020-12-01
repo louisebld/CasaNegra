@@ -1,41 +1,34 @@
 <?php
 	//Verifie les données du fomrulaire d'ajout de commentaire.
 	
-	$erreur = [];
 
-	if (isset($_POST['com'])) {
+	if (isset($_POST['envoyer_com'])) {
 
-		// com vide
-		if (empty($_POST["com"]) && !trim($_POST['com'])) {
-			$erreur[]="Il faut mettre un commentaire";
-		}
+
 
 		//pas connecté
-		if (isset($_SESSION['connected']) && $_SESSION['connected']){
+		if (!empty($_POST['nom'])){
+	
+
 			$idcompte = $_SESSION['idcompte'];
-		} else{
-			$erreur[] = "il faut que vous soyez connecté";
+			var_dump($idcompte);
+			
+			$sesdonnees =recupedonnees($idcompte);
+			$name = $sesdonnees['prénom'];
+			$com = $_POST['com'];
+			$idprojet = $_POST['idprojet'];
+
+
+			insert_com($com, $name, $idprojet);
+
+			header("Location:index.php?page=projets");
+				
 		}
 
+		}
 
-		if (count($erreur)>0) {
-				echo "par ici";
-				$_SESSION["faute"]= $erreur;
-				unset($_SESSION['erreur']);
-				
-		}else {
-				echo "par là";
-				$com = $_POST['com'];
+/*		var_dump($_POST);*/
 
-				insert_com($com, $idcompte);
-
-				header("Location:index.php?page=avis");
-				
-				unset($_SESSION['erreur']);
-				unset($_SESSION['donnee']);
-
-			}
-	}
 
 // Fin INSCRIPTION
 

@@ -463,7 +463,7 @@ figure {
   overflow-x: hidden;
 }
 
-img {
+.projet img {
   width:100%;
   vertical-align:top;
 }

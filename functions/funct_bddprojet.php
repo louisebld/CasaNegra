@@ -30,6 +30,7 @@
 		//var_dump($tableau);
 		return $tableau;
 	}
+	*/
 
 //verifs pour l'insertion
 
@@ -62,7 +63,7 @@ function projetexiste($nom){
 	}
 
 }
-
+/*
 function auteurexistepas($autor){
 	// faire une jointure avec equipe 
 }

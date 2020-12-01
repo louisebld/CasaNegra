@@ -3,7 +3,7 @@
 ?>
 
 <section>
-		<?php 
+		<?php
 			if (testif_admin($_SESSION['idcompte'])){
 				?>
 					<h2>Ajouter un projet:</h2>

@@ -1,7 +1,9 @@
 
 <?php
 	//Partie refaite
-
+	function get_file_extension($file) {
+		    return substr(strrchr($file,'.'),1);
+	}
 
 	function affiche_image($nomprojet){
 		//Prends en argument un nom d'image, et ressort une balise img avec cette derniere
@@ -36,6 +38,27 @@
 
 		}
 		
+	}
+
+
+	function print_formulaire(){
+		?>
+			<form name="projet" action="index.php?page=projets" method="POST" enctype="multipart/form-data"></br>
+
+
+			    <label>Date</label>
+			    <input type="date" name="date">
+
+			  	<label>Auteur</label>
+			  	<input type="text" name="autor"></br>
+
+		      	<label>Description</label>
+		      	<textarea name="description"></textarea></br>
+
+		        <input type="file" name="image" accept="image/jpeg"/></br>
+		        <input type="submit" name="projet"/>
+      		</form>
+		<?php
 	}
 
 

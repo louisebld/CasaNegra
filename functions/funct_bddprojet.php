@@ -8,29 +8,6 @@
 
 
 
-/*	function insert_projet($date, $nom, $description){
-		//Insere un nouveau projet dans la table du meme nom, le nom vient d'un membres de l'equipe 
-		global $c;
-		$sql = "INSERT INTO projet (date_creation, name, commentary) VALUES ($date, $name, $description)";
-		mysqli_query($c, $sql);
-	}
-
-	function charge_projet($c){
-		//Fonction qui renvoie un tableau associatif des infos sur les projets
-		$sql = "SELECT  date_creation, autor, description FROM projet";
-
-
-		$result=  mysqli_query($c, $sql);
-
-		//on met dans un tableau
-		$tableau = [];
-		while ($row=mysqli_fetch_assoc($result)) {
-			$tableau[] = $row;
-		}
-		//var_dump($tableau);
-		return $tableau;
-	}
-	*/
 
 //verifs pour l'insertion
 
@@ -63,11 +40,8 @@ function projetexiste($nom){
 	}
 
 }
-/*
-function auteurexistepas($autor){
-	// faire une jointure avec equipe 
-}
-*/
+
+
 ?>
 
 
@@ -102,6 +76,7 @@ function auteurexistepas($autor){
 			//var_dump($tableau);
 			return $tableau;
 		}
+		
 //Si besoin de faire apparaitre le nombre de projets
 //Ne pas oublier d'incrementer
 		

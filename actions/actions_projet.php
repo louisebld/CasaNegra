@@ -35,15 +35,15 @@ if (isset($_POST['projet'])) {
 
 // verifier si la date est valide (déja passée)
 
-	if(datepaspasse($_POST["date_creation"])){
-		$erreur[]="Cette date n'est pas encore passée";
-	}
-// verifier si le projet n'existe pas deja 
+// 	if(datepaspasse($_POST["date_creation"])){
+// 		$erreur[]="Cette date n'est pas encore passée";
+// 	}
+// // verifier si le projet n'existe pas deja 
 
-	if(projetexiste($_POST["nom"])){
-		$erreur[]="Ce projet existe deja";
+// 	if(projetexiste($_POST["nom"])){
+// 		$erreur[]="Ce projet existe deja";
 
-	}
+// 	}
 
 // verifier si l'auteur existe ---------------------------a retravailler
 /*

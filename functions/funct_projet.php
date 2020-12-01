@@ -26,7 +26,7 @@
 			echo $value['description'];
 
 
-			if ($_SESSION['connected']){
+			if (isset($_SESSION['connected'])){
 
 				echo "<h2>Ajouter un commentaire</h2>";
 				print_form_avis($value['id']);

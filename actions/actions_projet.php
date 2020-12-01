@@ -9,7 +9,7 @@ $erreur=[];
 
 // POUR L'AJOUT
 
-if (isset($_POST['action'])) {
+if (isset($_POST['projet'])) {
 
 
 // nom vide

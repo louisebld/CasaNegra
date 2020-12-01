@@ -12,11 +12,14 @@ table avis:
 function insert_com($com, $name, $idprojet){
 	//fonction qui ajoute un commentaire dans la table commentaire
 	global $c;
-
-	$sql = "INSERT INTO avis (idprojet, name, commentary) VALUES ($idprojet, $name, $com)";
-
-
+	var_dump($com);
+	var_dump($name);
+	var_dump($idprojet);
+	
+	$sql = "INSERT INTO avis (idprojet, name, commentary) VALUES ('$idprojet', '$name', '$com')";
 	mysqli_query($c, $sql);
+
+
 }
 
 function charge_avis($idprojet){
@@ -41,11 +44,10 @@ function return_pseudo($idcompte){
 	//fonction qui renvoie un peusdo, via l'id du membre connecté
 
 	global $c;
-	$sql = "SELECT name FROM compte WHERE idcompte=$idcompte";
-
-
-	$res=mysqli_fetch_assoc($result);
+	$sql = "SELECT name FROM compte WHERE idcompte='$idcompte'";
+	$result=  mysqli_query($c, $sql);
+	$res = mysqli_fetch_assoc($result);
+	return $res['name'];
 }
-
 
 ?>

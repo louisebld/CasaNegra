@@ -1,5 +1,5 @@
 <?php
-/*
+
 // Envoi du formulaire pour créer un projet
 // Vérification
 
@@ -45,14 +45,14 @@ if (isset($_POST['action'])) {
 
 	}
 
-// verifier si l'auteur existe
-
+// verifier si l'auteur existe ---------------------------a retravailler
+/*
 	if(auteurexistepas($_POST["autor"])){
 		$erreur[]="Cet auteur n'existe pas";
 
 	}
 
-
+*/ 
 
 	if (count($erreur)>0) {
 

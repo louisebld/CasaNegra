@@ -16,7 +16,7 @@ function insert_com($com, $name, $idprojet){
 	var_dump($name);
 	var_dump($idprojet);
 	
-	$sql = "INSERT INTO avis (idprojet, name, commentary) VALUES ('$idprojet', '$name', '$com')";
+	$sql = "INSERT INTO avis (idprojet, name, commentary) VALUES ($idprojet, '$name', '$com')";
 	mysqli_query($c, $sql);
 
 

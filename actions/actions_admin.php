@@ -4,6 +4,8 @@ $donneescomptes = charge_compte($c);
 $listemetier = recupmetier ($c);
 $listeadmin = charge_listeadmin($c);
 
+$compteurcompte = countcompte();
+$compteurprojet = countprojet();
 // vérification de l'envoi du métier
 
 

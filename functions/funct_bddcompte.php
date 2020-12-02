@@ -111,6 +111,18 @@ function insert_admin($id) {
 }
 
 
+// fonction qui renvoie le nombre de compte dans la base de données
+
+function countcompte () {
+	global $c;
+	$req=mysqli_query($c, "SELECT COUNT(*) FROM compte");
+	$result=mysqli_fetch_assoc($req);
+	return $result;
+
+}
+
+
+
 
 
 ?>

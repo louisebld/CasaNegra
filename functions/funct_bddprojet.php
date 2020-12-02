@@ -97,3 +97,12 @@ function projetexiste($nom){
 					WHERE 1";
 			mysqli_query($c, $sql);
 		}
+
+
+function countprojet () {
+	global $c;
+	$req=mysqli_query($c, "SELECT COUNT(*) FROM projet");
+	$result=mysqli_fetch_assoc($req);
+	return $result;
+	
+}

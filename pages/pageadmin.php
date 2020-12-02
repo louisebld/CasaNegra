@@ -119,6 +119,22 @@ print_contact_notok($contactatraiter);
 
 print_contact_ok($contactok);
 ?>
+</div>
 
+<div id='mescompteurs'>
+"<div id='compteur'>
+<h2> Nombre d'utilisateurs inscrits </h2>
+<?php
+printcompteur($compteurcompte);
 
+?>
+</div>
+"<div id='compteur'>
+<h2> Nombre de projets réalisés </h2>
+<?php
+
+printcompteur($compteurprojet);
+
+?>
+</div>
 </div>

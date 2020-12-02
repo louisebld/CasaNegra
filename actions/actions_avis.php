@@ -7,13 +7,11 @@
 
 
 		//pas connecté
-		if (!empty($_POST['nom'])){
-	
-
+		
 			$idcompte = $_SESSION['idcompte'];
 			var_dump($idcompte);
 			
-			$sesdonnees =recupedonnees($idcompte);
+			$sesdonnees = recupedonnees($idcompte);
 			$name = $sesdonnees['prénom'];
 			$com = $_POST['com'];
 			$idprojet = $_POST['idprojet'];
@@ -23,7 +21,7 @@
 
 			header("Location:index.php?page=projets");
 				
-		}
+	
 
 		}
 

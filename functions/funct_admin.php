@@ -121,5 +121,15 @@ function print_listeadmin($listeadmin){
 
 
 
+// pour afficher les compteurs
+
+function printcompteur($compteur) {
+	echo "<p>";
+	echo $compteur["COUNT(*)"];
+	echo "</p>";
+}
+
+
+
 
 ?>

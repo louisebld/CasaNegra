@@ -267,7 +267,7 @@ color: black;
 
 /*POUR LA PARTIE ADMIN*/
 
-#affichemembre, #membreequipe, #ajoutmembreequipe, #ajoutermetier, #supprimermetier, #listeadmin, #ajouteradmin
+#affichemembre, #membreequipe, #ajoutmembreequipe, #ajoutermetier, #supprimermetier, #listeadmin, #ajouteradmin, #compteur
 {
 
   background-color:#dfe4ea;
@@ -292,7 +292,7 @@ color: black;
   opacity:1;
  }
 
-#premiererangee, #metier, #admin {
+#premiererangee, #metier, #admin, #mescompteurs {
 text-align: center;
     padding: 3px;
     color: white;

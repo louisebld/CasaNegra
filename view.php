@@ -37,6 +37,11 @@
 					echo "<div id='pageadmin'>";
 					echo "<a href='index.php?page=pageadmin'>" . "Admin" . "</a>";
 					echo "</div>";
+
+					echo "<div id='nbmesstraite'>";
+					echo count($contactatraiter);
+					echo "<img src='./imgsite/message.jpg' alt='imagemessage'/>";
+					echo "</div>";
 					
 				}
 

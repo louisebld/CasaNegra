@@ -42,6 +42,14 @@ if (isset($_SESSION['fauteequipe'])) {
 }
 ?>
 
+<!-- <script>
+var meserreurs = <?php //echo json_encode($_SESSION['fauteequipe']) ?>;
+array1.forEach(element => console.log(element));
+
+
+
+</script> -->
+
 </div>
 </div>
 
@@ -129,7 +137,7 @@ printcompteur($compteurcompte);
 
 ?>
 </div>
-"<div id='compteur'>
+<div id='compteur'>
 <h2> Nombre de projets réalisés </h2>
 <?php
 
@@ -138,3 +146,11 @@ printcompteur($compteurprojet);
 ?>
 </div>
 </div>
+
+<SCRIPT LANGUAGE="Javascript">
+<!--
+var texte = "Mon chiffre préféré est le "
+var variable = 7
+document.write(texte + variable);
+//-->
+</SCRIPT>

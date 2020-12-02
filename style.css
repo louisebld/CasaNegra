@@ -115,7 +115,7 @@ div#diapo{
   margin-top:5px;
 }
 
-#monnom, #moncompte {
+#monnom, #moncompte, #nbmesstraite {
   background-color: #dfe4ea;
   border-radius:5px;
   border: none;
@@ -142,11 +142,12 @@ div#diapo{
 }
 
 /*Pour positionner l'image correctement*/
-#monnom img {
+#monnom img, #nbmesstraite img {
 vertical-align: middle;
 margin-bottom: 3px;
 margin-right:3px;
 width:auto;
+margin-left:3px;
 }
 
 

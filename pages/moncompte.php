@@ -9,7 +9,14 @@ print_donnescompte($_SESSION['comptedonnee']);
 <?php
 print_form_mdp();
 
+if (isset($_SESSION['fautechangementmdp'])) {
+	echo "<ul>";
+	foreach($_SESSION["fautechangementmdp"] as $faute)
+		echo "<li>$faute</li>";
+	echo "</ul>";
 
-
+}
 
 ?>
+
+Votre nouveau mot de passe doit contenir au moins : • Une majuscule • Une minuscule • Un chiffre • Un caractère spécial • 8 caractères

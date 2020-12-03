@@ -173,6 +173,29 @@ function affichetouscomptesadmin ($donneesdescomptes) {
 }
 
 
+// fonction formulaire changement de mot de passe
+
+function print_form_mdp() {
+	//Affiche le formulaire pour ajouter un nouveau membre
+
+	?>
+	<div id="formulairemdp">
+	<form method="post" action="index.php?page=moncompte">
+
+		<p>
+			<input type = "password" placeholder="Votre ancien mot de passe" name ="oldmdp" id="ajout"></p>
+
+			<p>
+			<input type = "password" placeholder="Votre nouveau mot de passe"  name ="newmdp" id="ajout"></p>
+
+		<p><input type="submit" name="changementmdp" id="action" value="Changer"/></p>
+				</form>
+</div>
+				<?php	 
+			}
+
+
+
 ?>
 
 

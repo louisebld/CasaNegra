@@ -11,6 +11,7 @@ include 'actions/actions_admin.php';
 include 'actions/actions_projet.php';
 include 'actions/actions_contact.php';
 include 'actions/actions_rdv.php';
+include 'actions/actions_mdp.php';
 
 
 

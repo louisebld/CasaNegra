@@ -146,11 +146,3 @@ printcompteur($compteurprojet);
 ?>
 </div>
 </div>
-
-<SCRIPT LANGUAGE="Javascript">
-<!--
-var texte = "Mon chiffre préféré est le "
-var variable = 7
-document.write(texte + variable);
-//-->
-</SCRIPT>

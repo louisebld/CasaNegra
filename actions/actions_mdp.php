@@ -2,7 +2,7 @@
 
 if (isset($_POST['changementmdp'])) {
 
-// appel à la fonction pour savoir si le mail et le mdp correspondent
+// appel à la fonction pour savoir si l'ancien mdp est correct
 	$verif = verificationadressemailmdp($compte, $_SESSION["comptedonnee"]['mail'], $_POST["oldmdp"]);
 	$erreur=[];
 // non vide
@@ -28,18 +28,19 @@ if (isset($_POST['changementmdp'])) {
 	}
 
 // Si il n'y a pas deux valeurs correctes
-	elseif ($verif==false) {
-		//$_SESSION["incorrect"]=verificationadressemailmdp($compte, $_POST["mail"], $_POST["motdepasse"]);
-		// on met le tableau dans la variable de session
+	elseif (!$verif) {
+
 		unset($_SESSION["fautechangementmdp"]);
 		// on change la valeur de la variable de session
-		$erreur[]="Mot de passe incorrect";
+		$erreur[]="Ancien mot de passe incorrect";
+		// actualisation
 		$_SESSION["fautechangementmdp"]=$erreur;
 	}
 
 	elseif (!mdpbonformat($_POST["newmdp"])) {
 
-		$erreur[]="Votre mot de passe doit contenir au moins : • Une majuscule • Une minuscule • Un chiffre • Un caractère spécial • 8 caractères";
+		$erreur[]="Votre nouveau mot de passe n'a pas le format demandé";
+		$_SESSION["fautechangementmdp"]=$erreur;
 
 	}
 
@@ -50,12 +51,18 @@ if (isset($_POST['changementmdp'])) {
 
 		unset($_SESSION["fautechangementmdp"]);
 
-	//	$_SESSION['monadressemail'] = $_POST["mail"];
-  		
-		// redirection vers une page membre
-		header('Location: index.php?page=moncompte');	
-			
+		// on va pouvoir changer le mot de passe
+		changemdp($_SESSION["idcompte"], $_POST["newmdp"]);
+
+		// on informe l'utilisateur qu'il a changé de mot de passe
+		// redirection vers la page moncompte
+		echo '<script>alert("Vous avez changé de mot de passe");
+		window.location.href = "./index.php";</script>'; 
+  		exit();
+		
 	}
-
-
 }
+
+?>
+
+

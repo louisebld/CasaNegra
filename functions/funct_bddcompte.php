@@ -122,6 +122,14 @@ function countcompte () {
 }
 
 
+// fonction pour changer de mot de passe
+
+function changemdp($id, $new) {
+	global $c;
+	$sql="UPDATE compte SET motdepasse = '$new' WHERE idcompte = $id";
+	mysqli_query($c, $sql);
+
+}
 
 
 

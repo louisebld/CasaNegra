@@ -39,7 +39,7 @@
 					echo "</div>";
 
 					echo "<div id='nbmesstraite'>";
-					echo count($contactatraiter);
+					echo "<a href='index.php?page=pageadmin#contactadmin'>" . count($contactatraiter) . "</a>";
 					echo "<img src='./imgsite/message.jpg' alt='imagemessage'/>";
 					echo "</div>";
 					

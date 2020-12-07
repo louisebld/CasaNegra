@@ -1,4 +1,36 @@
 
+<center>
+<div id="choixadmin">
+
+<ul id="listechoixadmin">
+<li><a href="index.php?page=pageadmin#affichemembre"> Voir les membres inscrits/en supprimer </a></li>
+<li><a href="index.php?page=pageadmin#membreequipe"> Voir les membre de l'équipe/en supprimer </a></li>
+<li><a href="index.php?page=pageadmin#ajoutmembreequipe"> Ajouter un membre à l'équipe </a></li>
+</ul>
+
+<ul id="listechoixadmin">
+<li><a href="index.php?page=pageadmin#ajoutermetier"> Ajouter un métier </a></li> 
+<li><a href="index.php?page=pageadmin#supprimermetier"> Supprimer un métier </a></li>
+</ul>
+
+<ul id="listechoixadmin">
+<li><a href="index.php?page=pageadmin#listeadmin"> Voir la liste des administrateurs/en supprimer </a></li>
+<li><a href="index.php?page=pageadmin#ajouteradmin"> Ajouter un membre à l'administration </a></li>
+</ul>
+
+<ul id="listechoixadmin">
+<li><a href="index.php?page=pageadmin#contactadmin"> Voir vos messages </a></li>
+<li><a href="index.php?page=pageadmin#mescompteurs"> Voir les statistiques </a></li>
+</ul>
+</div>
+</center>
+
+
+
+
+
+
+
 
 <div id="premiererangee">
 <div id="affichemembre">

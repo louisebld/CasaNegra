@@ -21,7 +21,7 @@
 
 			echo affiche_image($value['nomprojet']);
 
-			echo '<figcaption class="fig_projet">Date de création' . $value['date_creation'] . "</br>";
+			echo '<div class="fig_projet">Date de création' . $value['date_creation'] . "</br>";
 			echo "Realisation: " . $value['autor'] .'</br>';
 			echo $value['description'];
 
@@ -33,7 +33,7 @@
 			
 			}
 
-
+			echo "</div>";
 
 			$avis = charge_avis($value['id']);
 			if (!empty($avis)) {
@@ -44,7 +44,7 @@
 
 
 
-			echo "</figcaption></figure>";
+			echo "</figure>";
 
 			
 

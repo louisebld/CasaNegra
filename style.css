@@ -454,7 +454,6 @@ width:100%;
 figure {
   width: 80%;
   max-width: 80%;
-/*  border:1px solid #777;*/
   position:relative;
   transition: 1s;
   margin: 0 auto;
@@ -470,7 +469,30 @@ figure {
   max-height:800px;
 }
 
-figcaption {
+.commentary {
+  margin-bottom: 65px;
+  background-color: #FDDDB3;
+  text-align: left;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.autor {
+
+  background-color: #FDDDB3;
+  text-align: left;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.fig_projet{
+  background-color: #FDDDB3;
+  text-align: left;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+/*figcaption {
 font-size: 20px;
 transition: 1s;
 opacity:0;
@@ -494,7 +516,7 @@ overflow: inherit;
 
 /*COMMENTAIRE DES PROJETS*/
 
-.galery_avis{
+/*.galery_avis{
   width: 50%
   max-width 50%;
 }
@@ -506,7 +528,7 @@ figcaption .box_avis {
 
 }
 
-figcaption .commentary {
+.commentary {
   margin-bottom: 65px;
   background-color: #FDDDB3;
   text-align: left;
@@ -524,7 +546,7 @@ figcaption .autor {
 }
 
 /*ANIMATION DES PROJETS*/
-figure:hover{
+/*figure:hover{
 
   -webkit-transform: scale(1.04);
   -ms-transform: scale(1.04);
@@ -533,6 +555,6 @@ figure:hover{
 
 figure:hover figcaption {
 opacity:1;
-/*   transform:rotate(360deg); */
-}
-/*FIN PROJETS*/
+
+}*//*
+/*FIN PROJETS*/*/

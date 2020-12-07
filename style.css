@@ -94,16 +94,23 @@ div#diapo{
 
 /*Pour les div connexion, inscription, déconnexion, moncompte*/
 
-#inscription a, #moncompte a, #deconnexion a, #pageadmin a
+ #moncompte a
 {
  text-decoration:none;
- color:#57606f;
+ color:black;
  float:right;
 }
 
+#pageadmin a, #inscription a, #deconnexion a  {
+ text-decoration:none;
+ color:white;
+ float:right;
 
-#connexion, #inscription, #deconnexion, #pageadmin {
-  background-color: #dfe4ea;
+}
+
+
+#connexion, #inscription, #deconnexion {
+  background-color: #576574;
   border-radius:5px;
   border: none;
   padding: 5px 16px;
@@ -114,6 +121,23 @@ div#diapo{
   margin-right:5px;
   margin-top:5px;
 }
+
+#pageadmin {
+  background-color: #EE4F3F;
+  border-radius:5px;
+  border: none;
+  padding: 5px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left:5px;
+  margin-right:5px;
+  margin-top:5px;
+
+
+}
+
+
 
 #monnom, #moncompte, #nbmesstraite {
   background-color: #dfe4ea;
@@ -130,10 +154,18 @@ div#diapo{
 
 }
 
+/*Pour le lien cliquable*/
+#nbmesstraite a {
+
+ display: inline-block;
+text-decoration:none;
+
+}
+
 
 #connexion a {
  text-decoration:none;
- color:#57606f;
+ color:white;
  float:right;
  display: block;
  width: 100%;
@@ -557,4 +589,46 @@ figure:hover figcaption {
 opacity:1;
 
 }*//*
-/*FIN PROJETS*/*/
+/*FIN PROJETS*/
+
+
+/*Pour le menu de la partie admin*/
+
+#listechoixadmin {
+  width: 300px;
+  list-style: none;
+  margin: 10px;
+  padding: 0;
+
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+
+#listechoixadmin li {
+  background-color: #576574 ;
+  color: white ;
+  margin-bottom: 3px ;
+}
+
+
+#listechoixadmin li a {
+  display: block ;
+  background: #576574 ;
+  color: white ;
+  line-height: 1em ;
+  text-align: center ;
+  text-decoration: none ;
+  padding: 4px 0 ;
+}
+
+#listechoixadmin li a:hover {
+  background-color: #8395a7;
+}
+
+/*Pour afficher côte à côte*/
+
+#choixadmin {
+  width:100%;
+}

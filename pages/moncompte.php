@@ -3,6 +3,8 @@
 <?php
 
 print_donnescompte($_SESSION['comptedonnee']);
+affiche_rdv(charge_rdv($_SESSION['idcompte']));
+
 
 ?>
 <h2> Changer votre mot de passe </h2>

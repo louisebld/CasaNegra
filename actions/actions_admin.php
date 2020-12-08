@@ -37,7 +37,10 @@ if (isset($_POST['envoiemetier'])) {
 		unset($_SESSION["fautemetier"]);
 		$metier = $_POST['metier'];
 		insert_métier($metier);
-		header('location:index.php?page=pageadmin');
+		//header('location:index.php?page=pageadmin');
+		echo '<script>alert("Vous avez ajouté un métier");
+		window.location.href = "./index.php?page=pageadmin";</script>'; 
+  		exit();
 
 	}
 }
@@ -105,7 +108,12 @@ if (isset($_POST['envoiequipe'])) {
 
 		// marche ?
 		insert_membre($nom, $prénom, $age, $idmetier, $description, $tel);
-		header('location:index.php?page=pageadmin');
+		//header('location:index.php?page=pageadmin');
+		// on averti et on redirige
+		echo '<script>alert("Vous avez ajouté un membre à votre équipe");
+		window.location.href = "./index.php?page=pageadmin";</script>'; 
+  		exit();
+
 
 	}
 }
@@ -133,7 +141,13 @@ if (isset($_POST['envoiesupprmetier'])) {
 
 	suppr_métier($metier);
 	unset($_SESSION["metierutilise"]);
-	header('location:index.php?page=pageadmin');
+	//header('location:index.php?page=pageadmin');
+
+	echo '<script>alert("Vous avez supprimé un métier");
+	window.location.href = "./index.php?page=pageadmin";</script>'; 
+	exit();
+
+
 	}
 
 
@@ -149,7 +163,11 @@ if (isset($_POST['asupprimer'])) {
 
 	$idequipe = $_POST['idasuppr'];
 	suppr_equipe($idequipe);
-	header('location:index.php?page=pageadmin');
+	//header('location:index.php?page=pageadmin');
+	echo '<script>alert("Vous avez supprimé un membre de votre équipe");
+	window.location.href = "./index.php?page=pageadmin";</script>'; 
+	exit();
+
 
 }
 
@@ -160,7 +178,10 @@ if (isset($_POST['asupprimercompte'])) {
 
 	$idutilisateur = $_POST['idasupprcompte'];
 	suppr_utilisateur($idutilisateur);
-	header('location:index.php?page=pageadmin');
+	//header('location:index.php?page=pageadmin');
+	echo '<script>alert("Vous avez supprimé un utilisateur");
+	window.location.href = "./index.php?page=pageadmin";</script>'; 
+  	exit();
 
 }
 
@@ -172,7 +193,11 @@ if (isset($_POST['ajouteradmin'])) {
 // on ne verifie pas si admin car si il s'affiche dans la liste ça veut dire qu'il n'est pas admin
 	$idutilisateuradmin = $_POST['idajout'];
 	insert_admin($idutilisateuradmin);
-	header('location:index.php?page=pageadmin');
+	//header('location:index.php?page=pageadmin');
+	echo '<script>alert("Vous avez ajouté un membre à ladministration");
+	window.location.href = "./index.php?page=pageadmin";</script>'; 
+	exit();
+
 
 }
 
@@ -183,7 +208,11 @@ if (isset($_POST['deladmin'])) {
 	$idutilisateur = $_POST['idadminsuppr'];
 	suppr_admin($idutilisateur);
 // on fait des header location pour ne pas qu'il puisse renvoyer le formulaire en faisant F5
-	header('location:index.php?page=pageadmin');
+	//header('location:index.php?page=pageadmin');
+	echo '<script>alert("Vous avez supprimé un membre de ladministration");
+	window.location.href = "./index.php?page=pageadmin";</script>'; 
+	exit();
+
 
 }
 
@@ -193,7 +222,11 @@ if (isset($_POST['atraiter'])) {
 
 	$idcon = $_POST['idcontactsuppr'];
 	changestatusok($idcon);
-	header('location:index.php?page=pageadmin');
+	//header('location:index.php?page=pageadmin');
+	echo '<script>alert("Vous avez traité un message");
+	window.location.href = "./index.php?page=pageadmin";</script>'; 
+  	exit();
+
 	
 }
 
@@ -201,8 +234,11 @@ if (isset($_POST['asuppr'])) {
 
 	$idcon = $_POST['idcontactsuppr'];
 	supprime_contact($idcon);
-	header('location:index.php?page=pageadmin');
-	
+	//header('location:index.php?page=pageadmin');
+	echo '<script>alert("Vous avez supprimé un message");
+	window.location.href = "./index.php?page=pageadmin";</script>'; 
+  	exit();
+
 }
 
 

@@ -207,6 +207,14 @@ input, textarea {
 }
 
 /*DIAPORAMA */
+.compGen {
+    width: auto;
+    visibility: hidden;
+}
+
+#diapo1{
+  visibility: visible;
+}
 
 .cadre-diapo{
 
@@ -219,19 +227,40 @@ margin:0 auto;
 width:100%;
   }
   
+.cadre-diapo .suivant{
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+      border-radius: 50%
+}
+
+.cadre-diapo .precedent{
+      width: 100px;
+      height: 100px;
+      cursor: pointer;      
+      border-radius: 50%
+}
+
   
-.diapo {
-opacity: 0;
+.diapo_img {
 position: absolute;
 left: 50%;
 transform: translate3d(-50%,-50%,0);
 top: 50%;
 transition: opacity 1s;
-width: 100%;
+
+
 max-width: 600px;
+max-height: 300px
 
   
 }
+
+img.diapo{
+  width: 600px;
+  position: absolute;
+}
+
   
 
  button{
@@ -264,6 +293,7 @@ position: absolute;
 color: black;
 
 }
+
 
 
 /*Pour l'affichage des membres de l'équipe et le formulaire*/

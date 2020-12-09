@@ -7,6 +7,7 @@ function changedate($date){
 
 }
 
+
 function affiche_rdv($rdv){
 	//afficher les rdv 
 	echo'<div class="listerdv">';

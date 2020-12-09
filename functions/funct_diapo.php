@@ -1,6 +1,6 @@
 <?php
 
-function affiche_diapo(){ 
+/*function affiche_diapo(){ 
 	?>
 	<div class="cadre-diapo">
 <?php
@@ -14,5 +14,30 @@ for ($i = 1; $i <= 11; $i++){
 
 <script type="text/javascript" src="js/diapo.js"></script>
 <?php
+}*/
+
+function affiche_diapo(){ 
+	global $c;
+
+	?>
+
+	<div class="cadre-diapo">
+<?php
+for ($i = 1; $i <= charge_nbphotos($c); $i++){
+
+	echo'<div class="compGen" id="diapo' . $i . '"/><a href="index.php?page=projets#diapo' . $i . '.jpg"><img class="diapo_img" src="projets/diapo' . $i .'.jpg"></a></div>';
+
 }
+
+
+?>
+<div class="suivant" id="leftArrow"><h1>❯</h1></div>
+<div class="precedent" id="rightArrow"><h1>❮</h1></div>
+
+</div>
+
+<script type="text/javascript" src="js/diapo.js" ></script>
+<?php
+}
+
 ?>

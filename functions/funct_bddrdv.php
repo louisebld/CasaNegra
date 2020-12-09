@@ -23,8 +23,7 @@ table rdv:
 }
 
 function charge_rdv($idclient){
-	//Fonction qui renvoie calendrier avec les rdv
-	//pour le moment juste un tableau
+	//fonction qui recupere les rdv selon les id des clients
 	
 
 	global $c;
@@ -39,6 +38,24 @@ function charge_rdv($idclient){
 	}
 	return $tab;
 }
+
+//pour afficher tous les rdv (pour la partie admin)
+function charge_rdv_admin(){
+
+	global $c;
+
+	$sql = "SELECT idrdv, idmembre, idclient, daterdv, heurerdv FROM rdv ";
+	$result=  mysqli_query($c, $sql);
+
+	//on met dans un tableau pour le moment 
+	$tab = [];
+	while ($row=mysqli_fetch_assoc($result)) {
+		$tab[] = $row;
+	}
+	return $tab;
+
+}
+
 
 function recupmembre($membre){
 	global $c;

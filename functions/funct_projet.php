@@ -12,12 +12,17 @@
 
 	}
 
+	function filter_number($nomimg){
+
+		$int = (int) filter_var($nomimg, FILTER_SANITIZE_NUMBER_INT); 
+	}
+
 	function affiche_projet($projets){
 		//Affiche les differents projets
 
 		foreach ($projets as $key => $value) {
 
-			echo '<figure class="projet">';
+			echo '<figure class="projet" id="' . $value['nomprojet'] . '">';
 
 			echo affiche_image($value['nomprojet']);
 
@@ -33,7 +38,6 @@
 			
 			}
 
-			echo "</div>";
 
 			$avis = charge_avis($value['id']);
 			if (!empty($avis)) {

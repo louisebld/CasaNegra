@@ -12,15 +12,15 @@ if (isset($_POST['connexion'])) {
 	$erreur=[];
 // non vide
 	
-	if (empty($_POST["motdepasse"])) {
-		$erreur[]="Vous n'avez pas renseigné le mot de passe";
+	// if (empty($_POST["motdepasse"])) {
+	// 	$erreur[]="Vous n'avez pas renseigné le mot de passe";
 
-	}
+	// }
 
-	if (empty($_POST["mail"])) {
-		$erreur[]="Vous n'avez pas renseigné l'adresse mail";
+	// if (empty($_POST["mail"])) {
+	// 	$erreur[]="Vous n'avez pas renseigné l'adresse mail";
 
-	}
+	// }
 
 // Si on a des champs vide
 	if (count($erreur)>0) {

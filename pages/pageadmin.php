@@ -1,3 +1,7 @@
+<script type='text/javascript' src='js/verifmembreequipe.js'></script>
+<script type='text/javascript' src='js/verifmetier.js'></script>
+
+
 <!-- Les listes -->
 <center>
 <div id="choixadmin">

@@ -10,10 +10,6 @@ if (isset($_POST['contact'])) {
 $erreur = [];
 
 
-if(!isset($_SESSION['connected'])) {
-$erreur[]="Vous devez être connecté pour nous contacter";
-}
-
 
 if (empty($_POST['tel'])) {
 	$erreur[]="Vous devez mettre un numero de téléphone pour que l'on puisse vous contacter";

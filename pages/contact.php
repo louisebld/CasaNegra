@@ -2,7 +2,7 @@
 	<h2>Nous contacter:</h2>
 
 <?php
-
+if (isset($_SESSION['connected'])) {
 print_formulaire_contact();
 
 if (isset($_SESSION['fautecontact'])) {
@@ -12,7 +12,13 @@ if (isset($_SESSION['fautecontact'])) {
 	echo "</ul>";
 
 }
+}
+else {
 
+echo '<script>alert("Vous devez être connecté pour accéder à cette page");
+		window.location.href = "./index.php?page=connexion";</script>'; 
+  		exit();
+}
 
 
 ?>

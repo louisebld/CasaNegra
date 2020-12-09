@@ -1,3 +1,5 @@
+<script type='text/javascript' src='js/verifinscription.js'></script>
+
 <?php
 
 print_formulaire_ajout();

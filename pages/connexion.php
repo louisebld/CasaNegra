@@ -1,3 +1,4 @@
+<script type='text/javascript' src='js/verifconnexion.js'></script>
 <?php
 
 print_formulaire_connexion();

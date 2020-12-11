@@ -48,11 +48,11 @@ function projetexiste($nom){
 <?php
 
 
-	  	function insert_projet($autor, $description, $nomprojet, $date_creation){
+	  	function insert_projet($autor, $description, $nomprojet, $date_creation, $type){
 			//Fonction qui insere un projet dans la table projet, permet de stocker les infos lié au projet
 
 			global $c;
-			$sql = "INSERT INTO projet (nomprojet, date_creation, autor, description) VALUES ('$nomprojet', '$date_creation', '$autor', '$description')";
+			$sql = "INSERT INTO projet (nomprojet, date_creation, autor, description, type) VALUES ('$nomprojet', '$date_creation', '$autor', '$description', '$type')";
 			mysqli_query($c, $sql);
 		}
 
@@ -62,6 +62,22 @@ function projetexiste($nom){
 
 			
 			$sql = "SELECT * FROM projet";
+			$result=  mysqli_query($c, $sql);
+
+			//on met dans un tableau
+			$tableau = [];
+			while ($row=mysqli_fetch_assoc($result)) {
+				$tableau[] = $row;
+			}
+			//var_dump($tableau);
+			return $tableau;
+		}
+
+
+		function charge_projetType($aAfficher){
+			global $c;
+			
+			$sql = "SELECT * FROM projet WHERE type = '$aAfficher'";
 			$result=  mysqli_query($c, $sql);
 
 			//on met dans un tableau
@@ -106,3 +122,5 @@ function countprojet () {
 	return $result;
 	
 }
+
+

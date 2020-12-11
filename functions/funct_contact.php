@@ -5,10 +5,11 @@ function print_formulaire_contact() {
 
 	?>
 	<div id="formulairecontact">
-	<form method="post" action="index.php?page=contact">
+	<form method="post" action="index.php?page=contact"
+	onsubmit='javascript: return remplicontact();'>
 
 		<p>
-			<input type = "text" placeholder="Votre téléphone" name ="tel" id="ajout" value="<?php if (isset($_SESSION['telmessage']['tel'])) 
+			<input type = "text" placeholder="Votre téléphone" name ="tel" id="telephone" value="<?php if (isset($_SESSION['telmessage']['tel'])) 
 				echo $_SESSION['telmessage']['tel']; ?>"></p>
 
 			<p>

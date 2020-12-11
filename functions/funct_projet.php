@@ -1,5 +1,7 @@
 
 <?php
+
+
 	//Partie refaite
 	function get_file_extension($file) {
 		    return substr(strrchr($file,'.'),1);
@@ -58,6 +60,10 @@
 
 
 	function print_formulaire(){
+		global $c;
+		$typeProjets = charge_typeProjet($c);
+
+
 		?>
 			<form name="projet" action="index.php?page=projets" method="POST" enctype="multipart/form-data"></br>
 
@@ -70,6 +76,10 @@
 
 		      	<label>Description</label>
 		      	<textarea name="description"></textarea></br>
+
+		      	<?php
+		      		affiche_typeProjet($typeProjets);
+		      	?>
 
 		        <input type="file" name="image" accept="image/jpeg"/></br>
 		        <input type="submit" name="projet"/>

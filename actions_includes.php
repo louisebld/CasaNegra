@@ -13,6 +13,7 @@ include 'actions/actions_contact.php';
 include 'actions/actions_rdv.php';
 include 'actions/actions_mdp.php';
 
+include 'actions/actions_typeprojet.php';
 
 
 ?>

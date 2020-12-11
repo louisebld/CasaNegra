@@ -62,7 +62,7 @@
 	function print_formulaire(){
 		global $c;
 		$typeProjets = charge_typeProjet($c);
-		var_dump($typeProjets);
+
 
 		?>
 			<form name="projet" action="index.php?page=projets" method="POST" enctype="multipart/form-data"></br>

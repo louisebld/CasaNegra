@@ -2,6 +2,7 @@
 <?php
 	//Partie refaite
 	$projets = charge_projet($c);
+	$typeProjets = charge_typeProjet($c);
 	
 
 
@@ -41,12 +42,13 @@
 				echo "Le fichier $CheminFichier n'a pas été trouvé.<br />\n";
 			}
 			*/
+			$type = $_POST['form_typeProjets'];
 			$date_creation = $_POST['date'];
 			$autor = $_POST['autor'];
 			$description = $_POST['description'];
 			$file_new_name = "diapo" . $nbphotos . ".jpg";
 
-			insert_projet($autor, $description, $file_new_name, $date_creation);
+			insert_projet($autor, $description, $file_new_name, $date_creation, $type);
 	        echo "Success";
 	        unset($_FILES['image']);
 	        header("Location: index.php?page=projets");

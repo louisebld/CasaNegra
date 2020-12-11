@@ -71,8 +71,9 @@
 			    <label>Date</label>
 			    <input type="date" name="date">
 
-			  	<label>Auteur</label>
-			  	<input type="text" name="autor"></br>
+				<?php
+					listederoulemembres();
+				?>
 
 		      	<label>Description</label>
 		      	<textarea name="description"></textarea></br>

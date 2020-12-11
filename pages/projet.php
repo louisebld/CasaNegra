@@ -1,6 +1,3 @@
-<?php
-
-?>
 
 <section>
 		<?php
@@ -8,9 +5,14 @@
 		if (isset($_SESSION['idcompte'])){
 			if (testif_admin($_SESSION['idcompte'])){
 				?>
-					<h2>Ajouter un projet:</h2>
+					<h2>Ajouter un nouveau type de Projet :</h2>
+				<?php
+					form_newTypeProjet();
+				?>
+					<h2>Ajouter un projet :</h2>
 				<?php
 				print_formulaire();
+
 			}
 		}
 	    ?>  
@@ -30,7 +32,7 @@
 	    		<input type="submit" name="Submit">
 	    	</form>
 	    <?php
-
+	    	echo "<h1>Projets de " . $titreProjets . "</h1>";
 	    	affiche_projet($res);
       		
       	?> 

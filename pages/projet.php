@@ -13,19 +13,24 @@
 				print_formulaire();
 			}
 		}
-
 	    ?>  
+
 	    <h2>Nos creations</h2>
-	      
+	      	
+	    	<form name="affiche_projet" action="index.php?page=projets" method="POST">
+	    			<select name="form_typeProjets">
+	    			<option value="allProjets">Tous</option>
+	    			<?php
+					foreach ($typeProjets as $key => $value) {
+						echo '<option value="' . $value['type'] . '">' . $value['type'] . '</option>';
+					}
+					?>
+
+					</select>
+	    		<input type="submit" name="Submit">
+	    	</form>
 	    <?php
 
-	    ?>
-	    	<?php
-	    	affiche_projet($projets);
-      	
+	    	affiche_projet($res);
+      		
       	?> 
-
-
-
-
-</section>

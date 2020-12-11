@@ -1,3 +1,5 @@
+<script type='text/javascript' src='js/verifcontact.js'></script>
+
 <section class="contact">
 	<h2>Nous contacter:</h2>
 

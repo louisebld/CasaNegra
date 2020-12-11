@@ -11,13 +11,13 @@
 
 	}	
 
-	function form_newTypeProjet($typeProjets){
+	function form_newTypeProjet(){
 		?>
 		<div class="form_newTypeProjet">
-			<form name="newTypeProjet" action="index.php?page=admin" method="POST" enctype="multipart/form-data"></br>
+			<form name="newTypeProjet" action="index.php?page=projets" method="POST" enctype="multipart/form-data"></br>
 
 			    <label>Nouveau Type</label>
-			    <input type="type" name="type">
+			    <input type="newType" name="newType">
 
 			    <input type="submit" name="Envoyer_Type">
 			</form>

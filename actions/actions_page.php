@@ -2,6 +2,7 @@
 
 //Recuperation du tableau de l'equipe
 $equipe = charge_equipe($c);
+// données compte
 $compte = charge_compte_mailmotdepasse($c);
 // $avis = charge_avis($c);
 

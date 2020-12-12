@@ -9,10 +9,9 @@ function print_avis($avis){
 
 	echo '<div class="galery_avis">';
 	foreach ($avis as $key => $value) {
-		// Affichage des commentaires
-
-		echo '<div class="box_avis">';
+		//Affichage des commentaires
 		
+		echo '<div class="box_avis">';
 			echo '<div class="autor"><p>Pseudo: ' . $value["name"] . "</p></div>";
 			echo '<div class="commentary"><p>Commentaire: ' . $value["commentary"] . "</p></div>";
 			if (isset($value["answer"])){

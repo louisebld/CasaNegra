@@ -1,3 +1,4 @@
+<!-- On importe le script de vérification du formulaire -->
 <script type='text/javascript' src='js/verifconnexion.js'></script>
 <?php
 	// appel de la fonction pour afficher le formulaire

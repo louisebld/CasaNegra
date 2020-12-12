@@ -1,9 +1,16 @@
 <?php
 
+
+
 function print_avis($avis){
-	//Print toute l'avis contenue dans la base de donnée
+	// BUT : print_avis : Print tous l'avis que contient $avis
+
+	// $avis : tableau associatif contenant les infos lié a chaque commentaire posté par les utilisateurs
+
 	echo '<div class="galery_avis">';
 	foreach ($avis as $key => $value) {
+		// Affichage des commentaires
+
 		echo '<div class="box_avis">';
 		
 			echo '<div class="autor"><p>Pseudo: ' . $value["name"] . "</p></div>";
@@ -18,7 +25,7 @@ function print_avis($avis){
 }
 
 function print_form_avis($idprojet){
-	//Fonction qui permet d'afficher le formulaire qui ajoute un avis
+	// BUT : print_for_avis : Fonction qui permet d'afficher le formulaire qui ajoute un avis
 	//Obligation d'etre connecté, sinon redirection
 	?>
 
@@ -32,6 +39,7 @@ function print_form_avis($idprojet){
 		<p>
 			<?php	
 				echo  '<input id="idprojet" name="idprojet" type="hidden" value= '. $idprojet . ">" ;
+				//Champs invisible qui contient le projet sous lequel le commentaire est ajouté
 			?>
 		</p>
 

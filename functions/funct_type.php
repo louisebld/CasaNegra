@@ -14,10 +14,10 @@
 	function form_newTypeProjet(){
 		?>
 		<div class="form_newTypeProjet">
-			<form name="newTypeProjet" action="index.php?page=projets" method="POST" enctype="multipart/form-data"></br>
+			<form name="newTypeProjet" action="index.php?page=projets" method="POST" enctype="multipart/form-data" onsubmit='javascript: return remplitypeprojet();'></br>
 
 			    <label>Nouveau Type</label>
-			    <input type="newType" name="newType">
+			    <input type="newType" id="newType" name="newType">
 
 			    <input type="submit" name="Envoyer_Type">
 			</form>

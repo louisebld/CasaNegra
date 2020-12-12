@@ -59,7 +59,7 @@ function charge_rdv_admin(){
 
 function recupmembre($membre){
 	global $c;
-	$membres =  mysqli_query($c, "SELECT name FROM equipe ");
+	$membres =  mysqli_query($c, "SELECT fname, name FROM equipe ");
 	$tableau = [];
 	while ($row=mysqli_fetch_assoc($membres)) {
 		$tableau[] = $row;
@@ -70,16 +70,16 @@ function recupmembre($membre){
 
 function recupmembreid($nom){
 	global $c;
-	$idmembre = mysqli_query($c, "SELECT id FROM equipe WHERE name = '$nom'");
+	$idmembre = mysqli_query($c, "SELECT id FROM equipe WHERE fname = '$nom'");
 	$res = mysqli_fetch_assoc($idmembre);
 	return $res['id'];
 }
 
 function recupmemebrenom($id){
 	global $c;
-	$nommembre = mysqli_query($c, "SELECT name FROM equipe WHERE id = '$id'");
+	$nommembre = mysqli_query($c, "SELECT fname FROM equipe WHERE id = '$id'");
 	$res = mysqli_fetch_assoc($nommembre);
-	return $res['name'];
+	return $res['fname'];
 }
 
 

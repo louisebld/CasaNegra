@@ -32,17 +32,17 @@
 			$type = $_POST['form_typeProjets'];
         }
 
-        if (!empty($_POST['date']) || (isset($_POST['date'])){
+        if (!empty($_POST['date']) || (isset($_POST['date']))){
 			$date_creation = $_POST['date'];
 
 			$autor = $_POST['equipe'];
         }
 
-        if (!empty($_POST['equipe']) || (isset($_POST['equipe'])){
+        if (!empty($_POST['equipe']) || (isset($_POST['equipe']))){
 			$autor = $_POST['equipe'];
 		}
 
-		if (!empty($_POST['description']) || (isset($_POST['description'])){
+		if (!empty($_POST['description']) || (isset($_POST['description']))){
 			$description = $_POST['description'];
 		}
 

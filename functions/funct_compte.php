@@ -10,11 +10,12 @@ function print_formulaire_ajout() {
 	<div id="formulaireinscription">
 	<form method="post" action="index.php?page=inscription"
 	onsubmit='javascript: return rempliinscri();'>
+	<!-- On appelle une fonction javascript pour vérifier si les champs sont vides ou non -->
 
 		<p>
 			<input type = "text" placeholder="Nom" name ="nom" id="nominscri" value="<?php if (isset($_SESSION['donnee']['nom'])) 
 																echo $_SESSION['donnee']['nom']; ?>"></p>
-
+<!-- On donne une valeur pour que s'il y a des erreurs les valeurs restent dans le formulaire -->
 			
 
 		<p>
@@ -41,16 +42,16 @@ function print_formulaire_ajout() {
 			}
 
 
-//echo "<script type='text/javascript' src='js/verifconnexion.js'></script>";
-// mis dans connexion 
+ 
 
 function print_formulaire_connexion() {
-	//Affiche le formulaire pour ajouter un nouveau membre
+	//Affiche le formulaire pour se connecter
 
 	?>
 	<div id="formulaireconnexion">
 	<form method="post" action="index.php?page=connexion"
 	onsubmit='javascript: return rempliconn();'>
+	<!-- On appelle une fonction javascript pour vérifier si les champs sont vides ou non -->
 
 
 		<p>
@@ -74,19 +75,21 @@ function print_formulaire_connexion() {
 
 function verificationadressemailmdp($compte, $mail, $motdepasse){
 	// Permet de savoir si un mail et un mot de passe donné corresponde bien à un compte
-	// verification prend les champs corrects
+	// le paramètre compte correspond au tableau associatif contenant les comptes
+	// verification : le booléen
 	$verification=false;
+	// on parcourt les comptes
 	for ($i = 0; $i < count($compte); $i++){
 		$personnecourante=$compte[$i];
-
-// Mettre les deux ensembles sinon marche pas bien
-// car les deux sont réliés
+// si le mail et le mot de passe correspondent on passe le booléen à vrai
+// on ne peut pas avoir deux comptes avec le même mail : pas de soucis de ce côté là
 		if ($mail == $personnecourante['mail'] && $motdepasse == $personnecourante['motdepasse']) {
 			$verification=true;
 		}
 
 	}
-		return $verification;
+// on retourne le booléen
+	return $verification;
 }
 
 
@@ -96,10 +99,11 @@ function verificationadressemailmdp($compte, $mail, $motdepasse){
 // Vérification des éléments du mot de passe
 
 function mdpbonformat($motdepasse) {
+	// pour savoir si le mot de passe est au format que l'on demande
 // le mot de passe doit contenir au moins
 	// une majuscule, une minuscule, un chiffre et un caractère spécial -- mot de passe sécurisé
 	// le mot de passe doit contenir au moins 8 caractères
-
+	// on teste si il y a au moins 1 caractère de chaque 
 	$majuscule = preg_match('@[A-Z]@', $motdepasse);
 	$minuscule = preg_match('@[a-z]@', $motdepasse);
 	$chiffre = preg_match('@[0-9]@', $motdepasse);
@@ -108,22 +112,22 @@ function mdpbonformat($motdepasse) {
 	$caracterespecial = preg_match($car, $motdepasse) ;
 
 	// si toutes les conditions sont réunies
-
 	if($majuscule and $minuscule and $chiffre and $caracterespecial and strlen($motdepasse) >= 8) {
 		$correct=true;
 	}
 	else {
+	// sinon
 		$correct=false;
 	}
-
 	return $correct;
 }
 
 
 
 function print_donnescompte($donnees){
-
-	//Print les données du compte
+// Affiche les données d'un compte
+// données : données du compte : tableau associatif
+	//Affiche les données du compte
 	echo '<div id="donnees">';
 	echo "<p>" . $donnees["prénom"] . " ";
 	echo  $donnees["nom"] . "</p>";
@@ -133,21 +137,22 @@ function print_donnescompte($donnees){
 
 // fonction pour récupérer le nom et le prénom pour l'afficher
 function printnom ($donnees) {
-
+// Afficher le nom et le prénom d'un compte
 	echo $donnees["prénom"] . " " . $donnees["nom"];
-
 }
 
-// affiche tous les comptes sur la page admin 
 
 
 function affichetouscomptes ($donneesdescomptes) {
-
+// affiche tous les comptes sur la page admin 
+// on parcourt les comptes
 	for ($i = 0; $i < count($donneesdescomptes); $i++){
 		echo "<div id='compteutilisateur'>";
 		$comptecourant = $donneesdescomptes[$i];
+		// on appelle la fonction d'affichage
 		print_donnescompte($comptecourant);
-
+		// on met un formulaire pour pouvoir supprimer un compte
+		// champ hidden qui contient l'id : on s'en sert pour supprimer
 		echo "<form method='post' action='index.php?page=pageadmin'>";
 		echo  "<input id='idasuppr' name='idasupprcompte' type='hidden' value= ". $comptecourant['idcompte'] . ">" ;
 		echo "<input type='submit' name='asupprimercompte' id='action' value='Supprimer'/>";
@@ -159,16 +164,20 @@ function affichetouscomptes ($donneesdescomptes) {
 
 
 function affichetouscomptesadmin ($donneesdescomptes) {
-
+// Affiche tous les comptes qui ne sont pas des administrateurs
+	// on parcourt les comptes
 	for ($i = 0; $i < count($donneesdescomptes); $i++){
 		
 		$comptecourant = $donneesdescomptes[$i];
-
+		// si le compte n'est pas admin
+		// on affiche seulement si il n'est pas admin
 		if (testif_admin($comptecourant['idcompte'])==False) {
 		echo "<div id='compteutilisateur'>";
 					print_donnescompte($comptecourant);
 		
-
+		// on met un formulaire pour pouvoir supprimer un compte
+		// champ hidden qui contient l'id : on s'en sert pour supprimer
+					
 		echo "<form method='post' action='index.php?page=pageadmin'>";
 		echo  "<input id='idajout' name='idajout' type='hidden' value= ". $comptecourant['idcompte'] . ">" ;
 		echo "<input type='submit' name='ajouteradmin' id='action' value='Ajouter à ladministration'/> </form>" . "</p>";
@@ -183,7 +192,7 @@ function affichetouscomptesadmin ($donneesdescomptes) {
 // fonction formulaire changement de mot de passe
 
 function print_form_mdp() {
-	//Affiche le formulaire pour ajouter un nouveau membre
+	//Affiche le formulaire pour changer de mot de passe
 
 	?>
 	<div id="formulairemdp">

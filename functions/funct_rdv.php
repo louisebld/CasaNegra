@@ -1,11 +1,4 @@
 <?php
-//a revoir 
-function changedate($date){
-	setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
-	return strftime($date);
-
-
-}
 
 
 function affiche_rdv($rdv){
@@ -15,7 +8,7 @@ function affiche_rdv($rdv){
 	foreach ($rdv as $key => $value) {
 
 			echo'<div class="rdvbox">';
-			echo'<p> Le : ' . $value["daterdv"] . "</p>"; // voir pour retravailler le format de la date 
+			echo'<p> Le : ' . changedate($value["daterdv"]) . "</p>"; // voir pour retravailler le format de la date 
 			echo'<p> A : ' . $value["heurerdv"] . "</p> </div>";
 			echo'<p> RDV avec : ' . recupmemebrenom($value["idmembre"]) . "</p>";
 			echo'</div>';
@@ -45,7 +38,7 @@ function print_form_rdv($idclient){
 			<?php	
 				echo  '<input id="idclient" name="idclient" type="hidden" value= '. $idclient . ">" ;
 				?>
-		<label> Rdv avec : </label>
+		<label> Rendez-vous avec : </label>
 		<?php
 				listederoulemembres();
 			?>
@@ -61,13 +54,12 @@ function print_form_rdv($idclient){
 function listederoulemembres(){
 	global $listemembres; // le pb vient de la ????
 	?>
-	<select name="equipe" size="1">
+	<select name="equipe">
 		<?php
 
 	for ($i = 0; $i < count($listemembres); $i++){
 	$membrecourant = $listemembres[$i];
-	var_dump($listemembres[$i]);
-	echo "<option>" . $membrecourant['name'] . " ". $membrecourant['fname'] . "</option>" ; // equipe ???
+	echo "<option>" . $membrecourant['fname'] . "</option>" ; // equipe ???
 }
 ?>
 </select>

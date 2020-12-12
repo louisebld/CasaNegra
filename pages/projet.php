@@ -1,3 +1,4 @@
+<script type='text/javascript' src='js/veriftypeprojet.js'></script>
 
 <section>
 		<?php
@@ -19,19 +20,15 @@
 
 	    <h2>Nos creations</h2>
 	      	
-	    	<form name="affiche_projet" action="index.php?page=projets" method="POST">
-	    			<select name="form_typeProjets">
-	    			<option value="allProjets">Tous</option>
-	    			<?php
-					foreach ($typeProjets as $key => $value) {
-						echo '<option value="' . $value['type'] . '">' . $value['type'] . '</option>';
-					}
-					?>
 
-					</select>
-	    		<input type="submit" name="Submit">
-	    	</form>
+	    <h5> Cherchez les projets par type </h5>
 	    <?php
+			print_formulairechoixtype();
+			?>
+		<h5> Cherchez les projets réalisés par un membre de l'équipe </h5>
+		<?php 
+			listeoptionmembre();
+
 	    	echo "<h1>Projets de " . $titreProjets . "</h1>";
 	    	affiche_projet($res);
       		

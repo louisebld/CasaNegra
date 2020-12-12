@@ -1,33 +1,36 @@
 <?php
-	//Verifie les données du fomrulaire d'ajout de commentaire.
-	
+
+	// -----------------------------Ajoute de commentaire---------------------
 
 	if (isset($_POST['envoyer_com'])) {
 
 
 
-		//pas connecté
-		
+			
 			$idcompte = $_SESSION['idcompte'];
-			var_dump($idcompte);
+			//On recupere l'id de l'auteur
+
+
 			
 			$sesdonnees = recupedonnees($idcompte);
 			$name = $sesdonnees['prénom'];
-			$com = $_POST['com'];
+
+			if (empty($_POST["com"]) || !trim($_POST['com'])){
+				$com = $_POST['com'];
+			}
+			
 			$idprojet = $_POST['idprojet'];
+			//recuperation de l'id du projet, pour savoir a quel projet correspond le commentaire
 
 
 			insert_com($com, $name, $idprojet);
+			// Insetion du commentaire dans la table avis
 
 			header("Location:index.php?page=projets");
-				
+			// Redirection vers la page projet
 	
 
 		}
 
-/*		var_dump($_POST);*/
-
-
-// Fin INSCRIPTION
 
 ?>

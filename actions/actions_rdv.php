@@ -3,7 +3,7 @@
 // Données de la bdd équipe
 $listemembres = recupmembre ($c);
 
-//-------------------------------------------- verif formulaire rdv  
+//-------------------------------------------- verif formulaire rdv  -------------------------------
 
 if (isset($_POST['equipe'])){
 	$err=[];

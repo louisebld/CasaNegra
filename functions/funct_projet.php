@@ -4,11 +4,17 @@
 
 	//Partie refaite
 	function get_file_extension($file) {
-		    return substr(strrchr($file,'.'),1);
+		// BUT : get_file_extension : permet d'obtenir extension d'un fichier, decoupe le nom d'un fichier a partir d'un point
+
+		// $file : contient le nom d'un fichier
+
+	    return substr(strrchr($file,'.'),1);
 	}
 
 	function affiche_image($nomprojet){
-		//Prends en argument un nom d'image, et ressort une balise img avec cette derniere
+		// BUT : affiche_image : Prends en argument un nom d'image, et ressort une balise img avec cette derniere qui permet de l'afficher
+
+		// $nomprojet : 
 
 		return $img = '<img src="./projets/' . $nomprojet . '" alt="projets" class="img_projet"/>';
 

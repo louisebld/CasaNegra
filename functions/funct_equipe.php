@@ -37,5 +37,24 @@ echo '<div class="equipeadmin">';
 }
 
 
+function listeoptionmembre(){
+	global $listemembres; // le pb vient de la ????
+	?>		
+	<form name="affiche_projetequipe" action="index.php?page=projets" method="POST">
+	    			<!-- <select name="form_typeProjets"> -->
+	    			<!-- <option value="allProjets">Tous</option> -->
+	    			<input type='radio' id='equipe' name='projetequipe' value="allProjets" checked >
+	    			<label for='fname'>Tous</label>
+	    <?php
+	foreach ($listemembres as $key => $value) {
+  					echo "<input type='radio' id='equipe' name='projetequipe' value=" . "'" . $value['fname'] . "'" . ">";
+					echo "<label for='fname'>" . $value['fname'] . "</label>";
+					} ?>
+		    <input type="submit" name="Submit" value="Chercher">
+	    	</form>
+<?php	
+}
+
+
 
 ?>

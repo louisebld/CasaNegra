@@ -68,7 +68,7 @@ function printformulairemetier() {
 	<form method="post" action="index.php?page=pageadmin"
 	onsubmit='javascript: return remplimetier();'>
 
-		<p><input type = "text" placeholder="Métier" name ="metier" id="metier" ></p>
+		<p><input type = "text" id="newmetier" placeholder="Métier" name ="metier"></p>
 		<p><input type="submit" name="envoiemetier" id="action" value="Ajouter"/></p>
 	</form>
 </div>
@@ -130,6 +130,13 @@ function printcompteur($compteur) {
 	echo "<p>";
 	echo $compteur["COUNT(*)"];
 	echo "</p>";
+}
+
+
+// pour changer le format de date dans admin pour les messages et dans rendez-vous
+function changedate($date){
+	setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
+	return strftime('%x', strtotime($date));
 }
 
 

@@ -97,6 +97,25 @@ function projetexiste($nom){
 		}
 
 
+		function charge_projetPersonne($aAfficher){
+			global $c;
+			
+			$sql = "SELECT * FROM projet WHERE autor = '$aAfficher'";
+			$result=  mysqli_query($c, $sql);
+
+			//on met dans un tableau
+			$tableau = [];
+			while ($row=mysqli_fetch_assoc($result)) {
+				$tableau[] = $row;
+			}
+			//var_dump($tableau);
+			return $tableau;
+		}
+		
+//Si besoin de faire apparaitre le nombre de projets
+//Ne pas oublier d'incrementer
+		
+
 		function charge_nbphotos($c){
 			// BUT : charge_nbphotos : charge le nombre de photos, permet de recuperer ce nombre de de nommer les fichiers plus tard
 

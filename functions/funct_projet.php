@@ -77,8 +77,9 @@
 			    <label>Date</label>
 			    <input type="date" name="date">
 
-			  	<label>Auteur</label>
-			  	<input type="text" name="autor"></br>
+				<?php
+					listederoulemembres();
+				?>
 
 		      	<label>Description</label>
 		      	<textarea name="description"></textarea></br>
@@ -92,6 +93,36 @@
       		</form>
 		<?php
 	}
+
+
+
+function print_formulairechoixtype() {
+	global $typeProjets;
+?>
+	    	<form name="affiche_projet" action="index.php?page=projets" method="POST">
+	    			<!-- <select name="form_typeProjets"> -->
+	    			<!-- <option value="allProjets">Tous</option> -->
+	    			<input type='radio' id='equipe' name='form_typeProjets' value="allProjets" checked >
+	    			<label for='fname'>Tous</label>
+
+	    			<?php
+					foreach ($typeProjets as $key => $value) {
+  						echo "<input type='radio' id='equipe' name='form_typeProjets' value=" . "'" . $value['type'] . "'" . ">";
+						echo "<label for='fname'>" . $value['type'] . "</label>";
+
+					}
+
+					?>
+<!-- echo '<option value="' . $value['type'] . '">' . $value['type'] . '</option>'; -->
+					<!-- </select> -->
+	    		<input type="submit" name="Submit" value="Chercher">
+	    	</form>
+<?php
+
+}
+
+
+
 
 
 

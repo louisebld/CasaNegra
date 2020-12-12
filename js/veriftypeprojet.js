@@ -1,12 +1,10 @@
-function remplimetier(){
- 
+function remplitypeprojet(){
     champ = '';
-
-     if(document.getElementById("newmetier").value == ""){
-        champ += "\n 'Le métier'";
+ 
+    if(document.getElementById("newType").value == ""){
+        champ += "\n 'Le type'";
     }
  
-
     if(champ == ""){
         return true;
     }
@@ -14,5 +12,4 @@ function remplimetier(){
         alert("Les champs suivants doivent être remplis :" + champ);
         return false;
     }
-
 }

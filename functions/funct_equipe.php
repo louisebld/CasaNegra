@@ -3,6 +3,7 @@
 function print_equipe($equipe){
 	// Affiche les membres de l'équipe avec leur informations
 	// equipe : tableau associatif qui contient chaque membre de l'équipe
+	
 	echo '<div class="equipe">';
 	// on parcourt la totalité
 	foreach ($equipe as $key => $value) {

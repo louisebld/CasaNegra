@@ -32,11 +32,6 @@
 
 	}
 
-// peut-être suppression de type
-// on peut insérer un projet vide : verif
-// supprimer un projet
-
-
 
 // ------------------------------ AFFICHAGE PROJET EQUIPE ---------------------------------------
 

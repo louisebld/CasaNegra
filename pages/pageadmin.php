@@ -29,8 +29,11 @@
 </div>
 </center>
 
-
-
+<!-- <?php
+//     $dateMySQL = "2018-04-27";
+// setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
+// echo strftime('%A %d %B, %Y', strtotime($dateMySQL)). '<br>';
+?> -->
 
 
 

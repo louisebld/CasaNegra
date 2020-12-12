@@ -9,18 +9,19 @@ if (isset($_POST['connexion'])) {
 
 // appel à la fonction pour savoir si le mail et le mdp correspondent
 	$verif = verificationadressemailmdp($compte, $_POST["mail"], $_POST["motdepasse"]);
+// initialisation variable stockage des erreurs
 	$erreur=[];
-// non vide
-	
-	// if (empty($_POST["motdepasse"])) {
-	// 	$erreur[]="Vous n'avez pas renseigné le mot de passe";
+// vérification motdepasse non vide	
+	if (empty($_POST["motdepasse"])) {
+		$erreur[]="Vous n'avez pas renseigné le mot de passe";
 
-	// }
+	}
+// vérification mail non vide	
 
-	// if (empty($_POST["mail"])) {
-	// 	$erreur[]="Vous n'avez pas renseigné l'adresse mail";
+	if (empty($_POST["mail"])) {
+		$erreur[]="Vous n'avez pas renseigné l'adresse mail";
 
-	// }
+	}
 
 // Si on a des champs vide
 	if (count($erreur)>0) {
@@ -33,7 +34,6 @@ if (isset($_POST['connexion'])) {
 
 // Si il n'y a pas deux valeurs correctes
 	elseif ($verif==false) {
-		//$_SESSION["incorrect"]=verificationadressemailmdp($compte, $_POST["mail"], $_POST["motdepasse"]);
 		// on met le tableau dans la variable de session
 		unset($_SESSION["faute"]);
 		// on change la valeur de la variable de session
@@ -58,7 +58,7 @@ if (isset($_POST['connexion'])) {
 // on le passe en connecté
 		$_SESSION['connected']=true;
   		
-		// redirection vers une page membre
+		// redirection vers une page moncompte
 		header('Location: index.php?page=moncompte');	
 			
 	}

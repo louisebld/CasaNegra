@@ -112,21 +112,6 @@ function projetexiste($nom){
 			return $tableau;
 		}
 
-
-		function charge_projetPersonne($aAfficher){
-			global $c;
-			
-			$sql = "SELECT * FROM projet WHERE autor = '$aAfficher'";
-			$result=  mysqli_query($c, $sql);
-
-			//on met dans un tableau
-			$tableau = [];
-			while ($row=mysqli_fetch_assoc($result)) {
-				$tableau[] = $row;
-			}
-			//var_dump($tableau);
-			return $tableau;
-		}
 		
 //Si besoin de faire apparaitre le nombre de projets
 //Ne pas oublier d'incrementer

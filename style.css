@@ -523,7 +523,11 @@ figure {
   overflow: auto;
   word-wrap: break-word;
   overflow-x: hidden;
+
+  margin-bottom: 30px;
+
 }
+
 
 .projet img {
   width:100%;
@@ -531,9 +535,12 @@ figure {
   max-height:800px;
 }
 
+.box_avis{
+  background-color: #D0D2D3;
+}
+
 .commentary {
   margin-bottom: 65px;
-  background-color: #FDDDB3;
   text-align: left;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -541,18 +548,87 @@ figure {
 
 .autor {
 
-  background-color: #FDDDB3;
   text-align: left;
   border-radius: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .fig_projet{
-  background-color: #FDDDB3;
-  text-align: left;
-  border-radius: 5px;
-  margin-bottom: 5px;
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+
+  margin: 0 auto;
+
+  padding: 5px;
+  font-size: 20px;
+
+  transition-duration: 1.8s;
+  margin-bottom: 20px
+
 }
+
+.fig_projet:hover{
+  font-size: 21px; 
+  background-color: #D0D2D3;
+}
+
+.imgProjet{
+  transition: 2s;
+  transition-duration: 2s;
+
+}
+
+
+.imgProjet:hover{
+  cursor: pointer;
+
+}
+
+.description h2{
+   margin-right: 10px;
+}
+
+.realProjet h2{
+   margin-right: 10px;
+}
+
+
+.dateCrea, .description, .realProjet{
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #EFF1F1;
+
+}
+
+.dateCrea h2{
+  margin-right: 10px;
+}
+
+.dateCrea p{
+  font-size: 18px;
+}
+
+.projet .commentaire{
+  background-color: #EFF1F1;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 8px;
+}
+
+.sectionCommentaire{
+  background-color: #EFF1F1;
+
+
+  padding-bottom: 8px; 
+}
+
+
+
+
 
 /*figcaption {
 font-size: 20px;

@@ -28,7 +28,7 @@
         // Permet de deplacer le fichier initial dans notre dossier projets
         
         // On recupere les information du projet
-        if (!empty($_POST['form_typeProjets']) || (isset($_POST['form_typeProjets'])){
+        if (!empty($_POST['form_typeProjets']) || (isset($_POST['form_typeProjets']))){
 			$type = $_POST['form_typeProjets'];
         }
 

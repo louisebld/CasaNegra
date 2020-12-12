@@ -40,7 +40,7 @@ function print_contact_notok($contact){
 	foreach ($contact as $key => $value) {
 		$sesdonnees = recupedonnees ($value['idcompte']);
 		echo "<tr>";
-		echo "<td>" . $value['ladate'] . "</td>";
+		echo "<td>" . changedate($value['ladate']) . "</td>";
 		echo "<td>" . $sesdonnees['prénom'] . " " . $sesdonnees['nom'] . "</td>";
 		echo "<td>" . $value['tel'] . "</td>";
 		echo "<td>" . $value['message'] . "</td>";
@@ -72,7 +72,7 @@ function print_contact_ok($contact){
 	foreach ($contact as $key => $value) {
 		$sesdonnees = recupedonnees ($value['idcompte']);
 		echo "<tr>";
-		echo "<td>" . $value['ladate'] . "</td>";
+		echo "<td>" . changedate($value['ladate']) . "</td>";
 		echo "<td>" . $sesdonnees['prénom'] . " " . $sesdonnees['nom'] . "</td>";
 		echo "<td>" . $value['tel'] . "</td>";
 		echo "<td>" . $value['message'] . "</td>";

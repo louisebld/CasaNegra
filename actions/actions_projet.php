@@ -44,7 +44,7 @@
 			*/
 			$type = $_POST['form_typeProjets'];
 			$date_creation = $_POST['date'];
-			$autor = $_POST['autor'];
+			$autor = $_POST['equipe'];
 			$description = $_POST['description'];
 			$file_new_name = "diapo" . $nbphotos . ".jpg";
 

@@ -4,17 +4,16 @@
 table avis:
 	id: int
 	idautor: int
+	name : varchar 50 
 	commentary: text 750
 	answer: text 500
 	
 */
 
 function insert_com($com, $name, $idprojet){
-	//fonction qui ajoute un commentaire dans la table commentaire
+	// BUT : insert_com : fonction qui ajoute un commentaire dans la table commentaire
 	global $c;
-	var_dump($com);
-	var_dump($name);
-	var_dump($idprojet);
+
 	
 	$sql = "INSERT INTO avis (idprojet, name, commentary) VALUES ($idprojet, '$name', '$com')";
 	mysqli_query($c, $sql);
@@ -23,8 +22,9 @@ function insert_com($com, $name, $idprojet){
 }
 
 function charge_avis($idprojet){
-	//Fonction qui renvoie un tableau de commentaire avec une reponse (si existe) and un auteur sur un projet precis
-	//--------------------Il y a un pb dans le where en dessous-----------------
+	// BUT : charge_avis : Fonction qui renvoie un tableau de commentaire avec une reponse (si existe) and un auteur sur un projet precis
+
+	// $idprojet : integer, representant l'id du projet pour le commentaire
 
 	global $c;
 	$sql = "SELECT idprojet, name, commentary FROM avis WHERE idprojet = $idprojet";
@@ -35,13 +35,15 @@ function charge_avis($idprojet){
 	while ($row=mysqli_fetch_assoc($result)) {
 		$tableau[] = $row;
 	}
-	//var_dump($tableau);
+
 	return $tableau;
 }
 
 
 function return_pseudo($idcompte){
-	//fonction qui renvoie un peusdo, via l'id du membre connecté
+	// BUT : return_pseudo : fonction qui renvoie un peusdo, via l'id du membre connecté
+
+	// $idcompte : integer, representant l'id du projet pour le commentaire
 
 	global $c;
 	$sql = "SELECT name FROM compte WHERE idcompte='$idcompte'";

@@ -43,7 +43,9 @@ function print_contact_notok($contact){
 		// on récupère l'id du compte pour afficher le nom de la personne
 		$sesdonnees = recupedonnees ($value['idcompte']);
 		echo "<tr>";
+
 		// on change la date
+
 		echo "<td>" . changedate($value['ladate']) . "</td>";
 		echo "<td>" . $sesdonnees['prénom'] . " " . $sesdonnees['nom'] . "</td>";
 		echo "<td>" . $value['tel'] . "</td>";

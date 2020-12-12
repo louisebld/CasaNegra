@@ -2,6 +2,9 @@
 
 
 	function insert_typeProjet($newType){
+		// BUT : insert_typeProjet : Insere un nouveau type dans la bdd typeprojet
+
+		// $newType : chaine de carractere conetnant le nom du type à ajouter
 
 		global $c;
 		$sql = "INSERT INTO typeprojet (type) VALUES ('$newType')";
@@ -10,7 +13,7 @@
 
 
 	function charge_typeProjet($c){
-		//Fonction qui renvoie un tableau de commentaire avec une reponse (si existe) and un auteur sur un projet precis
+		// BUT : charge_typeProjet : Fonction qui renvoie un tableau de commentaire avec une reponse (si existe) and un auteur sur un projet precis
 
 			
 		$sql = "SELECT * FROM typeprojet ";
@@ -21,6 +24,6 @@
 		while ($row=mysqli_fetch_assoc($result)) {
 			$tableau[] = $row;
 		}
-		//var_dump($tableau);
+
 			return $tableau;
 	}

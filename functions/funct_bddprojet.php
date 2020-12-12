@@ -1,19 +1,12 @@
 <?php
-	/*table projet
-		id: int AI
-		name : -
-		date_creation: date
-		idautor: int
-		idcom: int*/
-
-
-
-
-//verifs pour l'insertion
 
 function datepaspassee($date){
-	//init date ajd
+	// BUT : datepaspassee : 
+
+	// Argument : 
+
 	$dateajd = date('d-m-y');
+	// On récupère la date d'aujourd'hui
 
 	if($dateajd>$date){
 		return false;
@@ -27,9 +20,14 @@ function datepaspassee($date){
 }
 
 function projetexiste($nom){
-	// retourne si le projet existe deja dans la base de donnée oui ou non
+	// BUT : projetexiste : Cherche dans la base de donnée si le projet existe déjà
+
+	// $nom : nom du projet, string
+
 	global $c;
-	// Je fais une recherche dans la base à partir de l'adresse mail
+
+	// Je fais une recherche dans la base à partir de du $nom
+
 	$projet = mysqli_query($c, "SELECT * FROM projet WHERE name = '".$nom."'");
 	$compteur = mysqli_num_rows($projet);
 	if ($compteur>0) {
@@ -49,7 +47,9 @@ function projetexiste($nom){
 
 
 	  	function insert_projet($autor, $description, $nomprojet, $date_creation, $type){
-			//Fonction qui insere un projet dans la table projet, permet de stocker les infos lié au projet
+			// BUT : insert_projet : Fonction qui insere un 'projet' dans la table projet, permet de stocker les infos lié au projet
+
+	  		// tous les paramètres, on se sert des variables en paramètres pour inserer dans la base des données les informations
 
 			global $c;
 			$sql = "INSERT INTO projet (nomprojet, date_creation, autor, description, type) VALUES ('$nomprojet', '$date_creation', '$autor', '$description', '$type')";
@@ -58,26 +58,49 @@ function projetexiste($nom){
 
 
 		function charge_projet($c){
-			//Fonction qui renvoie un tableau de commentaire avec une reponse (si existe) and un auteur sur un projet precis
+			// BUT : charge_projet : Fonction qui renvoie un tableau de commentaire avec une reponse (si existe) and un auteur sur un projet precis
+			// charge les données depuis la bdd 'projet'
 
 			
 			$sql = "SELECT * FROM projet";
 			$result=  mysqli_query($c, $sql);
 
-			//on met dans un tableau
+			// On met dans un tableau
 			$tableau = [];
 			while ($row=mysqli_fetch_assoc($result)) {
 				$tableau[] = $row;
 			}
-			//var_dump($tableau);
+
 			return $tableau;
 		}
 
 
 		function charge_projetType($aAfficher){
+			// BUT : charge_projetType : prends un type de projet, et charge tous les projets liés à ce type
+
+			// $aAfficher : contient une chaine de caractere avec un type de projet
+
 			global $c;
 			
 			$sql = "SELECT * FROM projet WHERE type = '$aAfficher'";
+			// Effectue une recherche sur le type souhaité dans notre bdd projet
+
+			$result=  mysqli_query($c, $sql);
+
+			// On met dans un tableau
+			$tableau = [];
+			while ($row=mysqli_fetch_assoc($result)) {
+				$tableau[] = $row;
+			}
+
+			return $tableau;
+		}
+
+
+		function charge_projetPersonne($aAfficher){
+			global $c;
+			
+			$sql = "SELECT * FROM projet WHERE autor = '$aAfficher'";
 			$result=  mysqli_query($c, $sql);
 
 			//on met dans un tableau
@@ -108,22 +131,26 @@ function projetexiste($nom){
 //Si besoin de faire apparaitre le nombre de projets
 //Ne pas oublier d'incrementer
 		
+
 		function charge_nbphotos($c){
-			//charge le nombre de photos, permet de recuperer ce nombre de de nommer les fichiers obtenues
+			// BUT : charge_nbphotos : charge le nombre de photos, permet de recuperer ce nombre de de nommer les fichiers plus tard
+
 	
 			$sql = "SELECT nbphotos FROM photos WHERE 1";
 
 			$result=  mysqli_query($c, $sql);
 
-			//on met dans un tableau
+			// On met dans un tableau
 			$row=mysqli_fetch_assoc($result);
 
-			//var_dump($tableau);
+
 			return $row['nbphotos'];
 		}
 
 		function increment_nbphotos($c){
-			//Incremente le nombre de photos
+			// BUT : increment_nbphotos : Incremente le nombre de photos dans la base de donnée 
+
+			// augmente de 1 le nombre de photos
 			$sql = "UPDATE photos 
 					SET nbphotos = nbphotos + 1 
 					WHERE 1";
@@ -132,6 +159,8 @@ function projetexiste($nom){
 
 
 function countprojet () {
+	// BUT : countprojet : Permet d'obtenir le nombre de projets dans la bdd projet
+
 	global $c;
 	$req=mysqli_query($c, "SELECT COUNT(*) FROM projet");
 	$result=mysqli_fetch_assoc($req);

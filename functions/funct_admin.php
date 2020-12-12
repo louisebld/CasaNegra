@@ -145,7 +145,9 @@ function printcompteur($compteur) {
 
 // pour changer le format de date dans admin pour les messages et dans rendez-vous
 function changedate($date){
+
 	// fonction qui change l'affichage de la date
+
 	setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
 	return strftime('%x', strtotime($date));
 }

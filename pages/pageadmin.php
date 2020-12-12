@@ -1,3 +1,4 @@
+<!-- On importe le script de vérification du formulaire -->
 <script type='text/javascript' src='js/verifmembreequipe.js'></script>
 <script type='text/javascript' src='js/verifmetier.js'></script>
 
@@ -29,14 +30,6 @@
 </div>
 </center>
 
-<!-- <?php
-//     $dateMySQL = "2018-04-27";
-// setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
-// echo strftime('%A %d %B, %Y', strtotime($dateMySQL)). '<br>';
-?> -->
-
-
-
 
 
 <div id="premiererangee">
@@ -44,6 +37,7 @@
 <h2> Liste des membres inscrits </h2>
 
 	<?php
+// appel de la fonction d'affichage de tous les membres inscrits
 	affichetouscomptes($donneescomptes);
 	?>
 </div>
@@ -55,7 +49,7 @@
 
 <?php
 
-
+// appel de la fonction d'affichage des membres de l'équipe
 print_equipeadmin($equipe);
 
 ?>
@@ -67,13 +61,15 @@ print_equipeadmin($equipe);
 
 <?php
 
-
+// Appel de la fonction d'affichage du formulaire pour ajouter un membre dans l'équipe
 print_formulairenouveauequipe();
 ?>
 
 <?php
+// Si il y a des erreurs dans les vérifications
 if (isset($_SESSION['fauteequipe'])) {
 			echo "<ul>";
+			// on affiche chaque erreur
 			foreach($_SESSION["fauteequipe"] as $faute)
 				echo "<li>$faute</li>";
 			echo "</ul>";
@@ -84,8 +80,6 @@ if (isset($_SESSION['fauteequipe'])) {
 <!-- <script>
 var meserreurs = <?php //echo json_encode($_SESSION['fauteequipe']) ?>;
 array1.forEach(element => console.log(element));
-
-
 
 </script> -->
 
@@ -98,10 +92,11 @@ array1.forEach(element => console.log(element));
 <h2> Ajouter un métier </h2>
 <?php
 
+// Appel de la fonction pour afficher le formulaire d'ajout de métier
 printformulairemetier();
-
+// Si il y a des erreurs dans les vérifications
 if (isset($_SESSION['fautemetier'])) {
-
+	// on affiche chaque erreur
 	foreach($_SESSION["fautemetier"] as $faute)
 		echo $faute;
 }
@@ -114,9 +109,11 @@ if (isset($_SESSION['fautemetier'])) {
 <h2> Supprimer un métier </h2>
 
 <?php
+// Appel de la fonction d'affichage du formulaire de suppression de métier
 print_formulairesupprmetier();
 
-
+// Si il y a des erreurs dans les vérifications
+// ici si le métier est utilisé par un membre de l'équipe
 if (isset($_SESSION['metierutilise'])) {
 
 	echo $_SESSION['metierutilise'];
@@ -131,6 +128,7 @@ if (isset($_SESSION['metierutilise'])) {
 <div id="listeadmin">
 <h2> Liste des admins </h2>
 <?php
+// Appel de la fonction d'affichage de la liste des admins
 print_listeadmin($listeadmin);
 ?>
 
@@ -140,6 +138,7 @@ print_listeadmin($listeadmin);
 <h2> Ajouter un membre à l'administration </h2>
 
 <?php
+// Appel de la fonction d'affichage de la liste des utilisateurs qui ne sont pas admins
 affichetouscomptesadmin ($donneescomptes);
 // On affiche à la fois le nom + l'email car deux emails différentes peuvent avoir les mêmes nom et aussi c'est plus simple :)
 
@@ -154,7 +153,7 @@ affichetouscomptesadmin ($donneescomptes);
 <h2>Vos messages non traités :</h2>
 
 <?php
-
+// Appel de la fonction d'affichage des messages non traités
 print_contact_notok($contactatraiter);
 ?>
 
@@ -163,7 +162,7 @@ print_contact_notok($contactatraiter);
 <h2> Anciens messages (traité) </h2>
 
 <?php
-
+// Appel de la fonction d'affichage des messages traités
 print_contact_ok($contactok);
 ?>
 </div>
@@ -172,6 +171,8 @@ print_contact_ok($contactok);
 "<div id='compteur'>
 <h2> Nombre d'utilisateurs inscrits </h2>
 <?php
+// Appel de la fonction d'affichage des compteurs
+// compteurcompte : variable où est stocké le nombre de comptes
 printcompteur($compteurcompte);
 
 ?>
@@ -179,7 +180,8 @@ printcompteur($compteurcompte);
 <div id='compteur'>
 <h2> Nombre de projets réalisés </h2>
 <?php
-
+// Appel de la fonction d'affichage des compteurs
+// compteurprojet : variable où est stocké le nombre de projets
 printcompteur($compteurprojet);
 
 ?>

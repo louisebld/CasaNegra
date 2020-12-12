@@ -1,17 +1,22 @@
 <?php
 
+// ---------------------------------- CHANGEMENT MOT DE PASSE
+
+// vérification envoi
 if (isset($_POST['changementmdp'])) {
 
 // appel à la fonction pour savoir si l'ancien mdp est correct
 	$verif = verificationadressemailmdp($compte, $_SESSION["comptedonnee"]['mail'], $_POST["oldmdp"]);
+// initialisation tableau erreur
 	$erreur=[];
-// non vide
-	
+
+
+// ancien mot de passe vide	
 	if (empty($_POST["oldmdp"])) {
 		$erreur[]="Vous n'avez pas renseigné l'ancien mot de passe";
 
 	}
-
+// nouveau mot de passe vide
 	if (empty($_POST["newmdp"])) {
 		$erreur[]="Vous n'avez pas renseigné le nouveau mot de passe";
 
@@ -36,7 +41,7 @@ if (isset($_POST['changementmdp'])) {
 		// actualisation
 		$_SESSION["fautechangementmdp"]=$erreur;
 	}
-
+// si le nouveau mot de passe n'est pas au bon format
 	elseif (!mdpbonformat($_POST["newmdp"])) {
 
 		$erreur[]="Votre nouveau mot de passe n'a pas le format demandé";
@@ -44,7 +49,7 @@ if (isset($_POST['changementmdp'])) {
 
 	}
 
-// Si les deux valeurs sont correctes =2
+// Si les deux valeurs sont correctes
 // on se connecte
 	else {
 // on enlève toutes les variables de session d'erreur

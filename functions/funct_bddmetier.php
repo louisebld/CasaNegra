@@ -3,17 +3,15 @@
 // pour récupérer l'id du métier à partir de son nom
 
 function recuperemetier($met) {
+// variable globale base de donnée
 	global $c;
 
-	//var_dump($met); // pb pas de message qd architecte d'intérieur
-	//$met='Tapissier';
-	// marche plus ...
-// on selectionne le métier que l'on veut à partir de son nom
 	// Je fais une recherche dans la base à partir du métier
-	// $test = ".$metier.";
 	$metier = mysqli_query($c, "SELECT id FROM metier WHERE metier = '$met'");
-	$resultat = mysqli_fetch_assoc($metier);
+	// on selectionne le métier que l'on veut à partir de son nom
 
+	$resultat = mysqli_fetch_assoc($metier);
+	// on retourne l'id
 	$id=$resultat['id'];
 	return $id;
 

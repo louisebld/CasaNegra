@@ -5,6 +5,7 @@
 			print_form_avis();
 			if (isset($_SESSION['faute'])) {
 				echo "<ul>";
+			// on affiche chaque erreur
 				foreach($_SESSION["faute"] as $faute){
 					echo "<li>$faute</li>";
 				}

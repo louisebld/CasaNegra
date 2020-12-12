@@ -55,10 +55,7 @@ function listeoptionmembre(){
 	    			<label for='fname'>Tous</label>
 	    <?php
 	// pour chaque membre on affiche son fname dans un formulaire radio
-		foreach ($listemembres as $key => $value) {
-	    			<input type='radio' id='equipe' name='projetequipe' value="allProjets" checked >
-	    			<label for='fname'>Tous</label>
-	    <?php
+
 	foreach ($listemembres as $key => $value) {
   					echo "<input type='radio' id='equipe' name='projetequipe' value=" . "'" . $value['fname'] . "'" . ">";
 					echo "<label for='fname'>" . $value['fname'] . "</label>";

@@ -2,13 +2,14 @@
 
 
 function print_formulairenouveauequipe() {
-	//Affiche le formulaire pour ajouter un nouveau membre
+	//Affiche le formulaire pour ajouter un nouveau membre dans l'équipe
 
 	?>
 	<div id="formulairequipe">
 		<form method="post" action="index.php?page=pageadmin"
 		onsubmit='javascript: return remplimembre();'>
-
+<!-- On appelle la fonction javascript pour vérifier si le formulaire est rempli -->
+<!-- On affiche une valeur dans le formulaire si il y a des erreurs c-à-d on garde les données -->
 			<p>
 				<input type = "text" placeholder="Nom" name ="nom" id="nom" value="<?php if (isset($_SESSION['donnee']['nom'])) 
 																echo $_SESSION['donnee']['nom']; ?>" ></p>
@@ -21,6 +22,7 @@ function print_formulairenouveauequipe() {
 																echo $_SESSION['donnee']['age']; ?>" ></p>
 
 			<?php
+// appel fonction liste déroulante des métiers
 			listederoulmetier ();
 			?>
 
@@ -41,11 +43,13 @@ function print_formulairenouveauequipe() {
 	}
 
 function listederoulmetier () {
+// Afficher une liste déroulante des métiers
 	global $listemetier;
+// on prend la variable dans lequel sont stockées les données des métiers
 ?>
 	<select name="metier" size="1">
 <?php
-
+// pour chacun des métiers on le met dans une "case"
 
 for ($i = 0; $i < count($listemetier); $i++){
 	$metiercourant = $listemetier[$i];
@@ -62,11 +66,12 @@ for ($i = 0; $i < count($listemetier); $i++){
 // Formulaire pour ajouter un métier
 
 function printformulairemetier() {
-
+// Afficher le formulaire d'ajout d'un métier
 ?>
 <div id="formulaireajoutmetier">
 	<form method="post" action="index.php?page=pageadmin"
 	onsubmit='javascript: return remplimetier();'>
+<!-- Appel de la fonction javascript voir si le formulaire est vide -->
 
 		<p><input type = "text" id="newmetier" placeholder="Métier" name ="metier"></p>
 		<p><input type="submit" name="envoiemetier" id="action" value="Ajouter"/></p>
@@ -82,7 +87,7 @@ function print_formulairesupprmetier() {
 	?>
 	<div id="formulairesupprmetier">
 		<form method="post" action="index.php?page=pageadmin">
-
+<!-- On appelle la fonction pour la liste déroulante des métiers pour le choix pour supprimer un métier -->
 			<?php
 			listederoulmetier ();
 			?>
@@ -97,18 +102,22 @@ function print_formulairesupprmetier() {
 // pour afficher la liste des admins
 
 function print_listeadmin($listeadmin){
-	//Print toute l'avis contenue dans la base de donnée
+	// Affiche la liste des admins à partir de la variable qui stocke
 	echo '<div class="listeadmin">';
+// pour chaque admin
 	foreach ($listeadmin as $key => $value) {
 // pour ne pas qu'on puisse se supprimer soit même : mettre des conditions
+		// cette condition sert à ne pas avoir d'erreur en utilisant la variable de session
 		if (isset($_SESSION['connected'])) {
-// si ce n'est pas son compte qui est connecté 
+// sert à afficher seulement les autres admins
+// donc si c'est son id on ne l'affiche pas
 			if ($value['idcompte']!=$_SESSION['idcompte']) {
 
 				echo "<p>" . $value["prénom"] . " ";
 				echo $value["nom"] . " ";
 				echo $value["mail"] . "</p> ";
 				echo "<form method='post' action='index.php?page=pageadmin'>";
+// champ hidden pour récupérer l'id pour supprimer
 				echo  "<input id='idadminsuppr' name='idadminsuppr' type='hidden' value= ". $value['idcompte'] . ">" ;
 				echo "<input type='submit' name='deladmin' id='action' value='Supprimer'/>" . "</p>";
 
@@ -127,9 +136,18 @@ function print_listeadmin($listeadmin){
 // pour afficher les compteurs
 
 function printcompteur($compteur) {
+// Fonction d'affichage des compteurs
 	echo "<p>";
 	echo $compteur["COUNT(*)"];
 	echo "</p>";
+}
+
+
+// pour changer le format de date dans admin pour les messages et dans rendez-vous
+function changedate($date){
+	// fonction qui change l'affichage de la date
+	setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
+	return strftime('%x', strtotime($date));
 }
 
 

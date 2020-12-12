@@ -11,11 +11,6 @@ table equipe:
 	tel: varchar(10)
 */
 
-/*Fichier fonction table metier associé a equipe en qlq sorte
-table metier:
-	id: int
-	metier: varchar(50)
-*/
 
 function charge_equipe($c){
 	//Focntion qui va prendre dex bases de données en arguments, et va rendre le metier de chaque personne, selon l'id des tables

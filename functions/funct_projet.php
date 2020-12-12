@@ -14,7 +14,7 @@
 	function affiche_image($nomprojet){
 		// BUT : affiche_image : Prends en argument un nom d'image, et ressort une balise img avec cette derniere qui permet de l'afficher
 
-		// $nomprojet : 
+		// $nomprojet : contient le nom du projet à inserer
 
 		return $img = '<img src="./projets/' . $nomprojet . '" alt="projets" class="img_projet"/>';
 
@@ -26,7 +26,9 @@
 	}
 
 	function affiche_projet($projets){
-		//Affiche les differents projets
+		// BUT : affiche_projet : Affiche les differents projets
+
+		// $projets : tableau de projets
 
 		foreach ($projets as $key => $value) {
 
@@ -34,23 +36,26 @@
 
 			echo affiche_image($value['nomprojet']);
 
-			echo '<div class="fig_projet">Date de création' . $value['date_creation'] . "</br>";
-			echo "Realisation: " . $value['autor'] .'</br>';
-			echo $value['description'];
+			echo '<div class="fig_projet"><div class="dateCrea"><h2>Date de création :</h2><p>' . $value['date_creation'] . "</p></div></br>";
+			echo '<div class="realProjet"><h2>Realisation :</h2><p>' . $value['autor'] .'</p></div></br>';
+			echo '<div class="description"><h2>Description :</h2><p>' . $value['description'] . "</p></div></div>";
 
 
 			if (isset($_SESSION['connected'])){
-
-				echo "<h2>Ajouter un commentaire</h2>";
+				echo '<div class="commentaire">';
+				echo "<h2>Ajouter un commentaire :</h2>";
 				print_form_avis($value['id']);
+				echo "</div>";
 			
 			}
 
 
 			$avis = charge_avis($value['id']);
 			if (!empty($avis)) {
+					echo '<div class="sectionCommentaire">';
 					echo "<h2>Commentaire: </h2></br>";	
 					print_avis($avis);
+					echo "</div>";
 			}
 
 

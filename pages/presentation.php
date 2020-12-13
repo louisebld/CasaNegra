@@ -41,7 +41,7 @@
 		<div class="contactEntreprise">
 			<div class="renseignements">
 				<a href="index.php?page=contact">Nous contacter par message</a>
-				<h2>Horraires de l'entrprise</h2>
+				<h2>Horraire de l'entreprise</h2>
 					<p>Lundi : 8h-12h et 14h-18h30</p>
 					<p>Mardi : 8h-12h et 14h-18h30</p>
 					<p>Mercredi : 8h-12h et 14h-18h30</p>

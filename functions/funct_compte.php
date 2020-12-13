@@ -26,8 +26,13 @@ function print_formulaire_ajout() {
 		<p>
 			<input type = "text" placeholder="Email" name ="mail" id="emailinscri" value="<?php if (isset($_SESSION['donnee']['mail'])) 
 																echo $_SESSION['donnee']['mail']; ?>"></p>
+		
+		<!-- On informe l'utilisateur de ce que doit contenir le mot de passe -->
+		<p>Votre mot de passe doit contenir au moins : • Une majuscule • Une minuscule • Un chiffre • Un caractère spécial • 8 caractères</p>
+
 
 		<p>
+
 	<input type = "password" placeholder="Mot de passe" name ="motdepasse1" id="mdp1inscri" value="<?php if (isset($_SESSION['donnee']['motdepasse1'])) 
 														echo $_SESSION['donnee']['motdepasse1']; ?>"></p>
 
@@ -37,6 +42,21 @@ function print_formulaire_ajout() {
 
 		<p><input type="submit" name="action" id="action" value="S'inscrire"/></p>
 				</form>
+			<?php
+				// si on a des erreurs dans la vérification on les affiche
+				if (isset($_SESSION['erreur'])) {
+
+					echo "Vous n'avez pas renseigné les champs correctement :";
+
+					echo "<ul>";
+					// on affiche chaque erreur
+					
+					foreach($_SESSION["erreur"] as $erreur)
+						echo "<li>$erreur</li>";
+					echo "</ul>";
+
+				}
+			?>
 			</div>
 				<?php	 
 			}

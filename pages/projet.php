@@ -7,16 +7,17 @@
 		if (isset($_SESSION['idcompte'])){
 			if (testif_admin($_SESSION['idcompte'])){
 				?>
-					<div class="fromAjouterTypeProjet">
 					<h2>Ajouter un nouveau type de Projet :</h2>
+					<div class="fromAjouterTypeProjet">
+					
 				<?php
 				// Appel de la fonction d'affichage du formulaire pour ajouter un type de projet
 					form_newTypeProjet();
 					echo "</div>";
 				?>
-
-					<div class="formAjouterProjet">
 					<h2>Ajouter un projet :</h2>
+					<div class="formAjouterProjet">
+					
 				<?php
 				// Appel de la fonction d'affichage du formulaire pour ajouter un projet
 				print_formulaire();

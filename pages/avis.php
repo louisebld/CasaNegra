@@ -1,8 +1,10 @@
 <section class="avis">
 	<h2>Ajouter un avis</h2>
 		<?php
-	//		var_dump($_SESSION['monadressemail']);
+			// JE CROIS QUE CETTE PAGE SERT A R
 			print_form_avis();
+
+
 			if (isset($_SESSION['faute'])) {
 				echo "<ul>";
 			// on affiche chaque erreur

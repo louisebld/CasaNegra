@@ -51,7 +51,6 @@
 					<p>Dimanche : Fermé </p>
 
 					<p>Attention, si vous voulez voir certaines personnes, celle-ci peuvent être en rendez-vous, si besoin vous pouvez <a href="index.php?page=contact">nous contacter ici</a></p>
-				<h2>Adresse de l'entreprise :</h2>
 			</div>
 			
 			<div class="map">

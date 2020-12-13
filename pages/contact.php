@@ -1,7 +1,7 @@
 <!-- On importe le script de vérification du formulaire -->
 <script type='text/javascript' src='js/verifcontact.js'></script>
 
-<section class="contact">
+<section class="nousContacter">
 	<h2>Nous contacter:</h2>
 
 	<?php

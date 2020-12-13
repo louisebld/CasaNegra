@@ -50,7 +50,7 @@ border-bottom-left-radius:10px;
  }
  /*FIN MENU*/
 
-/*TITRE DE LA PAGE*/
+ /*TITRE DE LA PAGE*/
 
 .titreSite{
   text-align: center;
@@ -88,6 +88,68 @@ footer #contact {
 }
 
 /*FIN FOOTER*/
+
+/*FORMULAIRE*/
+
+input[type=text], textarea, input[type=submit], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+
+
+/*FIN FORMULAIRE*/
+
+/*POUR LA PAGE CONTACT*/
+.nousContacter{
+  background-color:white;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.formulairecontact input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.formulairecontact textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.formulairecontact input[type=submit]{
+  margin: 0 auto;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+
+/*FIN DE LA PAGE CONTACT*/
+
+
 
 /*POUR LE DIAPO*/
 #diaporama{
@@ -426,17 +488,15 @@ header {
   border:solid;
   text-align:center;
   margin:10px;
-    width: 100%;
+  width: 100%;
+  background-color: white;
   /*margin-right:50px;*/
 }
 
-#notreequipe {
-
-}
 
 
  .methode {
-
+  background-color: white;
    width: 100%;
   float: left;
   flex: 1; 
@@ -448,8 +508,6 @@ header {
  }
 
 .membre_equipe {
-
-
 
   background-color:white;
   width: 100%;
@@ -496,6 +554,37 @@ text-align: center;
   margin-top:35px;
 
 }
+
+.map{
+  text-align: center;
+
+}
+
+
+.fournisseurs{
+  background-color: white;
+  width: 100%;
+  float: left;
+  flex: 1; 
+  padding: 1em;
+  margin:20px;
+  opacity: 0.80;
+  color:black;
+}
+
+.renseignements{
+  background-color:white;
+  width: 100%;
+  float: left;
+  flex: 1; 
+  padding: 1em;
+  margin:20px;
+  opacity: 0.80;
+  color:black;
+
+}
+
+
 
 /*POUR LA PARTIE MESSAGES DANS ADMIN*/
 

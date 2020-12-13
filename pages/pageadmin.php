@@ -5,6 +5,7 @@
 
 <!-- Les listes -->
 <center>
+
 <div id="choixadmin">
 
 <ul id="listechoixadmin">

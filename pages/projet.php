@@ -1,5 +1,6 @@
 <!-- On importe le script de vérification du formulaire -->
 <script type='text/javascript' src='js/veriftypeprojet.js'></script>
+<script type='text/javascript' src='js/verifprojet.js'></script>
 
 <section>
 		<?php
@@ -7,25 +8,38 @@
 		if (isset($_SESSION['idcompte'])){
 			if (testif_admin($_SESSION['idcompte'])){
 				?>
-					<h2>Ajouter un nouveau type de Projet :</h2>
+				<div id="projet">
 					<div class="fromAjouterTypeProjet">
+					<h2>Ajouter un nouveau type de Projet :</h2>
 					
 				<?php
 				// Appel de la fonction d'affichage du formulaire pour ajouter un type de projet
 					form_newTypeProjet();
 					echo "</div>";
 				?>
-					<h2>Ajouter un projet :</h2>
 					<div class="formAjouterProjet">
-					
+					<h2>Ajouter un projet :</h2>
 				<?php
 				// Appel de la fonction d'affichage du formulaire pour ajouter un projet
 				print_formulaire();
+				if (isset($_SESSION['fauteprojet'])) {
+					echo "<ul>";
+	// on affiche chaque erreur
+					foreach($_SESSION["fauteprojet"] as $faute)
+						echo "<li>$faute</li>";
+					echo "</ul>";
+
+				}
+
+
+
+
 				echo "</div>";
 
 			}
 		}
 	    ?>  
+	</div>
 
 	    <h2>Nos creations</h2>
 	      	

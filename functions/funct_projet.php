@@ -69,31 +69,34 @@
 		
 	}
 
-
 	function print_formulaire(){
 		global $c;
 		$typeProjets = charge_typeProjet($c);
 
 
 		?>
-			<form name="projet" action="index.php?page=projets" method="POST" enctype="multipart/form-data"></br>
-
+			<form action="index.php?page=projets" method="POST" enctype="multipart/form-data"
+			onsubmit='javascript: return rempliprojet();'>
 
 			    <label>Date</label>
-			    <input type="date" name="date">
-
+			    <input type="date" id="date" name="date" value="<?php if (isset($_SESSION['donneesprojet']['date'])) 
+																echo $_SESSION['donneesprojet']['date']; ?>"><br/>
+			    <label> Auteur : </label>
 				<?php
 					listederoulemembres();
 				?>
 
-		      	<label>Description</label>
-		      	<textarea name="description"></textarea></br>
+		      	<!-- <label>Description</label> -->
+		      	<textarea name="description" placeholder="Description" id="description"><?php if (isset($_SESSION['donneesprojet']['description'])) 
+																echo $_SESSION['donneesprojet']['description'];?></textarea></br>
 
+		      	<label> Type : </label>
 		      	<?php
 		      		affiche_typeProjet($typeProjets);
 		      	?>
-
+		      	<br/>
 		        <input type="file" name="image" accept="image/jpeg"/></br>
+				Le fichier doit être un .jpeg
 		        <input type="submit" name="projet"/>
       		</form>
 		<?php

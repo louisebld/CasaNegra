@@ -53,8 +53,29 @@ border-bottom-left-radius:10px;
  /*TITRE DE LA PAGE*/
 
 .titreSite{
+  float: right;
   text-align: center;
-  font-size: 45px;
+  font-size: 53px;
+
+  padding-right: 30px;
+  color: white;
+
+
+  /*Permet de ne pas pouvoir surligner les boutons*/
+  -webkit-user-select: none; 
+  -webkit-touch-callout: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;    
+}
+
+.titreSite a {
+  text-decoration: none;
+  color: white;
+}
+
+.titreSite h2, .titreSite p{
+  font-weight: 1000;
 }
 
 
@@ -102,6 +123,9 @@ input[type=text], textarea, input[type=submit], input[type=password] {
 
 }
 
+#premiererangee input[type=submit], #metier input[type=submit], #admin input[type=submit]{
+  background-color: #C1C1C1;
+}
 
 .formCommentaire{
   padding: 20px;
@@ -280,14 +304,14 @@ width:100%;
       width: 100px;
       height: 100px;
       cursor: pointer;
-      border-radius: 50%
+
 }
 
 .cadre-diapo .precedent{
       width: 100px;
       height: 100px;
       cursor: pointer;      
-      border-radius: 50%
+
 }
 
   
@@ -321,15 +345,23 @@ cursor: pointer;
   
 .precedent,
 .suivant{
+  /*Permet de ne pas pouvoir surligner les boutons*/
+  -webkit-user-select: none; 
+  -webkit-touch-callout: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;    
+  color: #cc0000;
 
-color: silver;
-transition: color .4s linear;
-transform: translatey(-50%);
-top: 50%;
-padding: .5rem;
-font-size: 2rem;
-background: white;
-position: absolute;
+
+  color: grey;
+  transition: color .4s linear;
+  transform: translatey(-50%);
+  top: 50%;
+  padding: .5rem;
+  font-size: 2rem;
+
+  position: absolute;
 
   }
 
@@ -703,9 +735,18 @@ figure {
 }
 
 
-.fromAjouterTypeProjet, .formAjouterProjet, .searchByType, .seachByAutor{
+.fromAjouterTypeProjet, .formAjouterProjet {
+  background-color:#A3C5DC;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
-  background-color:white;
+}
+
+
+.searchByType, .seachByAutor{
+
+  background-color:#99B6CA;
   padding: 10px;
   margin-top: 20px;
   margin-bottom: 20px;

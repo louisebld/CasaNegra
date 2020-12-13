@@ -5,14 +5,14 @@
 
 		// $typeProjets : liste contenant les types des projets, récupérés depuis la bdd typeprojet
 
-		echo '<div class="typeProjets">';
+		// echo '<div class="typeProjets">';
 		echo '<select name="form_typeProjets">';
 		//Affichage de tous les types dans une liste déroulantes
 		foreach ($typeProjets as $key => $value) {
 			echo '<option value="' . $value['type'] .'"">' . $value['type'] . '</option>';
 		}
 		echo "</select>";
-		echo "</div>";
+		// echo "</div>";
 
 	}	
 

@@ -123,7 +123,7 @@ input[type=text], textarea, input[type=submit], input[type=password] {
 
 }
 
-#premiererangee input[type=submit], #metier input[type=submit], #admin input[type=submit]{
+#premiererangee input[type=submit], #metier input[type=submit], #admin input[type=submit], .fromAjouterTypeProjet input[type=submit], .formAjouterProjet input[type=submit]{
   background-color: #C1C1C1;
 }
 
@@ -255,7 +255,7 @@ width:auto;
 margin-left:3px;
 }
 
-
+choixadmin
 
 /*Formulaire INSCRIPTION POUR CENTRER*/
 
@@ -411,7 +411,7 @@ color: black;
 
 /*POUR LA PARTIE ADMIN*/
 
-#affichemembre, #membreequipe, #ajoutmembreequipe, #ajoutermetier, #supprimermetier, #listeadmin, #ajouteradmin, #compteur
+#affichemembre, #membreequipe, #ajoutmembreequipe, #ajoutermetier, #supprimermetier, #listeadmin, #ajouteradmin, #compteur, .fromAjouterTypeProjet, .formAjouterProjet
 {
 
   background-color:#dfe4ea;
@@ -436,7 +436,7 @@ color: black;
   opacity:1;
  }
 
-#premiererangee, #metier, #admin, #mescompteurs {
+#premiererangee, #metier, #admin, #mescompteurs, #projet {
 text-align: center;
     padding: 3px;
     color: white;
@@ -735,13 +735,13 @@ figure {
 }
 
 
-.fromAjouterTypeProjet, .formAjouterProjet {
+/*.fromAjouterTypeProjet, .formAjouterProjet {
   background-color:#A3C5DC;
   padding: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
 
-}
+}*/
 
 
 .searchByType, .seachByAutor{
@@ -798,4 +798,5 @@ figure {
 
 #choixadmin {
   width:100%;
-}
+  margin-top:30px;
+  }

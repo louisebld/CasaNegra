@@ -42,12 +42,12 @@
 			<div class="renseignements">
 				<a href="index.php?page=contact">Nous contacter par message</a>
 				<h2>Horraires de l'entrprise</h2>
-					<p>Lundi : 8h-12h et 14h-17h</p>
-					<p>Mardi : 8h-12h et 14h-17h</p>
-					<p>Mercredi : 8h-12h et 14h-17h</p>
-					<p>Jeudi : 8h-12h et 14h-17h</p>
-					<p>Vendredi : 8h-12h et 14h-17h</p>
-					<p>Samedi : 8h-12h et 14h-17h</p>
+					<p>Lundi : 8h-12h et 14h-18h30</p>
+					<p>Mardi : 8h-12h et 14h-18h30</p>
+					<p>Mercredi : 8h-12h et 14h-18h30</p>
+					<p>Jeudi : 8h-12h et 14h-18h30</p>
+					<p>Vendredi : 8h-12h et 14h-18h30</p>
+					<p>Samedi : 8h-12h et 14h-17h30</p>
 					<p>Dimanche : Fermé </p>
 
 					<p>Attention, si vous voulez voir certaines personnes, celle-ci peuvent être en rendez-vous, si besoin vous pouvez <a href="index.php?page=contact">nous contacter ici</a></p>

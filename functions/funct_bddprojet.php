@@ -78,7 +78,7 @@
 		// charge les données depuis la bdd 'projet'
 
 		
-		$sql = "SELECT * FROM projet";
+		$sql = "SELECT * FROM projet ORDER BY date_creation DESC";
 		$result=  mysqli_query($c, $sql);
 
 		// On met dans un tableau
@@ -98,7 +98,7 @@
 
 		global $c;
 		
-		$sql = "SELECT * FROM projet WHERE type = '$aAfficher'";
+		$sql = "SELECT * FROM projet WHERE type = '$aAfficher' ORDER BY date_creation DESC";
 		// Effectue une recherche sur le type souhaité dans notre bdd projet
 
 		$result=  mysqli_query($c, $sql);
@@ -116,7 +116,7 @@
 	function charge_projetPersonne($aAfficher){
 		global $c;
 		
-		$sql = "SELECT * FROM projet WHERE autor = '$aAfficher'";
+		$sql = "SELECT * FROM projet WHERE autor = '$aAfficher' ORDER BY date_creation DESC";
 		$result=  mysqli_query($c, $sql);
 
 		//on met dans un tableau

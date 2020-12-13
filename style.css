@@ -50,6 +50,17 @@ border-bottom-left-radius:10px;
  }
  /*FIN MENU*/
 
+/*TITRE DE LA PAGE*/
+
+.titreSite{
+  text-align: center;
+  font-size: 45px;
+}
+
+
+
+/*FIN PARTIE TITRE DE LA PAGE*/
+
  /*POUR LE FOOTER*/
  footer{
   text-align: center;

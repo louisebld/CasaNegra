@@ -28,7 +28,7 @@ function print_form_avis($idprojet){
 	//Obligation d'etre connecté, sinon redirection
 	?>
 
-	<form method="post" action="index.php?page=projets">
+	<form method="post" class="formCommentaire" action="index.php?page=projets">
 
 		<p>
 			<textarea id="com" placeholder="Votre avis.." name="com"

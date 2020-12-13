@@ -55,7 +55,7 @@
 			</div>
 			
 			<div class="map">
-							
+				<h2>Adresse de l'entreprise :</h2>	
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2785.9519775318668!2d5.918705115390251!3d45.71200022489544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ba08a1cf85ba3%3A0xf0e8e2f4c8933886!2s11%20Rue%20du%20Dr%20Jean%20Paillot%2C%2073100%20Aix-les-Bains!5e0!3m2!1sfr!2sfr!4v1604751111492!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 			</div>
 		</div>

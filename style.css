@@ -50,7 +50,7 @@ border-bottom-left-radius:10px;
  }
  /*FIN MENU*/
 
-/*TITRE DE LA PAGE*/
+ /*TITRE DE LA PAGE*/
 
 .titreSite{
   text-align: center;
@@ -88,6 +88,44 @@ footer #contact {
 }
 
 /*FIN FOOTER*/
+
+/*FORMULAIRE*/
+
+input[type=text], textarea, input[type=submit], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+
+.formCommentaire{
+  padding: 20px;
+}
+
+
+
+
+
+/*FIN FORMULAIRE*/
+
+/*POUR LA PAGE CONTACT*/
+.nousContacter{
+  background-color:white;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+/*FIN DE LA PAGE CONTACT*/
+
+
 
 /*POUR LE DIAPO*/
 #diaporama{
@@ -426,17 +464,15 @@ header {
   border:solid;
   text-align:center;
   margin:10px;
-    width: 100%;
+  width: 100%;
+  background-color: white;
   /*margin-right:50px;*/
 }
 
-#notreequipe {
-
-}
 
 
  .methode {
-
+  background-color: white;
    width: 100%;
   float: left;
   flex: 1; 
@@ -448,8 +484,6 @@ header {
  }
 
 .membre_equipe {
-
-
 
   background-color:white;
   width: 100%;
@@ -496,6 +530,37 @@ text-align: center;
   margin-top:35px;
 
 }
+
+.map{
+  text-align: center;
+
+}
+
+
+.fournisseurs{
+  background-color: white;
+  width: 100%;
+  float: left;
+  flex: 1; 
+  padding: 1em;
+  margin:20px;
+  opacity: 0.80;
+  color:black;
+}
+
+.renseignements{
+  background-color:white;
+  width: 100%;
+  float: left;
+  flex: 1; 
+  padding: 1em;
+  margin:20px;
+  opacity: 0.80;
+  color:black;
+
+}
+
+
 
 /*POUR LA PARTIE MESSAGES DANS ADMIN*/
 
@@ -638,74 +703,18 @@ figure {
 }
 
 
+.fromAjouterTypeProjet, .formAjouterProjet, .searchByType, .seachByAutor{
 
-
-
-/*figcaption {
-font-size: 20px;
-transition: 1s;
-opacity:0;
-background-color: AntiqueWhite;
-text-align:center;
-vertical-align: middle;
-
-position:absolute;
-bottom:0;
-  left:0;
-right:0;
-border:1px solid #ccc;
-width: 100%;
-height: 100%;
-  max-height:800px;
-
-overflow: inherit;
+  background-color:white;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 
 
-/*COMMENTAIRE DES PROJETS*/
-
-/*.galery_avis{
-  width: 50%
-  max-width 50%;
-}
-
-figcaption .box_avis {
-  width: 90%;
-  margin: 0 auto;
-  padding: 0px;
-
-}
-
-.commentary {
-  margin-bottom: 65px;
-  background-color: #FDDDB3;
-  text-align: left;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
 
 
-figcaption .autor {
-
-  background-color: #FDDDB3;
-  text-align: left;
-  border-radius: 5px;
-  margin-bottom: 5px;
-}
-
-/*ANIMATION DES PROJETS*/
-/*figure:hover{
-
-  -webkit-transform: scale(1.04);
-  -ms-transform: scale(1.04);
-  transform: scale(1.04);
-}
-
-figure:hover figcaption {
-opacity:1;
-
-}*//*
 /*FIN PROJETS*/
 
 

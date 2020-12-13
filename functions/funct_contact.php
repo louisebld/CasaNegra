@@ -3,7 +3,7 @@
 function print_formulaire_contact() {
 	//Affiche le formulaire pour ajouter envoyer un message de contact
 	?>
-	<div id="formulairecontact">
+	<div class="formulairecontact">
 	<form method="post" action="index.php?page=contact"
 	onsubmit='javascript: return remplicontact();'>
 <!-- On appelle la fonction javascript pour vérifier si le formulaire est rempli -->

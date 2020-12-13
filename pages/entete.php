@@ -11,5 +11,10 @@
 </ul>
 </div>
 
+<div class="titreSite">
+	<h2 class="titre">Casa Negra</h2>
+	<p class="legende">Architecte et créateur d'intérieur</p>
+</div>
+
  
 

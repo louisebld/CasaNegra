@@ -14,7 +14,6 @@ function insert_com($com, $name, $idprojet){
 	// BUT : insert_com : fonction qui ajoute un commentaire dans la table commentaire
 	global $c;
 
-	
 	$sql = "INSERT INTO avis (idprojet, name, commentary) VALUES ($idprojet, '$name', '$com')";
 	mysqli_query($c, $sql);
 

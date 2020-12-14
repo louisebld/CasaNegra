@@ -129,38 +129,38 @@ function dejardv($jour, $heure, $pers){
 
 }
 
-function rdvnonvalide($jour, $heure) {
+// function rdvnonvalide($jour, $heure) {
 
-	$tabDate = explode('-', $jour);
-	$jourssemaine = array('dim', 'lun', 'mar', 'mer','jeu', 'ven', 'sam');
-	$timestamp = mktime(0, 0, 0, $tabDate[1], $tabDate[2], $tabDate[0]);
-	$nomjour = date('w', $timestamp);
-	//timestamp retourne un entier (1 opour dim, 2 pour lun ,...)
+// 	$tabDate = explode('-', $jour);
+// 	$jourssemaine = array('dim', 'lun', 'mar', 'mer','jeu', 'ven', 'sam');
+// 	$timestamp = mktime(0, 0, 0, $tabDate[1], $tabDate[2], $tabDate[0]);
+// 	$nomjour = date('w', $timestamp);
+// 	//timestamp retourne un entier (1 opour dim, 2 pour lun ,...)
 
-	// on definit les horraires de travail
-	$debmatin = date_create_from_format('H\hi','8h00');
-	$finmatin = date_create_from_format('H\hi','12h00');
-	$debutap = date_create_from_format('H\hi','14h00');
-	$finap = date_create_from_format('H\hi','18h30');
+// 	// on definit les horraires de travail
+// 	$debmatin = date_create_from_format('H\hi','8h00');
+// 	$finmatin = date_create_from_format('H\hi','12h00');
+// 	$debutap = date_create_from_format('H\hi','14h00');
+// 	$finap = date_create_from_format('H\hi','18h30');
 
-	//si c'est vendredi alors on modifie les horraires (fin de journee = 17h30
-	if ($jourssemaine[$nomjour] == 'ven') {
-			$finap =  date_create_from_format('H\hi','17h30');
-		}
+// 	//si c'est vendredi alors on modifie les horraires (fin de journee = 17h30
+// 	if ($jourssemaine[$nomjour] == 'ven') {
+// 			$finap =  date_create_from_format('H\hi','17h30');
+// 		}
 
-	//on vérifie que le jour n'est pas un dimanche
-	if ($jourssemaine[$nomjour] == 'dim'){
-		return true;
-	}
-		// on verifie que l'heure rentree par l'utilisateur est bien dans les bons creaneaux
+// 	//on vérifie que le jour n'est pas un dimanche
+// 	if ($jourssemaine[$nomjour] == 'dim'){
+// 		return true;
+// 	}
+// 		// on verifie que l'heure rentree par l'utilisateur est bien dans les bons creaneaux
 	
-	if (($heure >= $debmatin && $heure <= $finmatin ) or ($heure >= $debutap && $heure <= $finap )) {
-			return false; // dans les plages horraires
-		}
-	else{
-		return true;
-		}
-	}		
+// 	if (($heure >= $debmatin && $heure <= $finmatin ) or ($heure >= $debutap && $heure <= $finap )) {
+// 			return false; // dans les plages horraires
+// 		}
+// 	else{
+// 		return true;
+// 		}
+// 	}		
 
 
 		?>

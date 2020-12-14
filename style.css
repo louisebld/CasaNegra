@@ -3,7 +3,6 @@
   src: url("Abel-Regular.ttf");
 }
 
-
 body {
   font-family : Abel, cursive;
   overflow-x: hidden; 
@@ -123,7 +122,7 @@ input[type=text], textarea, input[type=submit], input[type=password] {
 
 }
 
-#premiererangee input[type=submit], #metier input[type=submit], #admin input[type=submit], #projet input[type=submit]{
+#premiererangee input[type=submit], #metier input[type=submit], #admin input[type=submit], #projet input[type=submit], #formulaireinscription input[type=submit], #formulaireconnexion input[type=submit] {
   background-color: #C1C1C1;
 }
 
@@ -231,6 +230,7 @@ div#diapo{
 
  display: inline-block;
 text-decoration:none;
+color:black;
 
 }
 
@@ -254,7 +254,6 @@ width:auto;
 margin-left:3px;
 }
 
-choixadmin
 
 /*Formulaire INSCRIPTION POUR CENTRER*/
 
@@ -592,7 +591,33 @@ text-align: center;
 }
 
 
+/*Pour la partie mon compte*/
+#affichagemoncompte, #affichagerdv{
+  background-color:white;
+  width: 100%;
+  float: left;
+  flex: 1; 
+  padding: 1em;
+  margin:20px;
+  opacity: 0.80;
+  color:black;
 
+}
+
+
+/*#afficherdvrdv {
+    background-color:white;
+  width: 100%;
+  float: left;
+  flex: 1; 
+  padding: 1em;
+  margin:20px;
+  opacity: 0.80;
+  color:black;
+
+
+}
+*/
 /*POUR LA PARTIE MESSAGES DANS ADMIN*/
 
 #tableaucontact {

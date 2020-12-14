@@ -57,7 +57,7 @@
 	}
 
 	function supprime_PhotoProjet($nomProjet){
-		unlink($nomProjet);
+		unlink('projets/' . $nomProjet);
 	}
 
 

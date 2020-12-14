@@ -31,6 +31,9 @@ if (isset($_POST['envoyer_rdv'])){
 	// 				$err[]= "Ce rdv n'est pas dans les creneaux de travail de l'entreprise";
 	// 			}
 
+	elseif (tropderdv($_POST['idclient'])) {
+			$err[]="Vous avez deja pris un rdv";
+	}
 	
 
 	if (empty($_POST['equipe']) || !trim($_POST['date'])) {

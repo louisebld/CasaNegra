@@ -82,7 +82,7 @@ function printformulairemetier() {
 }
 
 function print_formulairesupprmetier() {
-	//Affiche le formulaire pour ajouter un nouveau membre
+	//Affiche le formulaire pour supprimer un métier
 
 	?>
 	<div id="formulairesupprmetier">

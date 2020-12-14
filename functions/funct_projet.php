@@ -41,7 +41,9 @@
 			echo '<div class="description"><h2>Description :</h2><p>' . $value['description'] . "</p></div></div>";
 
 
+
 			if (isset($_SESSION['connected'])){
+
 				echo '<div class="commentaire">';
 				echo "<h2>Ajouter un commentaire :</h2>";
 				print_form_avis($value['id']);
@@ -56,6 +58,17 @@
 					echo "<h2>Commentaire: </h2></br>";	
 					print_avis($avis);
 					echo "</div>";
+			}
+
+						if (isset($_SESSION['connected'])) {
+				if (testif_admin($_SESSION['idcompte'])) {
+					echo "<form method='post' action='index.php?page=projets'>";
+// champ hidden pour récupérer l'id pour supprimer
+					echo  "<input id='idprojetsuppr' name='idprojetsuppr' type='hidden' value= ". $value['id'] . ">" ;
+					echo  "<input id='nomprojetsuppr' name='nomprojetsuppr' type='hidden' value= ". $value['nomprojet'] . ">" ;
+
+					echo "<input type='submit' name='delprojet' id='boutonsupprprojet' value='Supprimer le projet'/>" . "</p>";
+				}	
 			}
 
 
@@ -130,7 +143,42 @@ function print_formulairechoixtype() {
 }
 
 
+function listederoultype() {
+// Afficher une liste déroulante des types de projets
+	global $typeProjets;
+// on prend la variable dans lequel sont stockées les données des types de projets
+?>
+	<select name="typeprojet" size="1">
+<?php
+// pour chacun des types de projets on le met dans une "case"
 
+for ($i = 0; $i < count($typeProjets); $i++){
+	$typecourant = $typeProjets[$i];
+
+	echo "<option>" . $typecourant['type'];
+}
+?>
+</select>
+
+<?php
+}
+
+function print_formulairesupprtypeprojet() {
+	//Affiche le formulaire pour supprimer un type projet
+
+	?>
+	<div id="formulairesupprtypeprojet">
+		<form method="post" action="index.php?page=projets">
+<!-- On appelle la fonction pour la liste déroulante des types projets pour le choix pour supprimer un type projets -->
+			<?php
+			listederoultype ();
+			?>
+
+				<p><input type="submit" name="envoiesupprtype" id="action" value="Supprimer"/></p>
+			</form>
+		</div>
+		<?php	 
+	}
 
 
 

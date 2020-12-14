@@ -83,3 +83,22 @@ if (isset($_POST['projet'])) {
 	}
 
 }
+
+
+// -------------------- Suppression de projets
+
+if (isset($_POST['delprojet'])) {
+// on récupère
+	$nomprojet = $_POST['nomprojetsuppr'];
+	$idprojet = $_POST['idprojetsuppr'];
+// on supprime
+	supprime_projet($idprojet);
+	decrement_photo($c);
+	supprime_PhotoProjet($nomprojet);
+	//header('location:index.php?page=pageadmin');
+// on informe et on redirige
+	echo '<script>alert("Vous avez supprimé un projet");
+	window.location.href = "./index.php?page=projets";</script>'; 
+  	exit();
+
+}

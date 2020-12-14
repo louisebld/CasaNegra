@@ -1,6 +1,7 @@
 <!-- On importe le script de vérification du formulaire -->
 <script type='text/javascript' src='js/veriftypeprojet.js'></script>
 <script type='text/javascript' src='js/verifprojet.js'></script>
+<script type='text/javascript' src='js/verifcom.js'></script>
 
 <section>
 		<?php

@@ -9,8 +9,9 @@
 		
 		
 		if (testif_admin($_SESSION['idcompte'])){
+			echo "<div id='afficherdvrdv'>";
 			affiche_rdv(charge_rdv_admin());
-
+			echo "</div>";
 		}
 	}
 

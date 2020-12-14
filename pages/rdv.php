@@ -7,6 +7,14 @@
 		echo "<h2>Ajouter un RDV</h2>";
 		print_form_rdv($_SESSION['idcompte']);
 		
+		if (isset($_SESSION['fauterdv'])) {
+			echo "<ul>";
+	// on affiche chaque erreur
+			foreach($_SESSION["fauterdv"] as $faute)
+				echo "<li>$faute</li>";
+			echo "</ul>";
+
+		}
 		
 		if (testif_admin($_SESSION['idcompte'])){
 			echo "<div id='afficherdvrdv'>";

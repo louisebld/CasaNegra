@@ -123,7 +123,7 @@ input[type=text], textarea, input[type=submit], input[type=password] {
 
 }
 
-#premiererangee input[type=submit], #metier input[type=submit], #admin input[type=submit], .fromAjouterTypeProjet input[type=submit], .formAjouterProjet input[type=submit]{
+#premiererangee input[type=submit], #metier input[type=submit], #admin input[type=submit], #projet input[type=submit]{
   background-color: #C1C1C1;
 }
 
@@ -131,8 +131,7 @@ input[type=text], textarea, input[type=submit], input[type=password] {
   padding: 20px;
 }
 
-
-
+#boutonsupprprojet {background-color: #1A5EA6 ;}
 
 
 /*FIN FORMULAIRE*/
@@ -411,7 +410,7 @@ color: black;
 
 /*POUR LA PARTIE ADMIN*/
 
-#affichemembre, #membreequipe, #ajoutmembreequipe, #ajoutermetier, #supprimermetier, #listeadmin, #ajouteradmin, #compteur, .fromAjouterTypeProjet, .formAjouterProjet
+#affichemembre, #membreequipe, #ajoutmembreequipe, #ajoutermetier, #supprimermetier, #listeadmin, #ajouteradmin, #compteur, .fromAjouterTypeProjet, .formAjouterProjet, #suppressionprojet
 {
 
   background-color:#dfe4ea;

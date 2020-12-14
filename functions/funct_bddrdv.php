@@ -56,7 +56,7 @@ function charge_rdv_admin(){
 
 }
 
-
+// fonction qui permet de recuperer un embre de l'equipe
 function recupmembre($membre){
 	global $c;
 	$membres =  mysqli_query($c, "SELECT fname, name FROM equipe ");
@@ -67,7 +67,7 @@ function recupmembre($membre){
 	return $tableau;
 
 }
-
+// fonction qui permet de recuperer l'id d'un membre de l'equipe a partie de son nom
 function recupmembreid($nom){
 	global $c;
 	$idmembre = mysqli_query($c, "SELECT id FROM equipe WHERE fname = '$nom'");
@@ -75,6 +75,7 @@ function recupmembreid($nom){
 	return $res['id'];
 }
 
+// fonction qui permet de recuperer le nom d'un membre de l'equipe a partie du son id
 function recupmemebrenom($id){
 	global $c;
 	$nommembre = mysqli_query($c, "SELECT fname FROM equipe WHERE id = '$id'");
@@ -105,6 +106,61 @@ function charge_listerdv($c) {
 	//var_dump($tableau);
 	return $tableau;
 }
+
+
+function dejardv($jour, $heure, $pers){
+	// retourne si il y a deja un rdv avec cette personne à cette heure et ce jour (oui ou non)
+	//variable global bdd
+	global $c;
+	// Je fais une recherche dans la base à partir de la personne, l'heure et la date 
+	$rdv = mysqli_query($c, "SELECT * FROM rdv WHERE daterdv = '".$jour."' AND heurerdv = '".$heure."' AND idmembre = '".$pers."'" );
+	// on compte le nombre de lignes
+	$cpt = mysqli_num_rows($rdv);
+	// si on a trouvé un rdv qui correspond : >0 : true
+	if ($cpt>0) {
+		return true;
+	}
+	else {
+	// sinon faux
+		return false;
+	}
+
+
+
+}
+
+function rdvnonvalide($jour, $heure) {
+
+	$tabDate = explode('-', $jour);
+	$jourssemaine = array('dim', 'lun', 'mar', 'mer','jeu', 'ven', 'sam');
+	$timestamp = mktime(0, 0, 0, $tabDate[1], $tabDate[2], $tabDate[0]);
+	$nomjour = date('w', $timestamp);
+	//timestamp retourne un entier (1 opour dim, 2 pour lun ,...)
+
+	// on definit les horraires de travail
+	$debmatin = date_create_from_format('H\hi','8h00');
+	$finmatin = date_create_from_format('H\hi','12h00');
+	$debutap = date_create_from_format('H\hi','14h00');
+	$finap = date_create_from_format('H\hi','18h30');
+
+	//si c'est vendredi alors on modifie les horraires (fin de journee = 17h30
+	if ($jourssemaine[$nomjour] == 'ven') {
+			$finap =  date_create_from_format('H\hi','17h30');
+		}
+
+	//on vérifie que le jour n'est pas un dimanche
+	if ($jourssemaine[$nomjour] == 'dim'){
+		return true;
+	}
+		// on verifie que l'heure rentree par l'utilisateur est bien dans les bons creaneaux
+	
+	if (($heure >= $debmatin && $heure <= $finmatin ) or ($heure >= $debutap && $heure <= $finap )) {
+			return false; // dans les plages horraires
+		}
+	else{
+		return true;
+		}
+	}		
 
 
 		?>

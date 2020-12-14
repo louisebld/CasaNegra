@@ -5,11 +5,9 @@
 	if (isset($_POST['envoyer_com'])) {
 
 
-
 			
 			$idcompte = $_SESSION['idcompte'];
 			//On recupere l'id de l'auteur
-
 
 			
 			$sesdonnees = recupedonnees($idcompte);

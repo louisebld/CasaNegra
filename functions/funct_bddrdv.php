@@ -112,8 +112,17 @@ function dejardv($jour, $heure, $pers){
 	// retourne si il y a deja un rdv avec cette personne à cette heure et ce jour (oui ou non)
 	//variable global bdd
 	global $c;
-	// Je fais une recherche dans la base à partir de la personne, l'heure et la date 
-	$rdv = mysqli_query($c, "SELECT * FROM rdv WHERE daterdv = '".$jour."' AND heurerdv = '".$heure."' AND idmembre = '".$pers."'" );
+
+	//variable pour ajouter 30 min
+		//$minutesajout = 30;
+		//$heuremoinstrente =  date_add($heure, INTERVAL '30' MINUTES);
+		//$heureplustrente =  date_add($heure, INTERVAL '-30' MINUTES);
+
+	// Je fais une recherche dans la base à partir de la personne, l'heure et la date et on verifie aussi que l'heure est valide dans un intervalle de 30min
+	$rdv = mysqli_query($c, "SELECT * FROM rdv WHERE daterdv = '".$jour."' AND heurerdv = '".$heure."' AND idmembre = '".$pers."'");
+		//pour l'intervalle : utiliser "AND $heure BETWEEN '".$heuremoinstrente."' AND '".$heureplustrente."'"
+
+
 	// on compte le nombre de lignes
 	$cpt = mysqli_num_rows($rdv);
 	// si on a trouvé un rdv qui correspond : >0 : true
@@ -126,6 +135,24 @@ function dejardv($jour, $heure, $pers){
 	}
 
 
+
+}
+
+function tropderdv($idclient){
+	//fonction qui permet de verifier qu'un client n'a pas deja pris un rdv
+	global $c;
+	// Je fais une recherche dans la base à partir de l'id du client 
+	$rdv = mysqli_query($c, "SELECT * FROM rdv WHERE idclient = '".$idclient."'" );
+	// on compte le nombre de lignes
+	$cpt = mysqli_num_rows($rdv);
+	// si on a trouvé au moins un rdv qui correspond : >0 : true
+	if ($cpt>0) {
+		return true;
+	}
+	else {
+	// sinon faux
+		return false;
+	}
 
 }
 

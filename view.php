@@ -70,6 +70,7 @@
 	<?php
 		//Inclusion de la page selon la valeur de $page
 	if ($page == "accueil"){
+		$title="Accueil";
 		include ("pages/accueil.php");
 		include("pages/diapo.php");
 
@@ -77,9 +78,12 @@
 
 	elseif ($page == "presentation"){
 		include ("pages/presentation.php");
+		$title="Présentation";
+
 	}
 
 	elseif ($page == "inscription") {
+		$title="Inscription";
 
 		if (isset($_SESSION['connected'])) {
 			header('location:index.php');
@@ -95,6 +99,7 @@
 
 	elseif ($page == "connexion") {
 		
+		$title="Connexion";
 
 		if (isset($_SESSION['connected'])) {
 			header('location:index.php');
@@ -112,30 +117,31 @@
 */
 	elseif ($page == "projets"){
 		include ("pages/projet.php");
-	}
-
-
-	elseif ($page == "avis") {
-		include ("pages/avis.php");
+		$title="Nos projets";
 
 	}
+
 
 	elseif ($page == "prendrerdv") {
 		include ("pages/rdv.php");
+		$title="Les rendez-vous";
 
 	}
 
 	elseif ($page == "contact") {
 		include ("pages/contact.php");
+		$title="Contactez nous";
 
 	}
 
 	elseif ($page == "moncompte") {
 		include ("pages/moncompte.php");
+		$title="Mon compte";
 
 	}
 
 	elseif ($page == "pageadmin") {
+		$title="Page admin";
 
 // si c'est un admin on include
 		if (testif_admin($_SESSION['idcompte'])) {
@@ -144,7 +150,8 @@
 				}
 // sinon on redirige
 		else {
-			header('location:index.php');
+
+			header('location:index.php/page=accueil');
 
 		}
 

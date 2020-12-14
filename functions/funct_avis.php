@@ -14,9 +14,10 @@ function print_avis($avis){
 		echo '<div class="box_avis">';
 			echo '<div class="autor"><p>Pseudo: ' . $value["name"] . "</p></div>";
 			echo '<div class="commentary"><p>Commentaire: ' . $value["commentary"] . "</p></div>";
-			if (isset($value["answer"])){
-				echo '<div class="answer"><p>Reponse :' . $value["answer"] . "</p></div>";
-			}
+			// if (isset($value["answer"])){
+			// 	echo '<div class="answer"><p>Reponse :' . $value["answer"] . "</p></div>";
+			// }
+			
 
 		echo "</div>";
 	}
@@ -28,10 +29,11 @@ function print_form_avis($idprojet){
 	//Obligation d'etre connecté, sinon redirection
 	?>
 
-	<form method="post" class="formCommentaire" action="index.php?page=projets">
+	<form method="post" class="formCommentaire" action="index.php?page=projets"
+	onsubmit='javascript: return remplicom();'>
 
 		<p>
-			<textarea id="com" placeholder="Votre avis.." name="com"
+			<textarea id="com" id="com" placeholder="Votre avis.." name="com"
 			rows="10" cols="35"></textarea>
 		</p>
 

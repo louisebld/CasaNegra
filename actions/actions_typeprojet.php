@@ -20,17 +20,53 @@
 
 	//-----------------  insertion d'un nouveau type de projet ----------------------------
 
-	if (isset($_POST['newType']) && !empty($_POST['newType']) && trim($_POST['newType'])){
 
-	// verif à faire : si il y est pas déjà
+// si on a envoyé le formulaire
+	if (isset($_POST['Envoyer_Type'])) {
+// initialisation variable erreur
+		$erreurnewtypeprojet=[];
+	//existemetier($_POST["metier"]);
+// test si métier vide
+		if (empty($_POST["newType"]) || !trim($_POST['newType'])) {
+			$erreurnewtypeprojet[]="Vous n'avez pas rentré de type";
+		}
 
-		// verif à faire : si il y est pas déjà
+// test si il existe déjà
+		elseif (existetype($_POST["newType"])) {
 
-		$newType = $_POST['newType'];
-		insert_typeProjet($newType);
-		header('Location: index.php?page=projets');	
+			$erreurnewtypeprojet[]="Ce type existe déjà";
 
+		}
+
+// si il y a des erreurs
+		if (count($erreurnewtypeprojet)>0){
+// stockage dans une variable de session
+			$_SESSION["fautenewtypeprojet"]= $erreurnewtypeprojet;
+
+		}
+// sinon j'insère dans la bdd
+
+		else {
+	// j'unset donc ma variable faute
+			unset($_SESSION["fautenewtypeprojet"]);
+	// je récupère le métier
+			$newType = $_POST['newType'];
+	// je l'insère
+			insert_typeProjet($newType);
+	// redirection avec une petite alert javascript
+			echo '<script>alert("Vous avez ajouté un type de projet");
+			window.location.href = "./index.php?page=projets";</script>'; 
+			exit();
+
+		}
 	}
+
+
+
+
+
+
+
 
 
 // ------------------------------ AFFICHAGE PROJET EQUIPE ---------------------------------------
@@ -48,6 +84,41 @@
 		$titreProjets = "toutes nos réalisations";
 	}
 
+
+
+// ----------------------------- SUPPRESSION DE PROJETS -------------------------------
+
+
+
+// pareil on vérifie si il est envoyé
+if (isset($_POST['envoiesupprtype'])) {
+
+// on prend la valeur
+	$typeprojet = $_POST['typeprojet'];
+// on récupère du métier avec la fonction
+//	$idtypeprojet = recupetypeprojet($typeprojet);
+
+// si le métier est utilisé on prévient
+	if (typeutiliser($typeprojet)) {
+
+		$_SESSION['typeutiliser']="Ce type est affecté à un projet, vous ne pouvez pas le supprimer";
+
+	}
+
+	else {
+// on supprime le métier
+	supprtype($typeprojet);
+// on unset la variable de session
+	unset($_SESSION["typeutiliser"]);
+	//header('location:index.php?page=pageadmin');
+// on informe et on redirige
+	echo '<script>alert("Vous avez supprimé un type de projets");
+	window.location.href = "./index.php?page=projets";</script>'; 
+	exit();
+
+
+	}
+}
 
 
 ?>

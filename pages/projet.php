@@ -1,6 +1,7 @@
 <!-- On importe le script de vérification du formulaire -->
 <script type='text/javascript' src='js/veriftypeprojet.js'></script>
 <script type='text/javascript' src='js/verifprojet.js'></script>
+<script type='text/javascript' src='js/verifcom.js'></script>
 
 <section>
 		<?php
@@ -10,13 +11,32 @@
 				?>
 				<div id="projet">
 					<div class="fromAjouterTypeProjet">
-					<h2>Ajouter un nouveau type de Projet :</h2>
+					<h2>Ajouter un nouveau type de projet :</h2>
 					
 				<?php
 				// Appel de la fonction d'affichage du formulaire pour ajouter un type de projet
 					form_newTypeProjet();
-					echo "</div>";
+					if (isset($_SESSION['fautenewtypeprojet'])) {
+	// on affiche chaque erreur
+						foreach($_SESSION["fautenewtypeprojet"] as $faute)
+							echo $faute;
+}
 				?>
+				</div>
+				<div id='suppressionprojet'>
+				<h2> Supprimer un type de projet : </h2>
+				<?php
+				print_formulairesupprtypeprojet();
+
+				if (isset($_SESSION['typeutiliser'])) {
+
+				echo $_SESSION['typeutiliser'];
+}
+
+
+				?>
+				</div>
+
 					<div class="formAjouterProjet">
 					<h2>Ajouter un projet :</h2>
 				<?php
@@ -31,11 +51,9 @@
 
 				}
 
-
-
-
 				echo "</div>";
 
+				
 			}
 		}
 	    ?>  

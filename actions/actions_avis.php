@@ -4,33 +4,45 @@
 
 	if (isset($_POST['envoyer_com'])) {
 
+		$erreuravis=[];
 
+			if (empty($_POST["com"]) && !trim($_POST["com"])) {
+			$erreuravis[]="Vous n'avez pas rentré de commentaire";
 
+			}
 			
+
+			if (count($erreuravis)>0) {
+
+				$_SESSION["fauteavis"]= $erreuravis;
+
+			}
+
+			else {
+
 			$idcompte = $_SESSION['idcompte'];
 			//On recupere l'id de l'auteur
 
-
-			
 			$sesdonnees = recupedonnees($idcompte);
 			$name = $sesdonnees['prénom'];
 
-			if (empty($_POST["com"]) || !trim($_POST['com'])){
-				$com = $_POST['com'];
-			}
-			
 			$idprojet = $_POST['idprojet'];
+			$com = $_POST["com"];
 			//recuperation de l'id du projet, pour savoir a quel projet correspond le commentaire
 
 
 			insert_com($com, $name, $idprojet);
 			// Insetion du commentaire dans la table avis
 
-			header("Location:index.php?page=projets");
-			// Redirection vers la page projet
+			// on informe l'utilisateur qu'il a posté un commentaire
+			// redirection vers la page projets
+			echo '<script>alert("Vous avez posté un commentaire");
+			window.location.href = "./index.php?page=projets";</script>'; 
+	  		exit();
 	
 
 		}
+	}
 
 
 ?>

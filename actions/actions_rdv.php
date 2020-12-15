@@ -12,16 +12,16 @@ if (isset($_POST['envoyer_rdv'])){
 
 	//---------------------------DETECTION DES ERREURS --------------------------------
 	if (empty($_POST["heure"]) || !trim($_POST['heure'])) {
-		$err[]="Vous n'avez pas rentré d'heure de rdv";
+		$err[]="Vous n'avez pas rentré d'heure de rendez-vous";
 		}
 
 	if (empty($_POST["date"]) || !trim($_POST['date'])) {
-		$err[]="Vous n'avez pas rentré de date de rdv";
+		$err[]="Vous n'avez pas rentré de date de rendez-vous";
 		}
 
 		// on verifie que ce membre de l'equipe n'a pas deja un rdv a cette heure ce jour la 
 	elseif (dejardv(($_POST['date']), $_POST['heure'], recupmembreid($_POST['equipe']))) {
-					$err[]= "Ce rendez-vous n'est pas disponible, choisissez d'autres horaires";
+					$err[]= "Ce rendez-vous n'est pas disponible, veuillezez choisir d'autres horaires.";
 				}
 
 		//on verifie que les dates et les horraires rentrés sont bien dans les creaneaux de travail de l'entreprise
@@ -32,7 +32,7 @@ if (isset($_POST['envoyer_rdv'])){
 	// 			}
 
 	elseif (tropderdv($_POST['idclient'])) {
-			$err[]="Vous avez deja pris un rdv";
+			$err[]="Vous avez déjà pris un rendez-vous.";
 	}
 	
 

@@ -59,19 +59,28 @@ if (isset($_POST['projet'])) {
 		$file_tmp =$_FILES['image']['tmp_name'];
 		$file_type=$_FILES['image']['type'];
 
-		// Incrementation du nombre de photos dans notre bdd nbphotos
+		// Incrementation du nombre de photos dans notre bdd 
 		increment_nbphotos($c);
 
 		// Recuperation du nombre de photos, pour pouvoir renommer notre projet en cours d'insertion
 		$nbphotos = charge_nbphotos($c);
-
-
-		move_uploaded_file($file_tmp,"./projets/diapo" . $nbphotos . ".jpg");
+		$i=1;
+		$trouve=false;
+		while ($trouve==false) {
+			if (file_exists('projets/diapo' . $i .'.jpg')) {
+				$i=$i+1;
+			}
+			else {
+					$trouve=true;
+					move_uploaded_file($file_tmp,"./projets/diapo" . $i . ".jpg");
         // Permet de deplacer le fichier initial dans notre dossier projets
-	
+
+			}
+
+			}
 
 		// On recupere le nom du fichier qui va etre inserer.
-		$file_new_name = "diapo" . $nbphotos . ".jpg";
+		$file_new_name = "diapo" . $i . ".jpg";
 
 		// On insere le projet
 		insert_projet($autor, $description, $file_new_name, $date_creation, $type);

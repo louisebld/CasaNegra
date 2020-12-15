@@ -26,7 +26,7 @@ if (isset($_POST['envoiemetier'])) {
 	}
 
 // test si il existe déjà
-	elseif (existemetier($_POST["metier"])) {
+	elseif (existemetier(remplaceApo($_POST["metier"]))) {
 
 		$erreurmetier[]="Ce métier existe déjà";
 
@@ -44,7 +44,7 @@ if (isset($_POST['envoiemetier'])) {
 	// j'unset donc ma variable faute
 		unset($_SESSION["fautemetier"]);
 	// je récupère le métier
-		$metier = $_POST['metier'];
+		$metier = remplaceApo ($_POST['metier']);
 	// je l'insère
 		insert_métier($metier);
 		//header('location:index.php?page=pageadmin');
@@ -58,7 +58,7 @@ if (isset($_POST['envoiemetier'])) {
 
 
 
-// --------------------------- vérification de l'envoi de l'ajout du membre dans l'équipe
+// --------------------------- vérification de l'envoi de l'ajout du membre dans l'équipe----------------------------
 
 // la vérification si le membre est déjà dans l'équipe se fera sur le nom et le prénom
 
@@ -72,7 +72,7 @@ if (isset($_POST['envoiequipe'])) {
 		$erreurajoutmembreequipe[]="Le nom et/ou le prénom est vide";
 	}
 // appel fonction vérification si il n'y a pas déjà un membre de l'équipe s'appellant comme ça
-	elseif (verifmembreequipe ($_POST["nom"], $_POST["prénom"])) {
+	elseif (verifmembreequipe (remplaceApo($_POST["nom"]), remplaceApo($_POST["prénom"]))) {
 
 	$erreurajoutmembreequipe[]="Cette personne est déjà présente dans l'équipe";
 }
@@ -110,13 +110,13 @@ if (isset($_POST['envoiequipe'])) {
 		unset($_SESSION["donnee"]);
 		unset($_SESSION["fauteequipe"]);
 	// je récupère les données
-		$nom = $_POST['nom'];
-		$prénom = $_POST['prénom'];
+		$nom = remplaceApo ($_POST['nom']);
+		$prénom = remplaceApo ($_POST['prénom']);
 		$age = $_POST['age'];
 		$metier = $_POST['metier'];
 		$idmetier = recuperemetier($metier);
 // à partir d'un métier retrouver son id
-		$description = $_POST["description"];
+		$description = remplaceApo ($_POST["description"]);
 		$tel = $_POST["tel"];
 
 
@@ -141,7 +141,7 @@ if (isset($_POST['envoiequipe'])) {
 if (isset($_POST['envoiesupprmetier'])) {
 
 // on prend la valeur
-	$metier = $_POST['metier'];
+	$metier = remplaceApo($_POST['metier']);
 // on récupère du métier avec la fonction
 	$idmetier = recuperemetier($metier);
 	//var_dump($idmetier);

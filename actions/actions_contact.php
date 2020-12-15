@@ -1,4 +1,8 @@
 <?php
+
+
+
+
 // je mets les données de ma base dans des variables (tableau associatif)
 // les données des messages de contact qui ne sont pas encore traités
 $contactatraiter =charge_contactnotok($c);
@@ -32,7 +36,7 @@ if (count($erreur)>0) {
 		// on récupère les données
 				$id = $_SESSION['idcompte'];
 				$tel = $_POST['tel'];
-				$message = $_POST['message'];
+				$message = remplaceApo ($_POST['message']);
 // pour avoir la date du jour
 				$date = date('Y-m-d H:i:s');
 				// var_dump($id);

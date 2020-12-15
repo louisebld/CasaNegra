@@ -49,21 +49,35 @@ if (isset($_POST['envoyer_rdv'])){
 	}
 
 	else{
-	//on stocke les infos depuis la variabke $_POST
-	$heure = $_POST['heure'];
-	$date = $_POST['date'];
-	$idclient = $_POST['idclient'];
-	$membre = $_POST['equipe'];
-	$idmembre = recupmembreid($membre);
+		//on stocke les infos depuis la variabke $_POST
+		$heure = $_POST['heure'];
+		$date = $_POST['date'];
+		$idclient = $_POST['idclient'];
+		$membre = $_POST['equipe'];
+		$idmembre = recupmembreid($membre);
 
-	//on insere le rdv 
-	insert_rdv($heure, $date, $idclient, $idmembre);
-	unset($_SESSION["fauterdv"]);
-	header('location:index.php?page=moncompte');
+		//on insere le rdv 
+		insert_rdv($heure, $date, $idclient, $idmembre);
+		unset($_SESSION["fauterdv"]);
+		header('location:index.php?page=moncompte');
 
 
 
+	}
 }
+//------------------------Action a supprimer----------------------------
+if (isset($_POST['asupprimerrdv'])) {
+	// on récupère
+	$idrdv = $_POST['idasupprcompte'];
+	// on supprime
+	suppr_rdv($idrdv);
+
+	//header('location:index.php?page=pageadmin');
+	// on informe et on redirige
+	echo '<script>alert("Vous avez supprimé un rendez-vous");
+	window.location.href = "./index.php?page=moncompte";</script>'; 
+  	exit();
+
 }
 
 ?>

@@ -20,13 +20,23 @@ function insert_com($com, $name, $idprojet){
 
 }
 
+function supprime_com($idcom) {
+	// BUT : fonction pour supprimer un avis d'un commentaire
+	
+	// $idcom : represente l'id du commentaire a supprimer, permet de l'identifier dans la bdd
+
+	global $c;
+	// on supprime
+	mysqli_query($c, "DELETE FROM avis WHERE id = $idcom");
+}
+
 function charge_avis($idprojet){
 	// BUT : charge_avis : Fonction qui renvoie un tableau de commentaire avec une reponse (si existe) and un auteur sur un projet precis
 
 	// $idprojet : integer, representant l'id du projet pour le commentaire
 
 	global $c;
-	$sql = "SELECT idprojet, name, commentary FROM avis WHERE idprojet = $idprojet";
+	$sql = "SELECT id, idprojet, name, commentary FROM avis WHERE idprojet = $idprojet";
 	$result=  mysqli_query($c, $sql);
 
 	//on met dans un tableau

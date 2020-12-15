@@ -7,7 +7,7 @@
 			<ul>
 			<?php
 			foreach ($distrib as $key => $value) {
-				echo '<li><a style="color:black;"href="' . $value["link"] . '">' . $value["name"] . "</a></li>";
+				echo '<li><a target="_blank" style="color:black;"href="' . $value["link"] . '">' . $value["name"] . "</a></li>";
 			}
 			echo "</ul>";
 		echo "</div>";

@@ -44,6 +44,7 @@
 
 						form_ajouterDistrib();
 						form_suppDistrib($distrib);
+					}
 				}
 			?>
 		</div>

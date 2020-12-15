@@ -32,7 +32,7 @@
 		}
 
 // test si il existe déjà
-		elseif (existetype($_POST["newType"])) {
+		elseif (existetype(remplaceApo($_POST["newType"]))) {
 
 			$erreurnewtypeprojet[]="Ce type existe déjà";
 
@@ -50,7 +50,7 @@
 	// j'unset donc ma variable faute
 			unset($_SESSION["fautenewtypeprojet"]);
 	// je récupère le métier
-			$newType = $_POST['newType'];
+			$newType = remplaceApo ($_POST['newType']);
 	// je l'insère
 			insert_typeProjet($newType);
 	// redirection avec une petite alert javascript
@@ -94,7 +94,7 @@
 if (isset($_POST['envoiesupprtype'])) {
 
 // on prend la valeur
-	$typeprojet = $_POST['typeprojet'];
+	$typeprojet = remplaceApo($_POST['typeprojet']);
 // on récupère du métier avec la fonction
 //	$idtypeprojet = recupetypeprojet($typeprojet);
 

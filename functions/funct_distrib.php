@@ -17,16 +17,17 @@
 		?>
 		<div class="distributeurForm">
 			<h2>Ajouter un distributeur :</h2>
-			<form method="post" class="formCommentaire" action="index.php?page=presentation">
+			<form method="post" class="formCommentaire" action="index.php?page=presentation"
+			onsubmit='javascript: return remplidistrib();'>
 
 			<p>
 				<label class="nameDistrib" name="nameDistrib">Nom du distributeur à ajouter</label>
-				<input type="text" name="name">
+				<input type="text" id="name" name="name">
 			</p>
 
 			<p>
 				<label class="linkDistrib" name="linkDistrib">lien du site du distributeur à ajouter</label>
-				<input type="text" name="link">
+				<input type="text" id="link" name="link">
 			</p>
 
 			<p><input type="submit" name="ajouterDistrib" id="ajouterDistrib" value="Ajouter"/></p>

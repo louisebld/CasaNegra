@@ -41,7 +41,7 @@
 			// on informe l'admin qu'il a ajouté un distributeur
 			// redirection vers la page de presentation
 			echo '<script>alert("Vous avez ajouté un distributeur");
-			window.location.href = "./index.php?page=projets";</script>'; 
+			window.location.href = "./index.php?page=presentation";</script>'; 
 	  		exit();
 	
 

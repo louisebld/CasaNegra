@@ -66,11 +66,11 @@ if (isset($_POST['action'])) {
 	}
 	else {
 // on récupère les données
-		$nom = $_POST['nom'];
-		$prénom = $_POST['prénom'];
-		$mail = $_POST['mail'];
+		$nom = remplaceApo ($_POST['nom']);
+		$prénom = remplaceApo ($_POST['prénom']);
+		$mail = remplaceApo ($_POST['mail']);
 // on prend le 1 mais les 2 mots de passes sont les mêmes 
-		$motdepasse = $_POST['motdepasse1'];
+		$motdepasse = remplaceApo ($_POST['motdepasse1']);
 
 // création du compte dans la bdd
 		insert_compte($nom, $prénom, $mail, $motdepasse);

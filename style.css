@@ -646,6 +646,14 @@ width:100%;
   margin-bottom: 15px;
 }
 
+#contactadmin td{
+  width: 100% auto;
+  max-width: 300px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
 
 /*PROJETS*/
 

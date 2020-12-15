@@ -12,11 +12,16 @@ function affiche_rdv($rdv){
 			echo'<p> A : ' . $value["heurerdv"] . "</p> </div>";
 			echo'<p> RDV avec : ' . recupmemebrenom($value["idmembre"]) . "</p>";
 			echo'</div>';
-
+if (testif_admin($_SESSION['idcompte'])){
+echo "<form method='post' action='index.php?page=moncompte'>";
+		echo  "<input id='idasuppr' name='idasupprcompte' type='hidden' value= ". $value['idmembre'] . ">" ;
+		echo "<input class='btnsupprrdv' type='submit' name='asupprimerrdv' value='Supprimer'/>";
+}
 			
 		}
-		echo"</div>";
 
+		echo"</div>";
+	
 	}
 
 
@@ -71,5 +76,6 @@ function listederoulemembres(){
 
 
 }
+
 
 ?>

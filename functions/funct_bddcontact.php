@@ -1,4 +1,12 @@
 <?php
+Function remplaceApo ($chaine){
+		// BUT : remplaceApo : remplace les apostrophes simple par \'
+		// On a galéré on est fier
+		$search  = array("'");
+		$replace = array("\'");
+		$res = str_replace($search, $replace, $chaine);
+		return $res;
+}
 
 
 function insert_contact($id, $tel, $message, $date){

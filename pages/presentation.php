@@ -1,3 +1,4 @@
+<script type='text/javascript' src='js/verifdistrib.js'></script>
 <section>
 	<article>
 		<div class="presentation2">

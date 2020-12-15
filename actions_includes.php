@@ -14,6 +14,6 @@ include 'actions/actions_rdv.php';
 include 'actions/actions_mdp.php';
 
 include 'actions/actions_typeprojet.php';
-
+include 'actions/actions_distrib.php';
 
 ?>

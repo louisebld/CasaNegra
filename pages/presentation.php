@@ -29,12 +29,11 @@
 
 		<h2>Nos distributeurs :</h2>
 		<div class="fournisseurs">
-
-			
-				<div class="first_distrib">
-					<a href="https://doca.es/fr/" target="_blank"><img src="images/logo_doca.png" name="logo DOCA"></a>
-				</div>
-
+			<?php
+				affiche_distrib($distrib);
+				form_ajouterDistrib();
+				form_suppDistrib($distrib);
+			?>
 		</div>
 
 		<h2>Nous contacter :</h2>

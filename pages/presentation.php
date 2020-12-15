@@ -33,6 +33,9 @@
 				affiche_distrib($distrib);
 				if (isset($_SESSION['connected'])) {
 					if (testif_admin($_SESSION['idcompte'])) {
+						
+
+						form_ajouterDistrib();
 						if (isset($_SESSION['fauteDistrib'])) {
 							echo "<ul>";
 							// on affiche chaque erreur
@@ -41,8 +44,9 @@
 							}
 							echo "</ul>";
 						}
-
-						form_ajouterDistrib();
+						?>
+							<h2>Supprimer un distributeur :</h2>
+						<?php
 						form_suppDistrib($distrib);
 					}
 				}

@@ -43,6 +43,20 @@
 
 		}
 	}
+// -------------------- Suppression de commentaire-----------------------
 
+if (isset($_POST['delcom'])) {
+// on récupère
+	$idcom = $_POST['idcom'];
+// on supprime
+	supprime_com($idcom);
+
+	//header('location:index.php?page=pageadmin');
+// on informe et on redirige
+	echo '<script>alert("Vous avez supprimé un commentaire");
+	window.location.href = "./index.php?page=projets";</script>'; 
+  	exit();
+
+}
 
 ?>

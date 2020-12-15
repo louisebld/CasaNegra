@@ -51,8 +51,7 @@ if (isset($_POST['projet'])) {
 		$type = $_POST['form_typeProjets'];	
 		$date_creation = $_POST['date'];
 		$autor = $_POST['equipe'];	
-		$autor = $_POST['equipe'];
-		$description = $_POST['description'];
+		$description = remplaceApo($_POST['description']);
 
 		$file_name = $_FILES['image']['name'];
 		$file_size =$_FILES['image']['size'];

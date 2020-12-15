@@ -31,8 +31,20 @@
 		<div class="fournisseurs">
 			<?php
 				affiche_distrib($distrib);
-				form_ajouterDistrib();
-				form_suppDistrib($distrib);
+				if (isset($_SESSION['connected'])) {
+					if (testif_admin($_SESSION['idcompte'])) {
+						if (isset($_SESSION['fauteDistrib'])) {
+							echo "<ul>";
+							// on affiche chaque erreur
+							foreach($_SESSION["fauteDistrib"] as $fauteDistrib){
+								echo "<li>$fauteDistrib</li>";
+							}
+							echo "</ul>";
+						}
+
+						form_ajouterDistrib();
+						form_suppDistrib($distrib);
+				}
 			?>
 		</div>
 

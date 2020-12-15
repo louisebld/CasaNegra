@@ -30,8 +30,8 @@
 
 
 
-			$link = $_POST['link'];
-			$name = $_POST["name"];
+			$link = remplaceApo ($_POST['link']);
+			$name = remplaceApo ($_POST["name"]);
 			//recuperation du lien entré, et du nom du distributeur
 
 

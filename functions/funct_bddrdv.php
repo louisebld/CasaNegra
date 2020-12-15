@@ -84,9 +84,9 @@ function recupmemebrenom($id){
 }
 
 
-function suppr_rdv($idrdv){
+function suppr_rdv($idmembre){
 	global $c;
-	mysqli_query($c, "DELETE FROM rdv WHERE idrdv =  $idrdv");
+	mysqli_query($c, "DELETE FROM rdv WHERE idmembre =  $idmembre");
 }
 
 

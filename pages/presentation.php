@@ -47,11 +47,13 @@
 						}
 						?>
 							<h2>Supprimer un distributeur :</h2>
+							<center>
 						<?php
 						form_suppDistrib($distrib);
 					}
 				}
 			?>
+		</center>
 		</div>
 
 		<h2>Nous contacter :</h2>

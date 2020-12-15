@@ -26,7 +26,7 @@
 			</p>
 
 			<p>
-				<label class="linkDistrib" name="linkDistrib">lien du site du distributeur à ajouter</label>
+				<label class="linkDistrib" name="linkDistrib">Lien du site du distributeur à ajouter</label>
 				<input type="text" id="link" name="link">
 			</p>
 

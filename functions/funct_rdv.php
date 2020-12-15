@@ -36,7 +36,7 @@ function print_form_rdv($idclient){
 
 		<p> Les rendez-vous sont disponibles de 9h à 17h. </p>
 		<p> Si vous souhaitez un rendez-vous en dehors de ces horaires, merci de nous contacter. </p>
-		<p> Nous ne prenons pas de rendez-vous le dimanche </p>
+		<p> Nous ne prenons pas de rendez-vous le dimanche.</p>
 		<p>
 			<?php	
 				echo  '<input id="idclient" name="idclient" type="hidden" value= '. $idclient . ">" ;

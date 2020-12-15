@@ -27,7 +27,7 @@
 			$name = $sesdonnees['prénom'];
 
 			$idprojet = $_POST['idprojet'];
-			$com = $_POST["com"];
+			$com = remplaceApo($_POST["com"]);
 			//recuperation de l'id du projet, pour savoir a quel projet correspond le commentaire
 
 

@@ -20,17 +20,18 @@ function print_avis($avis){
 			
 
 		echo "</div>";
-	}
-	if (isset($_SESSION['connected'])) {
-		if (testif_admin($_SESSION['idcompte'])) {
-			echo "<form method='post' action='index.php?page=projets'>";
-			// champ hidden pour récupérer l'id pour supprimer
-			echo  "<input id='idcom' name='idcom' type='hidden' value= ". $value['id'] . ">" ;
+		if (isset($_SESSION['connected'])) {
+			if (testif_admin($_SESSION['idcompte'])) {
+				echo "<form method='post' action='index.php?page=projets'>";
+				// champ hidden pour récupérer l'id pour supprimer
+				echo  "<input id='idcom' name='idcom' type='hidden' value= ". $value['id'] . ">" ;
 
 
-			echo "<input type='submit' name='delcom' value='Supprimer le commentaire'/>" . "</p>";
+				echo "<input type='submit' name='delcom' value='Supprimer le commentaire'/>" . "</p>";
 		}	
 	}
+	}
+
 
 	echo '</div>';
 }

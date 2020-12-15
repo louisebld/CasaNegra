@@ -175,7 +175,7 @@ function affichetouscomptes ($donneesdescomptes) {
 		// champ hidden qui contient l'id : on s'en sert pour supprimer
 		echo "<form method='post' action='index.php?page=pageadmin'>";
 		echo  "<input id='idasuppr' name='idasupprcompte' type='hidden' value= ". $comptecourant['idcompte'] . ">" ;
-		echo "<input type='submit' name='asupprimercompte' id='action' value='Supprimer'/>";
+		echo "<input class='btnSupprMembre' type='submit' name='asupprimercompte' value='Supprimer'/>";
 
 		echo "</div>";
 	}
@@ -200,7 +200,7 @@ function affichetouscomptesadmin ($donneesdescomptes) {
 					
 		echo "<form method='post' action='index.php?page=pageadmin'>";
 		echo  "<input id='idajout' name='idajout' type='hidden' value= ". $comptecourant['idcompte'] . ">" ;
-		echo "<input type='submit' name='ajouteradmin' id='action' value='Ajouter à ladministration'/> </form>" . "</p>";
+		echo "<input type='submit' name='ajouteradmin' id='action' value='Ajouter'/> </form>" . "</p>";
 		echo "</div>";
 		}
 

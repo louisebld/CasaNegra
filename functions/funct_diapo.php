@@ -27,9 +27,13 @@ function affiche_diapo(){
 
     <div class="cadre-diapo">
     <?php
-    while ($cpt < charge_nbphotos($c)){
-        if (file_exists('projets/diapo' . $i .'.jpg')){
+    while ($cpt < countprojet()["COUNT(*)"]){
+        if (file_exists('projets/diapo' . $i .'.jpg') and $cpt==0){
 
+            echo'<div style="visibility:visible" class="compGen" id="diapo' . $i . '"/><a href="index.php?page=projets#diapo' . $i . '.jpg"><img class="diapo_img" src="projets/diapo' . $i .'.jpg"></a></div>';
+            $cpt = $cpt + 1;
+        }
+        elseif (file_exists('projets/diapo' . $i .'.jpg')) {
             echo'<div class="compGen" id="diapo' . $i . '"/><a href="index.php?page=projets#diapo' . $i . '.jpg"><img class="diapo_img" src="projets/diapo' . $i .'.jpg"></a></div>';
             $cpt = $cpt + 1;
         }

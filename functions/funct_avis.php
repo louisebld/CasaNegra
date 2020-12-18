@@ -39,10 +39,10 @@ function print_avis($avis){
 function print_form_avis($idprojet){
 	// BUT : print_for_avis : Fonction qui permet d'afficher le formulaire qui ajoute un avis
 	//Obligation d'etre connecté, sinon redirection
+	//onsubmit='javascript: return remplicom();'>
+	
 	?>
-
-	<form method="post" class="formCommentaire" action="index.php?page=projets"
-	onsubmit='javascript: return remplicom();'>
+	<form method="post" class="formCommentaire" action="index.php?page=projets">
 
 		<p>
 			<textarea id="com" id="com" placeholder="Votre avis.." name="com"
